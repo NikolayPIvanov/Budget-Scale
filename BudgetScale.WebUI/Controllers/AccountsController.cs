@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace BudgetScale.WebUI.Controllers
 {
-    [Authorize(Roles = "User")]
+    [AllowAnonymous]
     [ApiController]
     [Route("api/[controller]")]
     public class AccountsController : BaseController
