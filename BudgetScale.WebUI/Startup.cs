@@ -5,10 +5,15 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using BudgetScale.Application.Infrastructure;
 using BudgetScale.Domain.Entities;
+using BudgetScale.Infrastructure.Extensions;
+using BudgetScale.Infrastructure.Filters;
 using BudgetScale.Infrastructure.Middlewares.Authentication;
 using BudgetScale.Persistence;
 using BudgetScale.Persistence.Infrastructure;
+using MediatR;
+using MediatR.Pipeline;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -39,6 +44,7 @@ namespace BudgetScale.WebUI
             services.AddMvc(action =>
             {
                 action.ReturnHttpNotAcceptable = true;
+                action.Filters.Add(new ValidationFilter());
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddDbContext<ApplicationDbContext>(
@@ -54,6 +60,12 @@ namespace BudgetScale.WebUI
                 options.Expiration = TimeSpan.FromDays(15);
                 options.SigningCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
             });
+
+
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPerformanceBehaviour<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
+            services.AddMediatR();
 
             services
                .AddAuthentication()
@@ -129,6 +141,8 @@ namespace BudgetScale.WebUI
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
+            //GDPR middleware
+            app.UseFeaturePolicy();
 
             app.UseJwtBearerTokens(
                 app.ApplicationServices.GetRequiredService<IOptions<TokenProviderOptions>>(),
