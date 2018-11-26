@@ -5,6 +5,7 @@ using BudgetScale.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
@@ -41,6 +42,38 @@ namespace BudgetScale.WebUI
                 options.Expiration = TimeSpan.FromDays(15);
                 options.SigningCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
             });
+
+            services
+               .AddAuthentication()
+               .AddJwtBearer(opts =>
+               {
+                   opts.TokenValidationParameters = new TokenValidationParameters
+                   {
+                       ValidateIssuerSigningKey = true,
+                       IssuerSigningKey = signingKey,
+                       ValidateIssuer = true,
+                       ValidIssuer = this.Configuration["JwtTokenValidation:Issuer"],
+                       ValidateAudience = true,
+                       ValidAudience = this.Configuration["JwtTokenValidation:Audience"],
+                       ValidateLifetime = true,
+                   };
+               });
+
+            services
+             .AddIdentity<ApplicationUser, IdentityRole>(options =>
+             {
+                 options.Password.RequiredLength = 6;
+                 options.Password.RequireDigit = false;
+                 options.Password.RequireLowercase = false;
+                 options.Password.RequireNonAlphanumeric = false;
+                 options.Password.RequireUppercase = false;
+             })
+             .AddDefaultUI()
+                .AddRoles<IdentityRole>()
+                .AddUserManager<UserManager<ApplicationUser>>()
+                .AddRoleManager<RoleManager<IdentityRole>>()
+                .AddDefaultTokenProviders()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
 
