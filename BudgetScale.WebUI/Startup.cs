@@ -3,6 +3,7 @@ using System.Text;
 using BudgetScale.Domain.Entities;
 using BudgetScale.Infrastructure.Middlewares.Authentication;
 using BudgetScale.Persistence;
+using BudgetScale.Persistence.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,7 +29,10 @@ namespace BudgetScale.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc(action =>
+            {
+                action.ReturnHttpNotAcceptable = true;
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection")));
@@ -77,6 +81,7 @@ namespace BudgetScale.WebUI
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
+            services.AddSingleton(this.Configuration);
 
 
             // In production, the Angular files will be served from this directory
@@ -89,6 +94,19 @@ namespace BudgetScale.WebUI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
+            using (var serviceScope = app.ApplicationServices.CreateScope())
+            {
+                var dbContext = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+                if (!env.IsDevelopment())
+                {
+                    dbContext.Database.Migrate();
+                }
+
+                ApplicationDbContextSeeder.Seed(dbContext, serviceScope.ServiceProvider);
+            }
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
