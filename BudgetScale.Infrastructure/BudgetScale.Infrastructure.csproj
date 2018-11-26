@@ -5,7 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.2.0-preview3-35497" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.0-preview3-35497" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.2.0-preview3-35497" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BudgetTracker.Common\BudgetTracker.Common.csproj" />
   </ItemGroup>
 
 </Project>
