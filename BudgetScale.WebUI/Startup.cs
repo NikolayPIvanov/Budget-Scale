@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using BudgetScale.Domain.Entities;
 using BudgetScale.Infrastructure.Middlewares.Authentication;
 using BudgetScale.Persistence;
 using Microsoft.AspNetCore.Builder;
