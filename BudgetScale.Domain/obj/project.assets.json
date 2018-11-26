@@ -4040,11 +4040,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Budget Scale\\BudgetScale.Domain\\BudgetScale.Domain.csproj",
+      "projectUniqueName": "d:\\Budget Scale\\BudgetScale.Domain\\BudgetScale.Domain.csproj",
       "projectName": "BudgetScale.Domain",
-      "projectPath": "D:\\Budget Scale\\BudgetScale.Domain\\BudgetScale.Domain.csproj",
+      "projectPath": "d:\\Budget Scale\\BudgetScale.Domain\\BudgetScale.Domain.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "D:\\Budget Scale\\BudgetScale.Domain\\obj\\",
+      "outputPath": "d:\\Budget Scale\\BudgetScale.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

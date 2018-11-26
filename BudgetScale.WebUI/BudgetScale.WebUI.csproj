@@ -14,9 +14,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.0-preview3-35497" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0-preview3-35497" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.Extensions.Options" Version="2.2.0-preview3-35497" />
+    
   </ItemGroup>
 
   <ItemGroup>
@@ -27,10 +26,10 @@
   </ItemGroup>
 
   <ItemGroup>
+      <ProjectReference Include="..\BudgetScale.Application\BudgetScale.Application.csproj" />
+
     <ProjectReference Include="..\BudgetScale.Persistence\BudgetScale.Persistence.csproj" />
     <ProjectReference Include="..\BudgetScale.Infrastructure\BudgetScale.Infrastructure.csproj" />
-    <ProjectReference Include="..\BudgetScale.Domain\BudgetScale.Domain.csproj" />
-    <ProjectReference Include="..\BudgetScale.Application\BudgetScale.Application.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

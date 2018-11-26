@@ -9,3 +9,6 @@ D:\Budget Scale\BudgetScale.Persistence\obj\Debug\netcoreapp2.2\BudgetScale.Pers
 D:\Budget Scale\BudgetScale.Persistence\obj\Debug\netcoreapp2.2\BudgetScale.Persistence.AssemblyInfo.cs
 D:\Budget Scale\BudgetScale.Persistence\obj\Debug\netcoreapp2.2\BudgetScale.Persistence.dll
 D:\Budget Scale\BudgetScale.Persistence\obj\Debug\netcoreapp2.2\BudgetScale.Persistence.pdb
+D:\Budget Scale\BudgetScale.Persistence\bin\Debug\netcoreapp2.2\BudgetScale.Domain.dll
+D:\Budget Scale\BudgetScale.Persistence\bin\Debug\netcoreapp2.2\BudgetScale.Domain.pdb
+D:\Budget Scale\BudgetScale.Persistence\obj\Debug\netcoreapp2.2\BudgetScale.Persistence.csproj.CopyComplete

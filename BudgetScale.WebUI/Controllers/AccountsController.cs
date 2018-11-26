@@ -35,21 +35,24 @@ namespace BudgetScale.WebUI.Controllers
 
             if (result.Succeeded)
             {
+                if (this.userManager.Users.Count() == 1)
+                {
+                    await this.userManager.AddToRoleAsync(user, "Administrator");
+                }
+                else
+                {
+                    await this.userManager.AddToRoleAsync(user, "User");
+
+                }
                 return this.Ok();
             }
-
-            if (this.userManager.Users.Count() == 1)
-            {
-                await this.userManager.AddToRoleAsync(user, "Administrator");
-
-            }
-            else
-            {
-                await this.userManager.AddToRoleAsync(user, "User");
-
-            }
-
             return this.BadRequest(result);
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Login([FromBody]CredentialsViewModel credentials)
+        {
+            
         }
     }
 }
