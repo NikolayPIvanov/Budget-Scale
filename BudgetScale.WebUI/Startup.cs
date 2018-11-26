@@ -1,3 +1,6 @@
+using System;
+using System.Text;
+using BudgetScale.Infrastructure.Middlewares.Authentication;
 using BudgetScale.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -7,6 +10,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 
 namespace BudgetScale.WebUI
 {
@@ -26,6 +30,19 @@ namespace BudgetScale.WebUI
 
             services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection")));
+
+            var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(this.Configuration["JwtTokenValidation:Secret"]));
+
+            services.Configure<TokenProviderOptions>(options =>
+            {
+                options.Audience = this.Configuration["JwtTokenValidation:Audience"];
+                options.Issuer = this.Configuration["JwtTokenValidation:Issuer"];
+                options.Path = "/api/account/login";
+                options.Expiration = TimeSpan.FromDays(15);
+                options.SigningCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
+            });
+
+
 
 
             // In production, the Angular files will be served from this directory

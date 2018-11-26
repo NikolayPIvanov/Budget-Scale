@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
 
 namespace BudgetScale.Persistence
@@ -20,6 +21,9 @@ namespace BudgetScale.Persistence
 
 
             var builder = new DbContextOptionsBuilder<ApplicationDbContext>();
+
+            builder.ConfigureWarnings(w => w.Throw(RelationalEventId.QueryClientEvaluationWarning));
+
             var connectionString = configuration.GetConnectionString("DefaultConnection");
             builder.UseSqlServer(connectionString);
 

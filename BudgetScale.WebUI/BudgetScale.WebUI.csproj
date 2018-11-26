@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BudgetScale.Persistence\BudgetScale.Persistence.csproj" />
+    <ProjectReference Include="..\BudgetScale.Infrastructure\BudgetScale.Infrastructure.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
