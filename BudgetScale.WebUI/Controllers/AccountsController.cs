@@ -4,8 +4,8 @@ using BudgetScale.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-using BudgetScale.Application.Users;
 using Microsoft.AspNetCore.Authorization;
+using BudgetScale.Application.Users;
 
 namespace BudgetScale.WebUI.Controllers
 {

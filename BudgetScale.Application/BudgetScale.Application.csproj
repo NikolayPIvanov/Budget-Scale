@@ -11,4 +11,8 @@
     <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0-preview3-35497" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BudgetScale.Persistence\BudgetScale.Persistence.csproj" />
+  </ItemGroup>
+
 </Project>
