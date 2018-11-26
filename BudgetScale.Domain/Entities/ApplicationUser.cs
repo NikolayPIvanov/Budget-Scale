@@ -1,10 +1,15 @@
 namespace BudgetScale.Domain.Entities
 {
     using System;
+    using System.Collections.Generic;
     using BudgetScale.Domain.EntityContracts;
     using Microsoft.AspNetCore.Identity;
     public class ApplicationUser : IdentityUser, IAuditInfo
     {
+        public ApplicationUser()
+        {
+            this.Groups = new HashSet<Group>();
+        }
         private bool _isLockedOut;
 
         public string FullName { get; set; }
@@ -20,5 +25,7 @@ namespace BudgetScale.Domain.Entities
         public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
 
         public DateTime? ModifiedOn { get; set; }
+
+        public ICollection<Group> Groups { get; private set; }
     }
 }
