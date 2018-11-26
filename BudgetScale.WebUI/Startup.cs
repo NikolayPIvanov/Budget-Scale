@@ -4,6 +4,7 @@ using System.Security.Claims;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using BudgetScale.Domain.Entities;
 using BudgetScale.Infrastructure.Middlewares.Authentication;
 using BudgetScale.Persistence;
@@ -89,6 +90,7 @@ namespace BudgetScale.WebUI
 
             services.AddSingleton(this.Configuration);
 
+            services.AddAutoMapper();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
