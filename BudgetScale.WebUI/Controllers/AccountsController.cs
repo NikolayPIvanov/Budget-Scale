@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace BudgetScale.WebUI.Controllers
 {
-    [AllowAnonymous]
+    [Authorize(Roles = "User")]
     [ApiController]
     [Route("api/[controller]")]
     public class AccountsController : BaseController
@@ -47,12 +47,6 @@ namespace BudgetScale.WebUI.Controllers
                 return this.Ok();
             }
             return this.BadRequest(result);
-        }
-
-        [HttpPost("[action]")]
-        public async Task<IActionResult> Login([FromBody]CredentialsViewModel credentials)
-        {
-            
         }
     }
 }

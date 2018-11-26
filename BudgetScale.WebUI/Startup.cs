@@ -49,7 +49,7 @@ namespace BudgetScale.WebUI
             {
                 options.Audience = this.Configuration["JwtTokenValidation:Audience"];
                 options.Issuer = this.Configuration["JwtTokenValidation:Issuer"];
-                options.Path = "/api/account/login";
+                options.Path = "/api/accounts/login";
                 options.Expiration = TimeSpan.FromDays(15);
                 options.SigningCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
             });

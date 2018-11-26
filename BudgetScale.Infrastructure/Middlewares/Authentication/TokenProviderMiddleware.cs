@@ -36,7 +36,7 @@ namespace BudgetScale.Infrastructure.Middlewares.Authentication
                 return this.next(context);
             }
 
-            if (context.Request.Method.Equals("POST") && context.Request.HasFormContentType)
+            if (context.Request.Method.Equals("POST"))
             {
                 return this.GenerateToken(context);
             }
@@ -61,6 +61,7 @@ namespace BudgetScale.Infrastructure.Middlewares.Authentication
         private async Task GenerateToken(HttpContext context)
         {
             var principal = await this.principalResolver(context);
+
             if (principal == null)
             {
                 context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
