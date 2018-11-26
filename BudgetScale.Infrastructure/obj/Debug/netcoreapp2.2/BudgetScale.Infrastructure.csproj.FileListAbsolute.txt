@@ -7,3 +7,6 @@ D:\Budget Scale\BudgetScale.Infrastructure\obj\Debug\netcoreapp2.2\BudgetScale.I
 D:\Budget Scale\BudgetScale.Infrastructure\obj\Debug\netcoreapp2.2\BudgetScale.Infrastructure.AssemblyInfo.cs
 D:\Budget Scale\BudgetScale.Infrastructure\obj\Debug\netcoreapp2.2\BudgetScale.Infrastructure.dll
 D:\Budget Scale\BudgetScale.Infrastructure\obj\Debug\netcoreapp2.2\BudgetScale.Infrastructure.pdb
+D:\Budget Scale\BudgetScale.Infrastructure\bin\Debug\netcoreapp2.2\BudgetTracker.Common.dll
+D:\Budget Scale\BudgetScale.Infrastructure\bin\Debug\netcoreapp2.2\BudgetTracker.Common.pdb
+D:\Budget Scale\BudgetScale.Infrastructure\obj\Debug\netcoreapp2.2\BudgetScale.Infrastructure.csproj.CopyComplete

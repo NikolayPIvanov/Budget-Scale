@@ -2084,6 +2084,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "BudgetTracker.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/BudgetTracker.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BudgetTracker.Common.dll": {}
+        }
       }
     }
   },
@@ -7041,10 +7051,16 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "BudgetTracker.Common/1.0.0": {
+      "type": "project",
+      "path": "../BudgetTracker.Common/BudgetTracker.Common.csproj",
+      "msbuildProject": "../BudgetTracker.Common/BudgetTracker.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "BudgetTracker.Common >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 2.2.0-preview3-35497",
       "Microsoft.AspNetCore.Http >= 2.2.0-preview3-35497",
       "Microsoft.Extensions.Options >= 2.2.0-preview3-35497",
@@ -7081,7 +7097,11 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Budget Scale\\BudgetTracker.Common\\BudgetTracker.Common.csproj": {
+              "projectPath": "D:\\Budget Scale\\BudgetTracker.Common\\BudgetTracker.Common.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

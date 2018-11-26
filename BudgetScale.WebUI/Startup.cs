@@ -1,11 +1,16 @@
 using System;
+using System.Linq;
+using System.Security.Claims;
+using System.Security.Principal;
 using System.Text;
+using System.Threading.Tasks;
 using BudgetScale.Domain.Entities;
 using BudgetScale.Infrastructure.Middlewares.Authentication;
 using BudgetScale.Persistence;
 using BudgetScale.Persistence.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -13,6 +18,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
 namespace BudgetScale.WebUI
@@ -122,6 +128,10 @@ namespace BudgetScale.WebUI
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
+            app.UseJwtBearerTokens(
+                app.ApplicationServices.GetRequiredService<IOptions<TokenProviderOptions>>(),
+                PrincipalResolver);
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -141,6 +151,33 @@ namespace BudgetScale.WebUI
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+        }
+
+        private static async Task<GenericPrincipal> PrincipalResolver(HttpContext context)
+        {
+            var email = context.Request.Form["email"];
+
+            var userManager = context.RequestServices.GetRequiredService<UserManager<ApplicationUser>>();
+            var user = await userManager.FindByEmailAsync(email);
+            if (user == null)
+            {
+                return null;
+            }
+
+            var password = context.Request.Form["password"];
+
+            var isValidPassword = await userManager.CheckPasswordAsync(user, password);
+            if (!isValidPassword)
+            {
+                return null;
+            }
+
+            var roles = await userManager.GetRolesAsync(user);
+
+            var identity = new GenericIdentity(email, "Token");
+            identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id));
+
+            return new GenericPrincipal(identity, roles.ToArray());
         }
     }
 }
