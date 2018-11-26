@@ -1,0 +1,4 @@
+D:\Budget Scale\BudgetScale.Persistence\obj\Debug\netstandard2.0\BudgetScale.Persistence.csprojAssemblyReference.cache
+D:\Budget Scale\BudgetScale.Persistence\obj\Debug\netstandard2.0\BudgetScale.Persistence.csproj.CoreCompileInputs.cache
+D:\Budget Scale\BudgetScale.Persistence\obj\Debug\netstandard2.0\BudgetScale.Persistence.AssemblyInfoInputs.cache
+D:\Budget Scale\BudgetScale.Persistence\obj\Debug\netstandard2.0\BudgetScale.Persistence.AssemblyInfo.cs
