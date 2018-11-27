@@ -19,6 +19,7 @@ namespace BudgetScale.Persistence
 
         public DbSet<Category> Categories { get; set; }
 
+        public DbSet<CategoryInformation> CategoryInformations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
