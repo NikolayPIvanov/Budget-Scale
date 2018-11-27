@@ -1,9 +1,0 @@
-D:\Budget Scale\BudgetScale.Domain\bin\Debug\netcoreapp2.2\BudgetScale.Domain.deps.json
-D:\Budget Scale\BudgetScale.Domain\bin\Debug\netcoreapp2.2\BudgetScale.Domain.dll
-D:\Budget Scale\BudgetScale.Domain\bin\Debug\netcoreapp2.2\BudgetScale.Domain.pdb
-D:\Budget Scale\BudgetScale.Domain\obj\Debug\netcoreapp2.2\BudgetScale.Domain.csprojAssemblyReference.cache
-D:\Budget Scale\BudgetScale.Domain\obj\Debug\netcoreapp2.2\BudgetScale.Domain.csproj.CoreCompileInputs.cache
-D:\Budget Scale\BudgetScale.Domain\obj\Debug\netcoreapp2.2\BudgetScale.Domain.AssemblyInfoInputs.cache
-D:\Budget Scale\BudgetScale.Domain\obj\Debug\netcoreapp2.2\BudgetScale.Domain.AssemblyInfo.cs
-D:\Budget Scale\BudgetScale.Domain\obj\Debug\netcoreapp2.2\BudgetScale.Domain.dll
-D:\Budget Scale\BudgetScale.Domain\obj\Debug\netcoreapp2.2\BudgetScale.Domain.pdb

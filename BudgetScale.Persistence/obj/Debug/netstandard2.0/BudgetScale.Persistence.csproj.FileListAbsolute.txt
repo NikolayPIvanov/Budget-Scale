@@ -1,12 +1,12 @@
-D:\Budget Scale\BudgetScale.Persistence\obj\Debug\netstandard2.0\BudgetScale.Persistence.csprojAssemblyReference.cache
-D:\Budget Scale\BudgetScale.Persistence\obj\Debug\netstandard2.0\BudgetScale.Persistence.csproj.CoreCompileInputs.cache
-D:\Budget Scale\BudgetScale.Persistence\obj\Debug\netstandard2.0\BudgetScale.Persistence.AssemblyInfoInputs.cache
-D:\Budget Scale\BudgetScale.Persistence\obj\Debug\netstandard2.0\BudgetScale.Persistence.AssemblyInfo.cs
 D:\Budget Scale\BudgetScale.Persistence\bin\Debug\netstandard2.0\BudgetScale.Persistence.deps.json
 D:\Budget Scale\BudgetScale.Persistence\bin\Debug\netstandard2.0\BudgetScale.Persistence.dll
 D:\Budget Scale\BudgetScale.Persistence\bin\Debug\netstandard2.0\BudgetScale.Persistence.pdb
 D:\Budget Scale\BudgetScale.Persistence\bin\Debug\netstandard2.0\BudgetScale.Domain.dll
 D:\Budget Scale\BudgetScale.Persistence\bin\Debug\netstandard2.0\BudgetScale.Domain.pdb
+D:\Budget Scale\BudgetScale.Persistence\obj\Debug\netstandard2.0\BudgetScale.Persistence.csprojAssemblyReference.cache
+D:\Budget Scale\BudgetScale.Persistence\obj\Debug\netstandard2.0\BudgetScale.Persistence.csproj.CoreCompileInputs.cache
+D:\Budget Scale\BudgetScale.Persistence\obj\Debug\netstandard2.0\BudgetScale.Persistence.AssemblyInfoInputs.cache
+D:\Budget Scale\BudgetScale.Persistence\obj\Debug\netstandard2.0\BudgetScale.Persistence.AssemblyInfo.cs
 D:\Budget Scale\BudgetScale.Persistence\obj\Debug\netstandard2.0\BudgetScale.Persistence.csproj.CopyComplete
 D:\Budget Scale\BudgetScale.Persistence\obj\Debug\netstandard2.0\BudgetScale.Persistence.dll
 D:\Budget Scale\BudgetScale.Persistence\obj\Debug\netstandard2.0\BudgetScale.Persistence.pdb

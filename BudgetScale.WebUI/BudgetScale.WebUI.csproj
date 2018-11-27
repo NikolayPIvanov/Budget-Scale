@@ -13,8 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
-    <PackageReference Include="FluentValidation.AspNetCore" Version="8.0.101" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.0.100" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjectionFixed" Version="5.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0-preview3-35497" PrivateAssets="All" />
@@ -29,7 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-  
     <ProjectReference Include="..\BudgetScale.Persistence\BudgetScale.Persistence.csproj" />
     <ProjectReference Include="..\BudgetScale.Application\BudgetScale.Application.csproj" />
     <ProjectReference Include="..\BudgetScale.Infrastructure\BudgetScale.Infrastructure.csproj" />

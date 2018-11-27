@@ -4,7 +4,6 @@ using System.Security.Claims;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
-using AutoMapper;
 using BudgetScale.Application.Groups.Commands.CreateCommand;
 using BudgetScale.Application.Infrastructure;
 using BudgetScale.Domain.Entities;
@@ -72,7 +71,7 @@ namespace BudgetScale.WebUI
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPerformanceBehaviour<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
-            services.AddMediatR();
+            // services.AddMediatR();
 
             services
                .AddAuthentication()
@@ -109,7 +108,7 @@ namespace BudgetScale.WebUI
 
             services.AddSingleton(this.Configuration);
 
-            services.AddAutoMapper();
+            // services.AddAutoMapper();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
