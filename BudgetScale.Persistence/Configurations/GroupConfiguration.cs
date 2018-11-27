@@ -14,6 +14,8 @@ namespace BudgetScale.Persistence.Configurations
             .IsRequired(true)
             .HasMaxLength(30);
 
+            builder.Property(e => e.ModifiedOn).HasDefaultValue(null);
+
             builder.HasOne(e => e.User)
             .WithMany(u => u.Groups)
             .HasForeignKey(e => e.UserId)

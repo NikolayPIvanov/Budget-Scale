@@ -15,6 +15,8 @@ namespace BudgetScale.Persistence.Configurations
 
             builder.Property(e => e.GroupId).IsRequired(true);
 
+            builder.Property(e => e.ModifiedOn).HasDefaultValue(null);
+
             builder.HasOne(e => e.Group)
             .WithMany(g => g.Categories)
             .HasForeignKey(e => e.GroupId)
