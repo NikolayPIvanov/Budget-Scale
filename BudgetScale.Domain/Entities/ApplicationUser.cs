@@ -9,6 +9,7 @@ namespace BudgetScale.Domain.Entities
         public ApplicationUser()
         {
             this.Groups = new HashSet<Group>();
+            this.Accounts = new HashSet<Account>();
         }
         private bool _isLockedOut;
 
@@ -27,5 +28,7 @@ namespace BudgetScale.Domain.Entities
         public DateTime? ModifiedOn { get; set; }
 
         public ICollection<Group> Groups { get; private set; }
+
+        public ICollection<Account> Accounts { get; private set; }
     }
 }

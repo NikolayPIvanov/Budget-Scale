@@ -9,6 +9,7 @@ namespace BudgetScale.Domain.Entities
         public Category()
         {
             this.CategoryInformation = new HashSet<CategoryInformation>();
+            this.Transactions = new HashSet<Transaction>();
             this.CreatedOn = DateTime.UtcNow;
         }
         public string CategoryId { get; set; }
@@ -20,6 +21,8 @@ namespace BudgetScale.Domain.Entities
         public string GroupId { get; set; }
 
         public ICollection<CategoryInformation> CategoryInformation { get; private set; }
+
+        public ICollection<Transaction> Transactions { get; private set; }
         public DateTime CreatedOn { get; set; }
         public DateTime? ModifiedOn { get; set; }
     }

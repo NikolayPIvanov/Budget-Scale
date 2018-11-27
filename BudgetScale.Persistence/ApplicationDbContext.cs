@@ -21,6 +21,11 @@ namespace BudgetScale.Persistence
 
         public DbSet<CategoryInformation> CategoryInformations { get; set; }
 
+        public DbSet<Account> Accounts { get; set; }
+
+        public DbSet<Transaction> Transactions { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyAllConfigurations();
