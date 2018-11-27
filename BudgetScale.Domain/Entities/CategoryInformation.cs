@@ -25,7 +25,9 @@ namespace BudgetScale.Domain.Entities
         public string CategoryId { get; set; }
 
         public Category Category { get; set; }
+
         public DateTime CreatedOn { get; set; }
+
         public DateTime? ModifiedOn { get; set; }
     }
 }
