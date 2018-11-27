@@ -9,13 +9,11 @@ namespace BudgetScale.Domain.Entities
 
         public string TransactionId { get; set; }
 
-        public Account AccountSource { get; set; }
+        public Particiapant Issuer { get; set; }
 
-        public string AccountSourceId { get; set; }
+        public Particiapant Reciever { get; set; }
 
-        public string CategoryDestinationId { get; set; }
-
-        public Category CategoryDestination { get; set; }
+        public CategoryUnit Category { get; set; }
 
         public string Reason { get; set; }
 
