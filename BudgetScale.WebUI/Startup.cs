@@ -5,6 +5,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using BudgetScale.Application.Groups.Commands.CreateCommand;
 using BudgetScale.Application.Infrastructure;
 using BudgetScale.Domain.Entities;
 using BudgetScale.Infrastructure.Extensions;
@@ -12,6 +13,7 @@ using BudgetScale.Infrastructure.Filters;
 using BudgetScale.Infrastructure.Middlewares.Authentication;
 using BudgetScale.Persistence;
 using BudgetScale.Persistence.Infrastructure;
+using FluentValidation.AspNetCore;
 using MediatR;
 using MediatR.Pipeline;
 using Microsoft.AspNetCore.Builder;
@@ -45,7 +47,12 @@ namespace BudgetScale.WebUI
             {
                 action.ReturnHttpNotAcceptable = true;
                 action.Filters.Add(new ValidationFilter());
-            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            })
+            .AddFluentValidation(fv =>
+            {
+                fv.RegisterValidatorsFromAssemblyContaining<CreateGroupCommandValidator>();
+            })
+            .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection")));

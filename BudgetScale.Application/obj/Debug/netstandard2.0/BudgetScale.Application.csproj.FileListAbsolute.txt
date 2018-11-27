@@ -7,3 +7,8 @@ D:\Budget Scale\BudgetScale.Application\obj\Debug\netstandard2.0\BudgetScale.App
 D:\Budget Scale\BudgetScale.Application\obj\Debug\netstandard2.0\BudgetScale.Application.dll
 D:\Budget Scale\BudgetScale.Application\obj\Debug\netstandard2.0\BudgetScale.Application.pdb
 D:\Budget Scale\BudgetScale.Application\obj\Debug\netstandard2.0\BudgetScale.Application.csprojAssemblyReference.cache
+D:\Budget Scale\BudgetScale.Application\bin\Debug\netstandard2.0\BudgetScale.Domain.dll
+D:\Budget Scale\BudgetScale.Application\bin\Debug\netstandard2.0\BudgetScale.Persistence.dll
+D:\Budget Scale\BudgetScale.Application\bin\Debug\netstandard2.0\BudgetScale.Persistence.pdb
+D:\Budget Scale\BudgetScale.Application\bin\Debug\netstandard2.0\BudgetScale.Domain.pdb
+D:\Budget Scale\BudgetScale.Application\obj\Debug\netstandard2.0\BudgetScale.Application.csproj.CopyComplete

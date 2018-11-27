@@ -2,3 +2,11 @@ D:\Budget Scale\BudgetScale.Infrastructure\obj\Debug\netstandard2.0\BudgetScale.
 D:\Budget Scale\BudgetScale.Infrastructure\obj\Debug\netstandard2.0\BudgetScale.Infrastructure.csproj.CoreCompileInputs.cache
 D:\Budget Scale\BudgetScale.Infrastructure\obj\Debug\netstandard2.0\BudgetScale.Infrastructure.AssemblyInfoInputs.cache
 D:\Budget Scale\BudgetScale.Infrastructure\obj\Debug\netstandard2.0\BudgetScale.Infrastructure.AssemblyInfo.cs
+D:\Budget Scale\BudgetScale.Infrastructure\bin\Debug\netstandard2.0\BudgetScale.Infrastructure.deps.json
+D:\Budget Scale\BudgetScale.Infrastructure\bin\Debug\netstandard2.0\BudgetScale.Infrastructure.dll
+D:\Budget Scale\BudgetScale.Infrastructure\bin\Debug\netstandard2.0\BudgetScale.Infrastructure.pdb
+D:\Budget Scale\BudgetScale.Infrastructure\bin\Debug\netstandard2.0\BudgetTracker.Common.dll
+D:\Budget Scale\BudgetScale.Infrastructure\bin\Debug\netstandard2.0\BudgetTracker.Common.pdb
+D:\Budget Scale\BudgetScale.Infrastructure\obj\Debug\netstandard2.0\BudgetScale.Infrastructure.csproj.CopyComplete
+D:\Budget Scale\BudgetScale.Infrastructure\obj\Debug\netstandard2.0\BudgetScale.Infrastructure.dll
+D:\Budget Scale\BudgetScale.Infrastructure\obj\Debug\netstandard2.0\BudgetScale.Infrastructure.pdb
