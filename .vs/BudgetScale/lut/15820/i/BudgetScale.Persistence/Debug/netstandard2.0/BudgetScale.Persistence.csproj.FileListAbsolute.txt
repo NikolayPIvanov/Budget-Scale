@@ -1,0 +1,8 @@
+D:\Budget Scale\.vs\BudgetScale\lut\0\b\BudgetScale.Persistence\Debug\netstandard2.0\BudgetScale.Persistence.deps.json
+D:\Budget Scale\.vs\BudgetScale\lut\0\b\BudgetScale.Persistence\Debug\netstandard2.0\BudgetScale.Persistence.dll
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Persistence\Debug\netstandard2.0\BudgetScale.Persistence.csprojAssemblyReference.cache
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Persistence\Debug\netstandard2.0\BudgetScale.Persistence.csproj.CoreCompileInputs.cache
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Persistence\Debug\netstandard2.0\BudgetScale.Persistence.AssemblyInfoInputs.cache
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Persistence\Debug\netstandard2.0\BudgetScale.Persistence.AssemblyInfo.cs
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Persistence\Debug\netstandard2.0\BudgetScale.Persistence.csproj.CopyComplete
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Persistence\Debug\netstandard2.0\BudgetScale.Persistence.dll

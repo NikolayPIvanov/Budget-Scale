@@ -7,11 +7,11 @@ namespace BudgetScale.Persistence.Infrastructure
 
     public static class ApplicationDbContextSeeder
     {
-        public static void Seed(ApplicationDbContext dbContext, IServiceProvider serviceProvider)
+        public static void Seed(ApplicationDbContext context, IServiceProvider serviceProvider)
         {
-            if (dbContext == null)
+            if (context == null)
             {
-                throw new ArgumentNullException(nameof(dbContext));
+                throw new ArgumentNullException(nameof(context));
             }
 
             if (serviceProvider == null)
@@ -20,7 +20,7 @@ namespace BudgetScale.Persistence.Infrastructure
             }
 
             var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-            Seed(dbContext, roleManager);
+            Seed(context, roleManager);
         }
 
         public static void Seed(ApplicationDbContext dbContext, RoleManager<IdentityRole> roleManager)
@@ -49,14 +49,13 @@ namespace BudgetScale.Persistence.Infrastructure
         {
             var role = roleManager.FindByNameAsync(roleName).GetAwaiter().GetResult();
 
-            if (role == null)
-            {
-                var result = roleManager.CreateAsync(new IdentityRole(roleName)).GetAwaiter().GetResult();
+            if (role != null) return;
 
-                if (!result.Succeeded)
-                {
-                    throw new Exception(string.Join(Environment.NewLine, result.Errors.Select(e => e.Description)));
-                }
+            var result = roleManager.CreateAsync(new IdentityRole(roleName)).GetAwaiter().GetResult();
+
+            if (!result.Succeeded)
+            {
+                throw new Exception(string.Join(Environment.NewLine, result.Errors.Select(e => e.Description)));
             }
         }
     }

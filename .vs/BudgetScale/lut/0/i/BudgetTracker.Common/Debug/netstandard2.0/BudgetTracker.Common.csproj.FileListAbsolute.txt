@@ -1,0 +1,8 @@
+D:\Budget Scale\.vs\BudgetScale\lut\0\b\BudgetTracker.Common\Debug\netstandard2.0\BudgetTracker.Common.deps.json
+D:\Budget Scale\.vs\BudgetScale\lut\0\b\BudgetTracker.Common\Debug\netstandard2.0\BudgetTracker.Common.dll
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetTracker.Common\Debug\netstandard2.0\BudgetTracker.Common.csproj.CoreCompileInputs.cache
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetTracker.Common\Debug\netstandard2.0\BudgetTracker.Common.AssemblyInfoInputs.cache
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetTracker.Common\Debug\netstandard2.0\BudgetTracker.Common.AssemblyInfo.cs
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetTracker.Common\Debug\netstandard2.0\BudgetTracker.Common.csproj.CopyComplete
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetTracker.Common\Debug\netstandard2.0\BudgetTracker.Common.dll
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetTracker.Common\Debug\netstandard2.0\BudgetTracker.Common.csprojAssemblyReference.cache

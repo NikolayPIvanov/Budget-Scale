@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 using Microsoft.AspNetCore.Authorization;
 using BudgetScale.Application.Users;
+using BudgetScale.Infrastructure.Extensions;
 
 namespace BudgetScale.WebUI.Controllers
 {
@@ -14,11 +15,11 @@ namespace BudgetScale.WebUI.Controllers
     [Route("api/[controller]")]
     public class AccountsController : BaseController
     {
-        private readonly UserManager<ApplicationUser> userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
         public AccountsController(UserManager<ApplicationUser> userManager)
         {
-            this.userManager = userManager;
+            this._userManager = userManager;
         }
 
         [HttpPost]
@@ -26,27 +27,24 @@ namespace BudgetScale.WebUI.Controllers
         {
             if (model == null || !this.ModelState.IsValid)
             {
-                return BadRequest(this.ModelState);
-                //  return this.BadRequest(this.ModelState.GetFirstError());
+                return this.BadRequest(this.ModelState.GetFirstError());
             }
 
             var user = new ApplicationUser { Email = model.Email, UserName = model.Email, FullName = model.FullName };
-            var result = await this.userManager.CreateAsync(user, model.Password);
+            var result = await this._userManager.CreateAsync(user, model.Password);
 
-            if (result.Succeeded)
+            if (!result.Succeeded) return this.BadRequest(result);
+
+            if (this._userManager.Users.Count() == 1)
             {
-                if (this.userManager.Users.Count() == 1)
-                {
-                    await this.userManager.AddToRoleAsync(user, "Administrator");
-                }
-                else
-                {
-                    await this.userManager.AddToRoleAsync(user, "User");
-
-                }
-                return this.Ok();
+                await this._userManager.AddToRoleAsync(user, "Administrator");
             }
-            return this.BadRequest(result);
+            else
+            {
+                await this._userManager.AddToRoleAsync(user, "User");
+
+            }
+            return this.Ok();
         }
     }
 }

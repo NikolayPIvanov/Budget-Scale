@@ -14,8 +14,14 @@ namespace BudgetScale.Infrastructure.Extensions
 
             if (claimsPrincipal.Identity.IsAuthenticated)
             {
-                return claimsPrincipal.FindFirst(c => c.Type ==
-                                                      "id")?.Value;
+               // return claimsPrincipal.FindFirst(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+                foreach (var claim in claimsPrincipal.Claims)
+                {
+                    if (claim.Type == ClaimTypes.NameIdentifier)
+                    {
+                        return claim.Value;
+                    }
+                }
             }
 
             return null;
