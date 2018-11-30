@@ -12,11 +12,11 @@ namespace BudgetScale.Infrastructure.Filters
     {
         public override void OnActionExecuting(ActionExecutingContext context)
         {
-            if (!context.ModelState.IsValid)
-            {
-                List<string> list = (from modelState in context.ModelState.Values from error in modelState.Errors select error.ErrorMessage).ToList();
-                context.Result = new BadRequestObjectResult(list);
-            }
+            if (context.ModelState.IsValid) return;
+
+            var list = (from modelState in context.ModelState.Values
+                        from error in modelState.Errors select error.ErrorMessage).ToList();
+            context.Result = new BadRequestObjectResult(list);
 
         }
 

@@ -14,4 +14,8 @@
     <ProjectReference Include="..\BudgetScale.Persistence\BudgetScale.Persistence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Groups\Models\Input\RequestAll\" />
+  </ItemGroup>
+
 </Project>

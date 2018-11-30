@@ -23,7 +23,9 @@ namespace BudgetScale.Domain.Entities
         public ICollection<CategoryInformation> CategoryInformation { get; private set; }
 
         public ICollection<Transaction> Transactions { get; private set; }
+
         public DateTime CreatedOn { get; set; }
+
         public DateTime? ModifiedOn { get; set; }
     }
 }

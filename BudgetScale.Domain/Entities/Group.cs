@@ -11,6 +11,7 @@ namespace BudgetScale.Domain.Entities
             this.Categories = new HashSet<Category>();
             this.CreatedOn = DateTime.UtcNow;
         }
+
         public string GroupId { get; set; }
 
         public string GroupName { get; set; }
