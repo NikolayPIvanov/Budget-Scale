@@ -14,12 +14,12 @@ namespace BudgetScale.Infrastructure.Tests
 {
     public class Tests
     {
-        private IMockHttpContextService mock;
+        private IMockService<HttpContext> mock;
 
         [SetUp]
         public void Setup()
         {
-            this.mock = new MockHttpContextService();
+            this.mock = new MockService<HttpContext>();
         }
 
         [Test]

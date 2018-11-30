@@ -5,8 +5,8 @@ using Moq;
 
 namespace BudgetScale.Infrastructure.Tests.Services
 {
-    public class MockHttpContextService : IMockHttpContextService
+    public class MockService<T> : IMockService<T> where T : class 
     {
-        public Mock<HttpContext> Mock { get; set; } = new Mock<HttpContext>();
+        public Mock<T> Mock { get; set; } = new Mock<T>();
     }
 }
