@@ -6,3 +6,4 @@ D:\Budget Scale\BudgetScale.Domain\obj\Debug\netstandard2.0\BudgetScale.Domain.A
 D:\Budget Scale\BudgetScale.Domain\obj\Debug\netstandard2.0\BudgetScale.Domain.AssemblyInfo.cs
 D:\Budget Scale\BudgetScale.Domain\obj\Debug\netstandard2.0\BudgetScale.Domain.dll
 D:\Budget Scale\BudgetScale.Domain\obj\Debug\netstandard2.0\BudgetScale.Domain.pdb
+D:\Budget Scale\BudgetScale.Domain\obj\Debug\netstandard2.0\BudgetScale.Domain.csprojAssemblyReference.cache

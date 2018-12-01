@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using BudgetScale.Application.Categories.Models.Output;
 using BudgetScale.Application.CategoryInformation.Models.Output;
 using BudgetScale.Application.Groups.Models.Output;
@@ -14,7 +12,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Z.EntityFramework.Plus;
 
-namespace BudgetScale.Application.Groups.Queries
+namespace BudgetScale.Application.Groups.Queries.GetGroups
 {
     public class GetGroupsQueryHandler : BaseEntity, IRequestHandler<GetGroupsQuery, IEnumerable<GroupViewModel>>
     {

@@ -40,11 +40,14 @@ namespace BudgetScale.Infrastructure.Tests
         [Test]
         public void ClaimsPrincipalReturnsTheId()
         {
+            var claim = new Claim(ClaimTypes.NameIdentifier, "Nikolay");
+
             var claims = new List<Claim> {
-                new Claim(ClaimTypes.NameIdentifier, "Nikolay", ClaimValueTypes.String, "testhost"),
+                claim
             };
 
             var userIdentity = new ClaimsIdentity(claims, "Test");
+            IEnumerable<ClaimsIdentity> identities = new List<ClaimsIdentity>() {userIdentity};
 
             var userPrincipal = new ClaimsPrincipal(userIdentity);
 
@@ -52,8 +55,11 @@ namespace BudgetScale.Infrastructure.Tests
             mock.Mock.Setup(l => l.User.Identity.IsAuthenticated).Returns(true);
             mock.Mock.Setup(l => l.User.Claims).Returns(claims);
             mock.Mock.Setup(l => l.User.Identity).Returns(userIdentity);
+            mock.Mock.Setup(l => l.User.Identities).Returns(identities);
+            mock.Mock.Setup(l => l.User.FindFirst(It.IsAny<Predicate<Claim>>())).Returns(claim);
 
-            var result = this.mock.Mock.Object.User.GetId();
+
+            string result = this.mock.Mock.Object.User.GetId();
             Assert.That(result.Equals("Nikolay"));
         }
 
