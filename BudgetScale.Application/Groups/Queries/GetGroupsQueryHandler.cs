@@ -12,6 +12,7 @@ using BudgetScale.Domain.Entities;
 using BudgetScale.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Z.EntityFramework.Plus;
 
 namespace BudgetScale.Application.Groups.Queries
 {
@@ -23,12 +24,13 @@ namespace BudgetScale.Application.Groups.Queries
 
         public async Task<IEnumerable<GroupViewModel>> Handle(GetGroupsQuery request, CancellationToken cancellationToken)
         {
-            List<GroupViewModel> groups = await this._context.Groups.AsNoTracking()
-                .Where(group => group.UserId.Equals(request.UserId))
+            _context.Filter<Domain.Entities.CategoryInformation>(x =>
+                x.Where(c => c.Month.Equals(request.Month)));
+            
+            List<GroupViewModel> groups = await this._context.Groups
                 .Include(g => g.Categories)
-                .ThenInclude(c => c.CategoryInformation
-                    .Where(e => e.Month
-                        .Equals(request.Month)))
+                .ThenInclude(e => e.CategoryInformation)
+                .Where(i => i.UserId.Equals(request.UserId))
                 .ProjectTo<GroupViewModel>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken: cancellationToken);
 

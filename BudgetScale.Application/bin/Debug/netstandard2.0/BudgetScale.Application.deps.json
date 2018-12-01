@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "d1ed43e0121149f2f8ec6d71b7109e972ce5dd03"
+    "signature": "b1273d5cd118610312794d2cace575c6ad9328ac"
   },
   "compilationOptions": {},
   "targets": {
@@ -14,7 +14,8 @@
           "FluentValidation": "8.0.100",
           "MediatR": "5.1.0",
           "Microsoft.Extensions.Logging": "2.2.0-preview3-35497",
-          "NETStandard.Library": "2.0.3"
+          "NETStandard.Library": "2.0.3",
+          "Z.EntityFramework.Plus.EFCore": "1.8.17"
         },
         "runtime": {
           "BudgetScale.Application.dll": {}
@@ -1106,6 +1107,17 @@
         }
       },
       "System.ValueTuple/4.5.0": {},
+      "Z.EntityFramework.Plus.EFCore/1.8.17": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "2.2.0-preview3-35497"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Z.EntityFramework.Plus.EFCore.dll": {
+            "assemblyVersion": "1.8.17.0",
+            "fileVersion": "1.8.17.0"
+          }
+        }
+      },
       "BudgetScale.Domain/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0-preview3-35497"
@@ -1848,6 +1860,13 @@
       "sha512": "sha512-fa3P1cPe2SlrjCjJ/yc3mcXkDj4GQORmileNFYBtBZh2qddzwRubagAkj8yz/yF9oLvJVqaZYar9l2SCqNKDJg==",
       "path": "system.valuetuple/4.5.0",
       "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
+    },
+    "Z.EntityFramework.Plus.EFCore/1.8.17": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9dO5R6kL6ZJCTk/0rN4nPbQjWKrSOQMczu5r+7GAFzp8i5OuhquKvQ1AW1COW8XFVY1uZ1IJvbdFUDJiN1Hgqg==",
+      "path": "z.entityframework.plus.efcore/1.8.17",
+      "hashPath": "z.entityframework.plus.efcore.1.8.17.nupkg.sha512"
     },
     "BudgetScale.Domain/1.0.0": {
       "type": "project",

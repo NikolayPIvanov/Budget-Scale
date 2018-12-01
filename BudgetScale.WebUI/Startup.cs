@@ -73,7 +73,7 @@ namespace BudgetScale.WebUI
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPerformanceBehaviour<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
-            //services.AddMediatR();
+            services.AddMediatR();
 
             services
                .AddAuthentication()

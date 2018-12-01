@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "e51d5c5732135ce0e806517242bef00e598b6193"
+    "signature": "01521dfa6347e0eb7c8624d00ad40a7d36161c89"
   },
   "compilationOptions": {
     "defines": [
@@ -29,6 +29,8 @@
           "BudgetScale.Infrastructure": "1.0.0",
           "BudgetScale.Persistence": "1.0.0",
           "FluentValidation.AspNetCore": "8.0.100",
+          "MediatR": "5.1.0",
+          "MediatR.Extensions.Microsoft.DependencyInjection": "5.1.0",
           "MediatR.Extensions.Microsoft.DependencyInjectionFixed": "5.1.2",
           "Microsoft.AspNetCore.App": "2.2.0-preview3-35497",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0-preview3-35497",
@@ -113,6 +115,21 @@
         },
         "compile": {
           "lib/netstandard2.0/MediatR.dll": {}
+        }
+      },
+      "MediatR.Extensions.Microsoft.DependencyInjection/5.1.0": {
+        "dependencies": {
+          "MediatR": "5.1.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.2.0-preview3-35497"
+        },
+        "runtime": {
+          "lib/netstandard2.0/MediatR.Extensions.Microsoft.DependencyInjection.dll": {
+            "assemblyVersion": "5.1.0.0",
+            "fileVersion": "5.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/MediatR.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
       "MediatR.Extensions.Microsoft.DependencyInjectionFixed/5.1.2": {
@@ -611,13 +628,40 @@
         }
       },
       "System.ValueTuple/4.5.0": {},
+      "Z.EntityFramework.Plus.EF6/1.8.16": {
+        "runtime": {
+          "lib/net45/Z.EntityFramework.Plus.EF6.dll": {
+            "assemblyVersion": "1.8.16.0",
+            "fileVersion": "1.8.16.0"
+          }
+        },
+        "compile": {
+          "lib/net45/Z.EntityFramework.Plus.EF6.dll": {}
+        }
+      },
+      "Z.EntityFramework.Plus.EFCore/1.8.17": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "2.2.0-preview3-35497"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Z.EntityFramework.Plus.EFCore.dll": {
+            "assemblyVersion": "1.8.17.0",
+            "fileVersion": "1.8.17.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Z.EntityFramework.Plus.EFCore.dll": {}
+        }
+      },
       "BudgetScale.Application/1.0.0": {
         "dependencies": {
           "AutoMapper": "7.0.1",
           "BudgetScale.Persistence": "1.0.0",
           "FluentValidation": "8.0.100",
           "MediatR": "5.1.0",
-          "Microsoft.Extensions.Logging": "2.2.0-preview3-35497"
+          "Microsoft.Extensions.Logging": "2.2.0-preview3-35497",
+          "Z.EntityFramework.Plus.EF6": "1.8.16",
+          "Z.EntityFramework.Plus.EFCore": "1.8.17"
         },
         "runtime": {
           "BudgetScale.Application.dll": {}
@@ -3738,6 +3782,13 @@
       "path": "mediatr/5.1.0",
       "hashPath": "mediatr.5.1.0.nupkg.sha512"
     },
+    "MediatR.Extensions.Microsoft.DependencyInjection/5.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iFz9og0gyUUsbG9TBQfSxrnkOU6A9ZckGoswteeA+ip5Qvk0Bk60qJ5+AhXH/RCTxkSTNqQ3jP/gTmIWnFURsg==",
+      "path": "mediatr.extensions.microsoft.dependencyinjection/5.1.0",
+      "hashPath": "mediatr.extensions.microsoft.dependencyinjection.5.1.0.nupkg.sha512"
+    },
     "MediatR.Extensions.Microsoft.DependencyInjectionFixed/5.1.2": {
       "type": "package",
       "serviceable": true,
@@ -3940,6 +3991,20 @@
       "sha512": "sha512-fa3P1cPe2SlrjCjJ/yc3mcXkDj4GQORmileNFYBtBZh2qddzwRubagAkj8yz/yF9oLvJVqaZYar9l2SCqNKDJg==",
       "path": "system.valuetuple/4.5.0",
       "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
+    },
+    "Z.EntityFramework.Plus.EF6/1.8.16": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-K+7Bv5GqXxOHbsdtdJnMGx38TZvn6K33pWTZskT3b/6Xbmikbx+aC/GHFcQiwoftTGNHobwcF4d69s5yVYxnqQ==",
+      "path": "z.entityframework.plus.ef6/1.8.16",
+      "hashPath": "z.entityframework.plus.ef6.1.8.16.nupkg.sha512"
+    },
+    "Z.EntityFramework.Plus.EFCore/1.8.17": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9dO5R6kL6ZJCTk/0rN4nPbQjWKrSOQMczu5r+7GAFzp8i5OuhquKvQ1AW1COW8XFVY1uZ1IJvbdFUDJiN1Hgqg==",
+      "path": "z.entityframework.plus.efcore/1.8.17",
+      "hashPath": "z.entityframework.plus.efcore.1.8.17.nupkg.sha512"
     },
     "BudgetScale.Application/1.0.0": {
       "type": "project",

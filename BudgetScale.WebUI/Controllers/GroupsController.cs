@@ -21,9 +21,10 @@ namespace BudgetScale.WebUI.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<GroupViewModel>), (int)HttpStatusCode.OK)]
 
-        public async Task<IActionResult> All([FromQuery] string month)
+        public async Task<IActionResult> All([FromQuery] string month = "Dec")
         {
-            var response = await Mediator.Send(new GetGroupsQuery {Month = month, UserId = this.User.GetId()});
+            var request = new GetGroupsQuery {Month = month, UserId = this.User.GetId()};
+            var response = await Mediator.Send(request);
 
             return Ok(response);
         }

@@ -3233,6 +3233,18 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
+      "Z.EntityFramework.Plus.EFCore/1.8.17": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Z.EntityFramework.Plus.EFCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Z.EntityFramework.Plus.EFCore.dll": {}
+        }
+      },
       "BudgetScale.Application/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -3241,7 +3253,8 @@
           "BudgetScale.Persistence": "1.0.0",
           "FluentValidation": "8.0.100",
           "MediatR": "5.1.0",
-          "Microsoft.Extensions.Logging": "2.2.0-preview3-35497"
+          "Microsoft.Extensions.Logging": "2.2.0-preview3-35497",
+          "Z.EntityFramework.Plus.EFCore": "1.8.17"
         },
         "compile": {
           "bin/placeholder/BudgetScale.Application.dll": {}
@@ -10037,6 +10050,23 @@
         "ref/xamarinwatchos10/_._",
         "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
+      ]
+    },
+    "Z.EntityFramework.Plus.EFCore/1.8.17": {
+      "sha512": "9dO5R6kL6ZJCTk/0rN4nPbQjWKrSOQMczu5r+7GAFzp8i5OuhquKvQ1AW1COW8XFVY1uZ1IJvbdFUDJiN1Hgqg==",
+      "type": "package",
+      "path": "z.entityframework.plus.efcore/1.8.17",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard1.3/Z.EntityFramework.Plus.EFCore.deps.json",
+        "lib/netstandard1.3/Z.EntityFramework.Plus.EFCore.dll",
+        "lib/netstandard1.3/Z.EntityFramework.Plus.EFCore.xml",
+        "lib/netstandard2.0/Z.EntityFramework.Plus.EFCore.deps.json",
+        "lib/netstandard2.0/Z.EntityFramework.Plus.EFCore.dll",
+        "lib/netstandard2.0/Z.EntityFramework.Plus.EFCore.xml",
+        "z.entityframework.plus.efcore.1.8.17.nupkg.sha512",
+        "z.entityframework.plus.efcore.nuspec"
       ]
     },
     "BudgetScale.Application/1.0.0": {

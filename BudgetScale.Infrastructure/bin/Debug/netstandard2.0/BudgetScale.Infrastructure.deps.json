@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "f40047804884943c394f342f9172a1bf7479993b"
+    "signature": "73967e0e1339c8f533b4bc380e04f39b5c8b25d6"
   },
   "compilationOptions": {},
   "targets": {
@@ -1940,13 +1940,25 @@
           }
         }
       },
+      "Z.EntityFramework.Plus.EFCore/1.8.17": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "2.2.0-preview3-35497"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Z.EntityFramework.Plus.EFCore.dll": {
+            "assemblyVersion": "1.8.17.0",
+            "fileVersion": "1.8.17.0"
+          }
+        }
+      },
       "BudgetScale.Application/1.0.0": {
         "dependencies": {
           "AutoMapper": "7.0.1",
           "BudgetScale.Persistence": "1.0.0",
           "FluentValidation": "8.0.100",
           "MediatR": "5.1.0",
-          "Microsoft.Extensions.Logging": "2.2.0-preview3-35497"
+          "Microsoft.Extensions.Logging": "2.2.0-preview3-35497",
+          "Z.EntityFramework.Plus.EFCore": "1.8.17"
         },
         "runtime": {
           "BudgetScale.Application.dll": {}
@@ -3154,6 +3166,13 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "Z.EntityFramework.Plus.EFCore/1.8.17": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9dO5R6kL6ZJCTk/0rN4nPbQjWKrSOQMczu5r+7GAFzp8i5OuhquKvQ1AW1COW8XFVY1uZ1IJvbdFUDJiN1Hgqg==",
+      "path": "z.entityframework.plus.efcore/1.8.17",
+      "hashPath": "z.entityframework.plus.efcore.1.8.17.nupkg.sha512"
     },
     "BudgetScale.Application/1.0.0": {
       "type": "project",
