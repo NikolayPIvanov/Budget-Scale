@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "AutoMapper/7.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        }
+      },
       "FluentValidation/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -1352,6 +1365,28 @@
     }
   },
   "libraries": {
+    "AutoMapper/7.0.1": {
+      "sha512": "6xHbhsW09sWjjYuE1sqhYn25PQzB6UEUVPME5uhlaIz2NR2+L3+FGbVxvknJKug1BLp6VTLxDb5RcGXKMm0ieQ==",
+      "type": "package",
+      "path": "automapper/7.0.1",
+      "files": [
+        ".nupkg.metadata",
+        "automapper.7.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "lib/net45/AutoMapper.dll",
+        "lib/net45/AutoMapper.pdb",
+        "lib/net45/AutoMapper.xml",
+        "lib/netcoreapp2.0/AutoMapper.dll",
+        "lib/netcoreapp2.0/AutoMapper.pdb",
+        "lib/netcoreapp2.0/AutoMapper.xml",
+        "lib/netstandard1.3/AutoMapper.dll",
+        "lib/netstandard1.3/AutoMapper.pdb",
+        "lib/netstandard1.3/AutoMapper.xml",
+        "lib/netstandard2.0/AutoMapper.dll",
+        "lib/netstandard2.0/AutoMapper.pdb",
+        "lib/netstandard2.0/AutoMapper.xml"
+      ]
+    },
     "FluentValidation/8.0.100": {
       "sha512": "kVqtWfy7kNu599IuHiD6+G3OUN4uFXjtMKMTZ7LYBbXvu1bksuAgJh92pOK9TNcAePDpLUZJUUnEmNJn14zO/g==",
       "type": "package",
@@ -4621,6 +4656,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "AutoMapper >= 7.0.1",
       "BudgetScale.Persistence >= 1.0.0",
       "FluentValidation >= 8.0.100",
       "MediatR >= 5.1.0",
@@ -4673,6 +4709,10 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[7.0.1, )"
+          },
           "FluentValidation": {
             "target": "Package",
             "version": "[8.0.100, )"

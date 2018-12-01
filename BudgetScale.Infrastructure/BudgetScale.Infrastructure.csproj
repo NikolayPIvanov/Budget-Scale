@@ -13,7 +13,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BudgetScale.Application\BudgetScale.Application.csproj" />
+    <ProjectReference Include="..\BudgetScale.Domain\BudgetScale.Domain.csproj" />
     <ProjectReference Include="..\BudgetTracker.Common\BudgetTracker.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>C:\Users\Lenovo\.nuget\packages\automapper\7.0.1\lib\netstandard2.0\AutoMapper.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
+      "AutoMapper/7.0.1": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/AutoMapper.dll": {}
+        }
+      },
       "Castle.Core/4.3.1": {
         "type": "package",
         "dependencies": {
@@ -21,6 +33,30 @@
         },
         "runtime": {
           "lib/netstandard1.5/Castle.Core.dll": {}
+        }
+      },
+      "FluentValidation/8.0.100": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Concurrent": "4.3.0",
+          "System.ComponentModel.Annotations": "4.4.1",
+          "System.ComponentModel.Primitives": "4.3.0",
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.dll": {}
+        }
+      },
+      "MediatR/5.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MediatR.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MediatR.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authentication/2.2.0-preview3-35497": {
@@ -1702,7 +1738,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Collections.Concurrent.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Collections.Concurrent.dll": {}
@@ -3049,7 +3085,7 @@
           "lib/netstandard1.3/System.Threading.ThreadPool.dll": {}
         }
       },
-      "System.ValueTuple/4.4.0": {
+      "System.ValueTuple/4.5.0": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.0/_._": {}
@@ -3197,6 +3233,23 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
+      "BudgetScale.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "AutoMapper": "7.0.1",
+          "BudgetScale.Persistence": "1.0.0",
+          "FluentValidation": "8.0.100",
+          "MediatR": "5.1.0",
+          "Microsoft.Extensions.Logging": "2.2.0-preview3-35497"
+        },
+        "compile": {
+          "bin/placeholder/BudgetScale.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BudgetScale.Application.dll": {}
+        }
+      },
       "BudgetScale.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -3214,6 +3267,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "BudgetScale.Application": "1.0.0",
+          "BudgetScale.Domain": "1.0.0",
           "BudgetTracker.Common": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "2.2.0-preview3-35497",
           "Microsoft.AspNetCore.Http": "2.2.0-preview3-35497",
@@ -3259,6 +3314,28 @@
     }
   },
   "libraries": {
+    "AutoMapper/7.0.1": {
+      "sha512": "6xHbhsW09sWjjYuE1sqhYn25PQzB6UEUVPME5uhlaIz2NR2+L3+FGbVxvknJKug1BLp6VTLxDb5RcGXKMm0ieQ==",
+      "type": "package",
+      "path": "automapper/7.0.1",
+      "files": [
+        ".nupkg.metadata",
+        "automapper.7.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "lib/net45/AutoMapper.dll",
+        "lib/net45/AutoMapper.pdb",
+        "lib/net45/AutoMapper.xml",
+        "lib/netcoreapp2.0/AutoMapper.dll",
+        "lib/netcoreapp2.0/AutoMapper.pdb",
+        "lib/netcoreapp2.0/AutoMapper.xml",
+        "lib/netstandard1.3/AutoMapper.dll",
+        "lib/netstandard1.3/AutoMapper.pdb",
+        "lib/netstandard1.3/AutoMapper.xml",
+        "lib/netstandard2.0/AutoMapper.dll",
+        "lib/netstandard2.0/AutoMapper.pdb",
+        "lib/netstandard2.0/AutoMapper.xml"
+      ]
+    },
     "Castle.Core/4.3.1": {
       "sha512": "Dx90A7xzdyYiaq1aMn3QmblpFAaVhDCiZkSblt96pf8QopOjLxCcs5ufKJA1zyg2L+Hxjnzx3JNrmfK8ZMRHvA==",
       "type": "package",
@@ -3282,6 +3359,39 @@
         "lib/netstandard1.5/Castle.Core.dll",
         "lib/netstandard1.5/Castle.Core.xml",
         "readme.txt"
+      ]
+    },
+    "FluentValidation/8.0.100": {
+      "sha512": "kVqtWfy7kNu599IuHiD6+G3OUN4uFXjtMKMTZ7LYBbXvu1bksuAgJh92pOK9TNcAePDpLUZJUUnEmNJn14zO/g==",
+      "type": "package",
+      "path": "fluentvalidation/8.0.100",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluentvalidation.8.0.100.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net45/FluentValidation.dll",
+        "lib/net45/FluentValidation.xml",
+        "lib/netstandard1.1/FluentValidation.dll",
+        "lib/netstandard1.1/FluentValidation.xml",
+        "lib/netstandard1.6/FluentValidation.dll",
+        "lib/netstandard1.6/FluentValidation.xml",
+        "lib/netstandard2.0/FluentValidation.dll",
+        "lib/netstandard2.0/FluentValidation.xml"
+      ]
+    },
+    "MediatR/5.1.0": {
+      "sha512": "Xt0a7rxi3L9Hqds8dATA+lLdo7k+g6vryACCDjzSRodXY7axISBhUOO0uY/94YN6aPw2sfBpBSF+t9gw2J2eLA==",
+      "type": "package",
+      "path": "mediatr/5.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/MediatR.dll",
+        "lib/netstandard1.3/MediatR.dll",
+        "lib/netstandard2.0/MediatR.dll",
+        "mediatr.5.1.0.nupkg.sha512",
+        "mediatr.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication/2.2.0-preview3-35497": {
@@ -9561,10 +9671,10 @@
         "system.threading.threadpool.nuspec"
       ]
     },
-    "System.ValueTuple/4.4.0": {
-      "sha512": "6FvjECwwsvwtdnm2uD91MlFEgId6C2SWsdZk23gFpynHQ9x5ruqjsfEadb0VNzpkEHDQ6cq31CXUv3ouT09EHA==",
+    "System.ValueTuple/4.5.0": {
+      "sha512": "fa3P1cPe2SlrjCjJ/yc3mcXkDj4GQORmileNFYBtBZh2qddzwRubagAkj8yz/yF9oLvJVqaZYar9l2SCqNKDJg==",
       "type": "package",
-      "path": "system.valuetuple/4.4.0",
+      "path": "system.valuetuple/4.5.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -9582,6 +9692,7 @@
         "lib/netstandard2.0/_._",
         "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
         "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
+        "lib/uap10.0.16299/_._",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
@@ -9589,18 +9700,16 @@
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
         "ref/net461/System.ValueTuple.dll",
-        "ref/net461/System.ValueTuple.xml",
         "ref/net47/System.ValueTuple.dll",
-        "ref/net47/System.ValueTuple.xml",
         "ref/netcoreapp2.0/_._",
         "ref/netstandard2.0/_._",
         "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
-        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
+        "ref/uap10.0.16299/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.valuetuple.4.4.0.nupkg.sha512",
+        "system.valuetuple.4.5.0.nupkg.sha512",
         "system.valuetuple.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -9929,6 +10038,11 @@
         "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
+    },
+    "BudgetScale.Application/1.0.0": {
+      "type": "project",
+      "path": "../BudgetScale.Application/BudgetScale.Application.csproj",
+      "msbuildProject": "../BudgetScale.Application/BudgetScale.Application.csproj"
     },
     "BudgetScale.Domain/1.0.0": {
       "type": "project",

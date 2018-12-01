@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "9860178b026fd9cbf7a5a1aeec75991bfec659d4"
+    "signature": "4102902967eeca599fda762b0d3c0d40c3e463ed"
   },
   "compilationOptions": {
     "defines": [
@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.2": {
       "BudgetScale.WebUI/1.0.0": {
         "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "5.0.1",
           "BudgetScale.Application": "1.0.0",
           "BudgetScale.Infrastructure": "1.0.0",
           "BudgetScale.Persistence": "1.0.0",
@@ -39,6 +40,35 @@
         },
         "compile": {
           "BudgetScale.WebUI.dll": {}
+        }
+      },
+      "AutoMapper/7.0.1": {
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/AutoMapper.dll": {
+            "assemblyVersion": "7.0.1.0",
+            "fileVersion": "7.0.1.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp2.0/AutoMapper.dll": {}
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/5.0.1": {
+        "dependencies": {
+          "AutoMapper": "7.0.1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.2.0-preview3-35497"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "5.0.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
       "FluentValidation/8.0.100": {
@@ -276,6 +306,7 @@
       "System.ValueTuple/4.5.0": {},
       "BudgetScale.Application/1.0.0": {
         "dependencies": {
+          "AutoMapper": "7.0.1",
           "BudgetScale.Persistence": "1.0.0",
           "FluentValidation": "8.0.100",
           "MediatR": "5.1.0",
@@ -301,6 +332,8 @@
       },
       "BudgetScale.Infrastructure/1.0.0": {
         "dependencies": {
+          "BudgetScale.Application": "1.0.0",
+          "BudgetScale.Domain": "1.0.0",
           "BudgetTracker.Common": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "2.2.0-preview3-35497",
           "Microsoft.AspNetCore.Http": "2.2.0-preview3-35497",
@@ -3362,6 +3395,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AutoMapper/7.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6xHbhsW09sWjjYuE1sqhYn25PQzB6UEUVPME5uhlaIz2NR2+L3+FGbVxvknJKug1BLp6VTLxDb5RcGXKMm0ieQ==",
+      "path": "automapper/7.0.1",
+      "hashPath": "automapper.7.0.1.nupkg.sha512"
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7MIq6D/ax3964iHXbL1L2ldUvl6IlKp0p1GZFzr6vlIhEVyp4CgJwOpisRLvIO7dP+kDtbY3Hb9yuPNCkfyBFg==",
+      "path": "automapper.extensions.microsoft.dependencyinjection/5.0.1",
+      "hashPath": "automapper.extensions.microsoft.dependencyinjection.5.0.1.nupkg.sha512"
     },
     "FluentValidation/8.0.100": {
       "type": "package",
