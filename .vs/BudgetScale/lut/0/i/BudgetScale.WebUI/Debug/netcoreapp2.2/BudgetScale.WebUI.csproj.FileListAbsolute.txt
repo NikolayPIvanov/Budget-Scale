@@ -19,4 +19,3 @@ D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.WebUI\Debug\netcoreapp2.2\Bu
 D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.WebUI\Debug\netcoreapp2.2\BudgetScale.WebUI.Views.pdb
 D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.WebUI\Debug\netcoreapp2.2\BudgetScale.WebUI.csproj.CopyComplete
 D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.WebUI\Debug\netcoreapp2.2\BudgetScale.WebUI.dll
-D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.WebUI\Debug\netcoreapp2.2\BudgetScale.WebUI.csprojAssemblyReference.cache
