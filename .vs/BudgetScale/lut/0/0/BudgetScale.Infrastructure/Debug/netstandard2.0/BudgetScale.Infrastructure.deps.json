@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "258d4d566a23c6eb030b617378e4825632f19312"
+    "signature": "73967e0e1339c8f533b4bc380e04f39b5c8b25d6"
   },
   "compilationOptions": {},
   "targets": {
@@ -1941,14 +1941,6 @@
           }
         }
       },
-      "Z.EntityFramework.Plus.EF6/1.8.16": {
-        "runtime": {
-          "lib/net45/Z.EntityFramework.Plus.EF6.dll": {
-            "assemblyVersion": "1.8.16.0",
-            "fileVersion": "1.8.16.0"
-          }
-        }
-      },
       "Z.EntityFramework.Plus.EFCore/1.8.17": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational": "2.2.0-preview3-35497"
@@ -1967,7 +1959,6 @@
           "FluentValidation": "8.0.100",
           "MediatR": "5.1.0",
           "Microsoft.Extensions.Logging": "2.2.0-preview3-35497",
-          "Z.EntityFramework.Plus.EF6": "1.8.16",
           "Z.EntityFramework.Plus.EFCore": "1.8.17"
         },
         "runtime": {
@@ -3184,13 +3175,6 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
-    },
-    "Z.EntityFramework.Plus.EF6/1.8.16": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-K+7Bv5GqXxOHbsdtdJnMGx38TZvn6K33pWTZskT3b/6Xbmikbx+aC/GHFcQiwoftTGNHobwcF4d69s5yVYxnqQ==",
-      "path": "z.entityframework.plus.ef6/1.8.16",
-      "hashPath": "z.entityframework.plus.ef6.1.8.16.nupkg.sha512"
     },
     "Z.EntityFramework.Plus.EFCore/1.8.17": {
       "type": "package",

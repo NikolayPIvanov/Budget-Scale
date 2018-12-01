@@ -1,5 +1,8 @@
 ﻿
 
+using BudgetScale.Application.Groups.Commands.CreateCommand;
+using BudgetScale.Application.Groups.Models.Input;
+
 namespace BudgetScale.WebUI.Controllers
 {
     using System.Collections.Generic;
@@ -20,13 +23,25 @@ namespace BudgetScale.WebUI.Controllers
     {
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<GroupViewModel>), (int)HttpStatusCode.OK)]
-
         public async Task<IActionResult> All([FromQuery] string month = "Dec")
         {
             var request = new GetGroupsQuery {Month = month, UserId = this.User.GetId()};
             var response = await Mediator.Send(request);
 
-            return Ok(response);
+            return Ok(response);    
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] CommandInputModel model)
+        {
+            var categoryId = await Mediator.Send(new CreateGroupCommand
+            {
+                GroupName = model.GroupName,
+                UserId = this.User.GetId()
+            });
+
+            //TODO: Redirect to GET for 201 Created Status Code.
+            return Ok(categoryId);
         }
     }
 }

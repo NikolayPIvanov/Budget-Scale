@@ -27,6 +27,7 @@ namespace BudgetScale.Application.Groups.Queries
             _context.Filter<Domain.Entities.CategoryInformation>(x =>
                 x.Where(c => c.Month.Equals(request.Month)));
             
+            
             List<GroupViewModel> groups = await this._context.Groups
                 .Include(g => g.Categories)
                 .ThenInclude(e => e.CategoryInformation)

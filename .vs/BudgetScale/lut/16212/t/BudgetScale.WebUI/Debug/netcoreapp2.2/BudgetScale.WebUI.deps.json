@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "01521dfa6347e0eb7c8624d00ad40a7d36161c89"
+    "signature": "949317109672054b618e84178bb195a82bd5e9f9"
   },
   "compilationOptions": {
     "defines": [
@@ -628,17 +628,6 @@
         }
       },
       "System.ValueTuple/4.5.0": {},
-      "Z.EntityFramework.Plus.EF6/1.8.16": {
-        "runtime": {
-          "lib/net45/Z.EntityFramework.Plus.EF6.dll": {
-            "assemblyVersion": "1.8.16.0",
-            "fileVersion": "1.8.16.0"
-          }
-        },
-        "compile": {
-          "lib/net45/Z.EntityFramework.Plus.EF6.dll": {}
-        }
-      },
       "Z.EntityFramework.Plus.EFCore/1.8.17": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational": "2.2.0-preview3-35497"
@@ -660,7 +649,6 @@
           "FluentValidation": "8.0.100",
           "MediatR": "5.1.0",
           "Microsoft.Extensions.Logging": "2.2.0-preview3-35497",
-          "Z.EntityFramework.Plus.EF6": "1.8.16",
           "Z.EntityFramework.Plus.EFCore": "1.8.17"
         },
         "runtime": {
@@ -3991,13 +3979,6 @@
       "sha512": "sha512-fa3P1cPe2SlrjCjJ/yc3mcXkDj4GQORmileNFYBtBZh2qddzwRubagAkj8yz/yF9oLvJVqaZYar9l2SCqNKDJg==",
       "path": "system.valuetuple/4.5.0",
       "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
-    },
-    "Z.EntityFramework.Plus.EF6/1.8.16": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-K+7Bv5GqXxOHbsdtdJnMGx38TZvn6K33pWTZskT3b/6Xbmikbx+aC/GHFcQiwoftTGNHobwcF4d69s5yVYxnqQ==",
-      "path": "z.entityframework.plus.ef6/1.8.16",
-      "hashPath": "z.entityframework.plus.ef6.1.8.16.nupkg.sha512"
     },
     "Z.EntityFramework.Plus.EFCore/1.8.17": {
       "type": "package",
