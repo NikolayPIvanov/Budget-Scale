@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using System.Linq;
+using AutoMapper;
+using BudgetScale.Application.Categories.Models.Output;
 using BudgetScale.Application.Groups.Commands.CreateCommand;
 using BudgetScale.Application.Groups.Models.Output;
 using BudgetScale.Domain.Entities;

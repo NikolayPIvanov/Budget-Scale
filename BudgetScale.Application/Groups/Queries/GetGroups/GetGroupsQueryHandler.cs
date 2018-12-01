@@ -27,12 +27,7 @@ namespace BudgetScale.Application.Groups.Queries
 
             _context.Filter<Group>(i => i.Where(g => g.UserId.Equals(request.UserId)));
 
-
-            //i.Where(group => 
-            //group.Categories.Select(b => b.CategoryInformation)
-            //    .Any(x => x.Any(o => o.Month.Equals(request.Month))))
-
-
+            _context.Filter<Domain.Entities.CategoryInformation>(i => i.Where(g => g.Month.Equals(request.Month)));
 
             var groups = await this._context.Groups
                .Include(g => g.Categories)
@@ -47,15 +42,10 @@ namespace BudgetScale.Application.Groups.Queries
                         CategoryId = category.CategoryId,
                         CategoryName = category.CategoryId,
                         CategoryInformation = category.
-                            CategoryInformation.Where(info => info.Month.Equals(request.Month))
-                            .Select(info => new CategoryInformationViewModel
-                            {
-                                Activity = info.Activity,
-                                Available = info.Available,
-                                Budgeted = info.Budgeted,
-                                CategoryInformationId = info.CategoryInformationId,
-                                Month = info.Month
-                            }).FirstOrDefault(e => e.Month.Equals(request.Month))
+                        CategoryInformation
+                            .Where(info => info.Month.Equals(request.Month))
+                            .Select(info => _mapper.Map<CategoryInformationViewModel>(info))
+                            .FirstOrDefault(e => e.Month.Equals(request.Month))
                     })
                 })
                .ToListAsync(cancellationToken: cancellationToken);
