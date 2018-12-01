@@ -124,7 +124,9 @@ namespace BudgetScale.Persistence.Migrations
                     b.Property<string>("TransactionId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<decimal>("Amount");
+                    b.Property<decimal>("Amount")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(0.0m);
 
                     b.Property<string>("CategoryId");
 

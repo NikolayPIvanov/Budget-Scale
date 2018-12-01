@@ -9,7 +9,7 @@ namespace BudgetScale.Application.Categories.Models.Output
 
         public string CategoryName { get; set; }
 
-        public IEnumerable<CategoryInformationViewModel> CategoryInformation { get; set; }
+        public CategoryInformationViewModel CategoryInformation { get; set; }
 
 
     }

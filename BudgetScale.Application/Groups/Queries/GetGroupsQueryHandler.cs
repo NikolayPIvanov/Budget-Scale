@@ -18,52 +18,52 @@ namespace BudgetScale.Application.Groups.Queries
 {
     public class GetGroupsQueryHandler : BaseEntity, IRequestHandler<GetGroupsQuery, IEnumerable<GroupViewModel>>
     {
-        public GetGroupsQueryHandler(ApplicationDbContext context, IMapper mapper) : base(context,mapper)
+        public GetGroupsQueryHandler(ApplicationDbContext context, IMapper mapper) : base(context, mapper)
         {
         }
 
         public async Task<IEnumerable<GroupViewModel>> Handle(GetGroupsQuery request, CancellationToken cancellationToken)
         {
-            _context.Filter<Domain.Entities.CategoryInformation>(x =>
-                x.Where(c => c.Month.Equals(request.Month)));
-            
-            
-            List<GroupViewModel> groups = await this._context.Groups
-                .Include(g => g.Categories)
-                .ThenInclude(e => e.CategoryInformation)
-                .Where(i => i.UserId.Equals(request.UserId))
-                .ProjectTo<GroupViewModel>(_mapper.ConfigurationProvider)
-                .ToListAsync(cancellationToken: cancellationToken);
+
+            _context.Filter<Group>(i => i.Where(g => g.UserId.Equals(request.UserId)));
+
+
+            //i.Where(group => 
+            //group.Categories.Select(b => b.CategoryInformation)
+            //    .Any(x => x.Any(o => o.Month.Equals(request.Month))))
+
+
+
+            var groups = await this._context.Groups
+               .Include(g => g.Categories)
+               .ThenInclude(e => e.CategoryInformation)
+                //.ProjectTo<GroupViewModel>(_mapper.ConfigurationProvider)
+                .Select(group => new GroupViewModel
+                {
+                    GroupName = group.GroupName,
+                    GroupId = group.GroupId,
+                    Categories = group.Categories.Select(category => new CategoryViewModel
+                    {
+                        CategoryId = category.CategoryId,
+                        CategoryName = category.CategoryId,
+                        CategoryInformation = category.
+                            CategoryInformation.Where(info => info.Month.Equals(request.Month))
+                            .Select(info => new CategoryInformationViewModel
+                            {
+                                Activity = info.Activity,
+                                Available = info.Available,
+                                Budgeted = info.Budgeted,
+                                CategoryInformationId = info.CategoryInformationId,
+                                Month = info.Month
+                            }).FirstOrDefault(e => e.Month.Equals(request.Month))
+                    })
+                })
+               .ToListAsync(cancellationToken: cancellationToken);
 
             return groups;
 
-            /*.Select(group => new GroupViewModel
-            {
-                GroupName = group.GroupName,
-                GroupId = group.GroupId,
-                Categories = group.Categories.Select(category => new CategoryViewModel
-                {
-                    CategoryId = category.CategoryId,
-                    CategoryName = category.CategoryId,
-                    CategoryInformation = category.
-                        CategoryInformation.Where(info => info.Month.Equals(request.Month))
-                        .Select(info => new CategoryInformationViewModel
-                    {
-                        Activity = info.Activity,
-                        Available = info.Available,
-                        Budgeted = info.Budgeted,
-                        CategoryInformationId = info.CategoryInformationId,
-                        Month = info.Month
-                    })
-                })
-            })
-            */
-
-
-
-
         }
 
-        
+
     }
 }
