@@ -1,0 +1,14 @@
+D:\Budget Scale\BudgetScale.Application\bin\Debug\netcoreapp2.2\BudgetScale.Application.deps.json
+D:\Budget Scale\BudgetScale.Application\bin\Debug\netcoreapp2.2\BudgetScale.Application.dll
+D:\Budget Scale\BudgetScale.Application\bin\Debug\netcoreapp2.2\BudgetScale.Application.pdb
+D:\Budget Scale\BudgetScale.Application\bin\Debug\netcoreapp2.2\BudgetScale.Domain.dll
+D:\Budget Scale\BudgetScale.Application\bin\Debug\netcoreapp2.2\BudgetScale.Persistence.dll
+D:\Budget Scale\BudgetScale.Application\bin\Debug\netcoreapp2.2\BudgetScale.Persistence.pdb
+D:\Budget Scale\BudgetScale.Application\bin\Debug\netcoreapp2.2\BudgetScale.Domain.pdb
+D:\Budget Scale\BudgetScale.Application\obj\Debug\netcoreapp2.2\BudgetScale.Application.csprojAssemblyReference.cache
+D:\Budget Scale\BudgetScale.Application\obj\Debug\netcoreapp2.2\BudgetScale.Application.csproj.CoreCompileInputs.cache
+D:\Budget Scale\BudgetScale.Application\obj\Debug\netcoreapp2.2\BudgetScale.Application.AssemblyInfoInputs.cache
+D:\Budget Scale\BudgetScale.Application\obj\Debug\netcoreapp2.2\BudgetScale.Application.AssemblyInfo.cs
+D:\Budget Scale\BudgetScale.Application\obj\Debug\netcoreapp2.2\BudgetScale.Application.csproj.CopyComplete
+D:\Budget Scale\BudgetScale.Application\obj\Debug\netcoreapp2.2\BudgetScale.Application.dll
+D:\Budget Scale\BudgetScale.Application\obj\Debug\netcoreapp2.2\BudgetScale.Application.pdb

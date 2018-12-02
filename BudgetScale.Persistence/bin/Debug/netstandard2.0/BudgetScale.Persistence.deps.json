@@ -1187,7 +1187,7 @@
     "Microsoft.EntityFrameworkCore.Design/2.1.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-UWn5ufxQZiFl18MSzD7/JM4kNUtbMtJQuNncZ9k4Is7J/oogx6ApbG/nsznoEcM2PfeZc6CZG9u14TJZbXRoig==",
+      "sha512": "sha512-oQ9riABU2UiAE0aj1/yRZx58dvyTsmmSL2tgASrhYxwHeAAEO9is1OavrdjC6hDc+t/M0/PsJ8GFyRp8cedlWg==",
       "path": "microsoft.entityframeworkcore.design/2.1.4",
       "hashPath": "microsoft.entityframeworkcore.design.2.1.4.nupkg.sha512"
     },
@@ -1201,7 +1201,7 @@
     "Microsoft.EntityFrameworkCore.SqlServer/2.1.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-f5Zl534MVOrVhe5kAYE9eFN+4AYW6IUw7+i5NeNQ+8eJQpAjCW5HlzGBkFVerHwzkjcM/Z3tlqMTzrdpO+f0HA==",
+      "sha512": "sha512-pVQpP3bOv26GLn6Ff5ocS1ibP+kqkjh6Wz14xdxLIVIQBVp+eb/3jaHqkvBJS+fXMfLyyAnHCNALyaTvp9bRZA==",
       "path": "microsoft.entityframeworkcore.sqlserver/2.1.4",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.2.1.4.nupkg.sha512"
     },
@@ -1628,7 +1628,7 @@
     "System.Security.Cryptography.Cng/4.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3d/d+7sdNpfYfqJFzuE/o6Pl/reaMbH7rlUMNvtm4+XVYHY32tdFa45yjB3vhb6q0YY+IV8GUuiBPRsBFP3yaw==",
+      "sha512": "sha512-dHOg6ZQofflUFXYjVJyTY3OryoaS+os3wmz3Pp6MEF++WOYdPD5clM/orVHAi1bwuIW5mzqkl9YxFJafPUKjPw==",
       "path": "system.security.cryptography.cng/4.4.0",
       "hashPath": "system.security.cryptography.cng.4.4.0.nupkg.sha512"
     },

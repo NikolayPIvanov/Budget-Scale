@@ -333,8 +333,6 @@ namespace BudgetScale.Persistence.Migrations
 
                     b.Property<DateTime?>("ModifiedOn");
 
-                    b.ToTable("ApplicationUser");
-
                     b.HasDiscriminator().HasValue("ApplicationUser");
                 });
 
