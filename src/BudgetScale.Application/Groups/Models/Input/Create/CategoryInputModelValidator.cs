@@ -1,7 +1,6 @@
-using BudgetScale.Application.Groups.Models.Input.Create;
 using FluentValidation;
 
-namespace BudgetScale.Application.Groups.Models.Input
+namespace BudgetScale.Application.Groups.Models.Input.Create
 {
     public class CategoryInputModelValidator : AbstractValidator<CommandInputModel>
     {

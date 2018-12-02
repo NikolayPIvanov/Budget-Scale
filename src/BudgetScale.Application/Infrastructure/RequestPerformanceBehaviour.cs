@@ -26,7 +26,7 @@ namespace BudgetScale.Application.Infrastructure
 
             _timer.Stop();
 
-            if (_timer.ElapsedMilliseconds > 500)
+            if (_timer.ElapsedMilliseconds > 5000)
             {
                 var name = typeof(TRequest).Name;
 
@@ -37,5 +37,6 @@ namespace BudgetScale.Application.Infrastructure
 
             return response;
         }
+        
     }
 }

@@ -223,15 +223,14 @@ namespace BudgetScale.Application.Tests
         }
 
         [Test]
-        [TestCase(null,"An invalid data")]
-        [TestCase(null,"A")]
+        [TestCase(null, "An invalid data")]
+        [TestCase(null, "A")]
         [TestCase(null, "An invalid data that is too long to be processed by the validator because the maximum is reached!")]
         [TestCase("Valid", "An invalid data that is too long to be processed by the validator because the maximum is reached!")]
         [TestCase("Valid", "A")]
         [TestCase(null, null)]
-        public async Task CreateGroup_Validation_TracksInvalidData(string userId, string groupName)
+        public void CreateGroup_Validation_TracksInvalidData(string userId, string groupName)
         {
-            
             //Act
             var query = new CreateGroupCommand()
             {
@@ -248,5 +247,6 @@ namespace BudgetScale.Application.Tests
             Assert.True(!result.IsValid);
 
         }
+
     }
 }
