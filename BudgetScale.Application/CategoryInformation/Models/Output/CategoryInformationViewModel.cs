@@ -1,8 +1,9 @@
-﻿using BudgetScale.Infrastructure.Mapping;
+﻿using System.Collections.Generic;
+using AutoMapper;
 
 namespace BudgetScale.Application.CategoryInformation.Models.Output
 {
-    public class CategoryInformationViewModel : IMapTo<Domain.Entities.CategoryInformation>
+    public class CategoryInformationViewModel
     {
         public string CategoryInformationId { get; set; }
 
@@ -17,7 +18,6 @@ namespace BudgetScale.Application.CategoryInformation.Models.Output
 
         public decimal Available { get; set; }
 
-
-
+        
     }
 }

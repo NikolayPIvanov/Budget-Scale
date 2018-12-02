@@ -12,5 +12,3 @@ D:\Budget Scale\BudgetScale.Application\obj\Debug\netcoreapp2.2\BudgetScale.Appl
 D:\Budget Scale\BudgetScale.Application\obj\Debug\netcoreapp2.2\BudgetScale.Application.csproj.CopyComplete
 D:\Budget Scale\BudgetScale.Application\obj\Debug\netcoreapp2.2\BudgetScale.Application.dll
 D:\Budget Scale\BudgetScale.Application\obj\Debug\netcoreapp2.2\BudgetScale.Application.pdb
-D:\Budget Scale\BudgetScale.Application\bin\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Mapping.dll
-D:\Budget Scale\BudgetScale.Application\bin\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Mapping.pdb

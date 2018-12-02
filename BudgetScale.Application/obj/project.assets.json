@@ -1519,19 +1519,6 @@
           "bin/placeholder/BudgetScale.Domain.dll": {}
         }
       },
-      "BudgetScale.Infrastructure.Mapping/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.2",
-        "dependencies": {
-          "AutoMapper": "7.0.1"
-        },
-        "compile": {
-          "bin/placeholder/BudgetScale.Infrastructure.Mapping.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BudgetScale.Infrastructure.Mapping.dll": {}
-        }
-      },
       "BudgetScale.Persistence/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
@@ -5142,11 +5129,6 @@
       "path": "../BudgetScale.Domain/BudgetScale.Domain.csproj",
       "msbuildProject": "../BudgetScale.Domain/BudgetScale.Domain.csproj"
     },
-    "BudgetScale.Infrastructure.Mapping/1.0.0": {
-      "type": "project",
-      "path": "../BudgetScale.Infrastructure.Mapping/BudgetScale.Infrastructure.Mapping.csproj",
-      "msbuildProject": "../BudgetScale.Infrastructure.Mapping/BudgetScale.Infrastructure.Mapping.csproj"
-    },
     "BudgetScale.Persistence/1.0.0": {
       "type": "project",
       "path": "../BudgetScale.Persistence/BudgetScale.Persistence.csproj",
@@ -5156,7 +5138,6 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "AutoMapper >= 7.0.1",
-      "BudgetScale.Infrastructure.Mapping >= 1.0.0",
       "BudgetScale.Persistence >= 1.0.0",
       "FluentValidation >= 8.0.100",
       "MediatR >= 5.1.0",
@@ -5195,9 +5176,6 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\Budget Scale\\BudgetScale.Infrastructure.Mapping\\BudgetScale.Infrastructure.Mapping.csproj": {
-              "projectPath": "D:\\Budget Scale\\BudgetScale.Infrastructure.Mapping\\BudgetScale.Infrastructure.Mapping.csproj"
-            },
             "D:\\Budget Scale\\BudgetScale.Persistence\\BudgetScale.Persistence.csproj": {
               "projectPath": "D:\\Budget Scale\\BudgetScale.Persistence\\BudgetScale.Persistence.csproj"
             }

@@ -1,3 +1,4 @@
+using BudgetScale.Application.Groups.Models.Input.Create;
 using FluentValidation;
 
 namespace BudgetScale.Application.Groups.Models.Input

@@ -1,0 +1,8 @@
+D:\Budget Scale\.vs\BudgetScale\lut\0\b\BudgetScale.Infrastructure.Mapping\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Mapping.deps.json
+D:\Budget Scale\.vs\BudgetScale\lut\0\b\BudgetScale.Infrastructure.Mapping\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Mapping.dll
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Infrastructure.Mapping\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Mapping.csprojAssemblyReference.cache
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Infrastructure.Mapping\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Mapping.csproj.CoreCompileInputs.cache
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Infrastructure.Mapping\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Mapping.AssemblyInfoInputs.cache
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Infrastructure.Mapping\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Mapping.AssemblyInfo.cs
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Infrastructure.Mapping\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Mapping.csproj.CopyComplete
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Infrastructure.Mapping\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Mapping.dll

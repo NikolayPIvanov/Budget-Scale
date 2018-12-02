@@ -33,7 +33,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BudgetScale.Infrastructure.Mapping\BudgetScale.Infrastructure.Mapping.csproj" />
+    <None Include="Controllers\AccountsController.cs" />
+    <None Include="Controllers\BaseController.cs" />
+    <None Include="Controllers\GroupsController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BudgetScale.Persistence\BudgetScale.Persistence.csproj" />
     <ProjectReference Include="..\BudgetScale.Application\BudgetScale.Application.csproj" />
     <ProjectReference Include="..\BudgetScale.Infrastructure\BudgetScale.Infrastructure.csproj" />

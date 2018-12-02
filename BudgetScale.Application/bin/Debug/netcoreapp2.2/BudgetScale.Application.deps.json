@@ -9,7 +9,6 @@
       "BudgetScale.Application/1.0.0": {
         "dependencies": {
           "AutoMapper": "7.0.1",
-          "BudgetScale.Infrastructure.Mapping": "1.0.0",
           "BudgetScale.Persistence": "1.0.0",
           "FluentValidation": "8.0.100",
           "MediatR": "5.1.0",
@@ -1016,14 +1015,6 @@
           "BudgetScale.Domain.dll": {}
         }
       },
-      "BudgetScale.Infrastructure.Mapping/1.0.0": {
-        "dependencies": {
-          "AutoMapper": "7.0.1"
-        },
-        "runtime": {
-          "BudgetScale.Infrastructure.Mapping.dll": {}
-        }
-      },
       "BudgetScale.Persistence/1.0.0": {
         "dependencies": {
           "BudgetScale.Domain": "1.0.0",
@@ -1739,11 +1730,6 @@
       "hashPath": "z.entityframework.plus.efcore.1.8.17.nupkg.sha512"
     },
     "BudgetScale.Domain/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "BudgetScale.Infrastructure.Mapping/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
