@@ -2,6 +2,7 @@ using System;
 using AutoMapper;
 using BudgetScale.Application.Categories.Models.Output;
 using BudgetScale.Application.CategoryInformation.Models.Output;
+using BudgetScale.Application.Groups.Commands.CreateCommand;
 using BudgetScale.Application.Groups.Models.Input.Create;
 using BudgetScale.Application.Groups.Models.Output;
 using BudgetScale.Domain.Entities;
@@ -27,15 +28,10 @@ namespace BudgetScale.Application.Tests.Infrastructure
             this.context = new ApplicationDbContext(options);
 
             this.context.Database.EnsureCreated();
-
-            //Mapper.Initialize(config =>
-            //{
-            //    //config.CreateMap<Group, GroupViewModel>();
-            //    //config.CreateMap<Category, CategoryViewModel>();
-            //    //config.CreateMap<Domain.Entities.CategoryInformation, CategoryInformationViewModel>();
-            //    //config.CreateMap<CommandInputModel, Group>();
-
-            //});
+            this.mapper = new Mapper(new MapperConfiguration(config =>
+            {
+                config.CreateMap<CreateGroupCommand, Group>();
+            }));
 
             Initializer.Initialize(context);
         }
@@ -43,7 +39,7 @@ namespace BudgetScale.Application.Tests.Infrastructure
         [TearDown]
         public void TearDown()
         {
-            context.Database.EnsureDeleted();
+                context.Database.EnsureDeleted();
             this.Dispose();
         }
 
