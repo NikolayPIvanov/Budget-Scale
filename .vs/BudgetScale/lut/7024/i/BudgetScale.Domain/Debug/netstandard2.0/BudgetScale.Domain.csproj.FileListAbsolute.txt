@@ -1,8 +1,0 @@
-D:\Budget Scale\.vs\BudgetScale\lut\0\b\BudgetScale.Domain\Debug\netstandard2.0\BudgetScale.Domain.deps.json
-D:\Budget Scale\.vs\BudgetScale\lut\0\b\BudgetScale.Domain\Debug\netstandard2.0\BudgetScale.Domain.dll
-D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Domain\Debug\netstandard2.0\BudgetScale.Domain.csprojAssemblyReference.cache
-D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Domain\Debug\netstandard2.0\BudgetScale.Domain.csproj.CoreCompileInputs.cache
-D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Domain\Debug\netstandard2.0\BudgetScale.Domain.AssemblyInfoInputs.cache
-D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Domain\Debug\netstandard2.0\BudgetScale.Domain.AssemblyInfo.cs
-D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Domain\Debug\netstandard2.0\BudgetScale.Domain.csproj.CopyComplete
-D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Domain\Debug\netstandard2.0\BudgetScale.Domain.dll

@@ -1,3 +1,0 @@
-D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Application.Tests\Debug\netcoreapp2.2\BudgetScale.Application.Tests.csproj.CoreCompileInputs.cache
-D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Application.Tests\Debug\netcoreapp2.2\BudgetScale.Application.Tests.AssemblyInfoInputs.cache
-D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Application.Tests\Debug\netcoreapp2.2\BudgetScale.Application.Tests.AssemblyInfo.cs
