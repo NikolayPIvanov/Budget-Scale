@@ -8073,8 +8073,7 @@
     ".NETCoreApp,Version=v2.2": [
       "AutoMapper >= 7.0.1",
       "BudgetScale.Application >= 1.0.0",
-      "D:\\Budget Scale\\BudgetScale.Application\\BudgetScale.Application.csproj",
-      "D:\\Budget Scale\\BudgetScale.Persistence\\BudgetScale.Persistence.csproj",
+      "BudgetScale.Persistence >= 1.0.0",
       "Microsoft.EntityFrameworkCore.InMemory >= 2.1.4",
       "Microsoft.NET.Test.Sdk >= 15.7.2",
       "Microsoft.NETCore.App >= 2.2.0-preview3-27014-02",
@@ -8113,14 +8112,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\Budget Scale\\BudgetScale.Application\\BudgetScale.Application.csproj": {
-              "projectPath": "D:\\Budget Scale\\BudgetScale.Application\\BudgetScale.Application.csproj"
-            },
-            "D:\\Budget Scale\\BudgetScale.Persistence\\BudgetScale.Persistence.csproj": {
-              "projectPath": "D:\\Budget Scale\\BudgetScale.Persistence\\BudgetScale.Persistence.csproj"
-            },
             "D:\\Budget Scale\\src\\BudgetScale.Application\\BudgetScale.Application.csproj": {
               "projectPath": "D:\\Budget Scale\\src\\BudgetScale.Application\\BudgetScale.Application.csproj"
+            },
+            "D:\\Budget Scale\\src\\BudgetScale.Persistence\\BudgetScale.Persistence.csproj": {
+              "projectPath": "D:\\Budget Scale\\src\\BudgetScale.Persistence\\BudgetScale.Persistence.csproj"
             }
           }
         }
@@ -8172,25 +8168,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'D:\\Budget Scale\\BudgetScale.Application\\BudgetScale.Application.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "D:\\Budget Scale\\BudgetScale.Application\\BudgetScale.Application.csproj",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.2"
-      ]
-    },
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'D:\\Budget Scale\\BudgetScale.Persistence\\BudgetScale.Persistence.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "D:\\Budget Scale\\BudgetScale.Persistence\\BudgetScale.Persistence.csproj",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.2"
-      ]
-    }
-  ]
+  }
 }

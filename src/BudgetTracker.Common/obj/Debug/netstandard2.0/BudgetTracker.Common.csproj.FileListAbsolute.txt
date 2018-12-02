@@ -7,3 +7,12 @@ D:\Budget Scale\BudgetTracker.Common\obj\Debug\netstandard2.0\BudgetTracker.Comm
 D:\Budget Scale\BudgetTracker.Common\obj\Debug\netstandard2.0\BudgetTracker.Common.AssemblyInfo.cs
 D:\Budget Scale\BudgetTracker.Common\obj\Debug\netstandard2.0\BudgetTracker.Common.dll
 D:\Budget Scale\BudgetTracker.Common\obj\Debug\netstandard2.0\BudgetTracker.Common.pdb
+D:\Budget Scale\src\BudgetTracker.Common\bin\Debug\netstandard2.0\BudgetTracker.Common.deps.json
+D:\Budget Scale\src\BudgetTracker.Common\bin\Debug\netstandard2.0\BudgetTracker.Common.dll
+D:\Budget Scale\src\BudgetTracker.Common\bin\Debug\netstandard2.0\BudgetTracker.Common.pdb
+D:\Budget Scale\src\BudgetTracker.Common\obj\Debug\netstandard2.0\BudgetTracker.Common.csprojAssemblyReference.cache
+D:\Budget Scale\src\BudgetTracker.Common\obj\Debug\netstandard2.0\BudgetTracker.Common.csproj.CoreCompileInputs.cache
+D:\Budget Scale\src\BudgetTracker.Common\obj\Debug\netstandard2.0\BudgetTracker.Common.AssemblyInfoInputs.cache
+D:\Budget Scale\src\BudgetTracker.Common\obj\Debug\netstandard2.0\BudgetTracker.Common.AssemblyInfo.cs
+D:\Budget Scale\src\BudgetTracker.Common\obj\Debug\netstandard2.0\BudgetTracker.Common.dll
+D:\Budget Scale\src\BudgetTracker.Common\obj\Debug\netstandard2.0\BudgetTracker.Common.pdb

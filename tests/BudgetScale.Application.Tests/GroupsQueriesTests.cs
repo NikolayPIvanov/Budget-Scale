@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using BudgetScale.Application.Groups.Models.Output;
+using BudgetScale.Application.Groups.Queries.GetGroup;
 using BudgetScale.Application.Groups.Queries.GetGroups;
 using BudgetScale.Application.Tests.Infrastructure;
 using NUnit.Framework;
@@ -101,6 +102,56 @@ namespace BudgetScale.Application.Tests
             var result = validator.Validate(query);
 
             Assert.True(!result.IsValid);
+        }
+
+        [Test]  
+        [TestCase("1","1","Dec")]
+        [TestCase("2", "3", "Dec")]
+        public async Task GetGroup_ReturnTheCorrectGroup(string userId,string groupId, string month)
+        {
+            //Act
+            var query = new GetGroupQuery
+            {
+                Month = month,
+                UserId = userId,
+                GroupId = groupId
+            };
+            
+            var handler = new GetGroupQueryHandler(context, mapper);
+
+            var expected = context.Groups
+                .FirstOrDefault(g => g.UserId.Equals(userId) && g.GroupId.Equals(groupId));
+
+            //Arrange
+            var result = await handler.Handle(query, CancellationToken.None);
+
+            //Assert
+            Assert.True(expected.GroupId.Equals(result.GroupId)
+            && expected.GroupName.Equals(result.GroupName)
+            && expected.Categories.Count == result.Categories.Count());
+        }
+
+        [Test]
+        [TestCase("0", "1", "Dec")]
+        [TestCase("1", "3", "Dec")]
+        [TestCase("0", "0", "Dec")]
+        public async Task GetGroup_FromNonExistingUser_ReturnNull(string userId, string groupId, string month)
+        {
+            //Act
+            var query = new GetGroupQuery
+            {
+                Month = month,
+                UserId = userId,
+                GroupId = groupId
+            };
+
+            var handler = new GetGroupQueryHandler(context, mapper);
+
+            //Arrange
+            var result = await handler.Handle(query, CancellationToken.None);
+
+            Assert.IsNull(result);
+            
         }
     }
 }

@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\BudgetScale.Infrastructure\BudgetScale.Infrastructure.csproj" />
-    <ProjectReference Include="..\..\BudgetScale.Persistence\BudgetScale.Persistence.csproj" />
+    <ProjectReference Include="..\..\src\BudgetScale.Infrastructure\BudgetScale.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\BudgetScale.Persistence\BudgetScale.Persistence.csproj" />
   </ItemGroup>
 
   <ItemGroup>
