@@ -1,5 +1,4 @@
-﻿using System;
-using BudgetScale.Domain.Entities;
+﻿using BudgetScale.Domain.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 

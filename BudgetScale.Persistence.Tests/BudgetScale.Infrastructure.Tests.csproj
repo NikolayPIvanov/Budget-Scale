@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -16,6 +16,12 @@
   <ItemGroup>
     <ProjectReference Include="..\BudgetScale.Infrastructure\BudgetScale.Infrastructure.csproj" />
     <ProjectReference Include="..\BudgetScale.Persistence\BudgetScale.Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions">
+      <HintPath>C:\Users\Lenovo\.nuget\packages\microsoft.aspnetcore.http.abstractions\2.2.0-preview3-35497\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

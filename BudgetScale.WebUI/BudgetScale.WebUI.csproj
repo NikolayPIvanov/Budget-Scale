@@ -33,6 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BudgetScale.Infrastructure.Mapping\BudgetScale.Infrastructure.Mapping.csproj" />
     <ProjectReference Include="..\BudgetScale.Persistence\BudgetScale.Persistence.csproj" />
     <ProjectReference Include="..\BudgetScale.Application\BudgetScale.Application.csproj" />
     <ProjectReference Include="..\BudgetScale.Infrastructure\BudgetScale.Infrastructure.csproj" />

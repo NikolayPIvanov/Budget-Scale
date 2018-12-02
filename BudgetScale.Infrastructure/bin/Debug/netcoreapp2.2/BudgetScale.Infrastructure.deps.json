@@ -1835,6 +1835,7 @@
       "BudgetScale.Application/1.0.0": {
         "dependencies": {
           "AutoMapper": "7.0.1",
+          "BudgetScale.Infrastructure.Mapping": "1.0.0",
           "BudgetScale.Persistence": "1.0.0",
           "FluentValidation": "8.0.100",
           "MediatR": "5.1.0",
@@ -1851,6 +1852,14 @@
         },
         "runtime": {
           "BudgetScale.Domain.dll": {}
+        }
+      },
+      "BudgetScale.Infrastructure.Mapping/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "7.0.1"
+        },
+        "runtime": {
+          "BudgetScale.Infrastructure.Mapping.dll": {}
         }
       },
       "BudgetScale.Persistence/1.0.0": {
@@ -1889,14 +1898,14 @@
     "FluentValidation/8.0.100": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kGyYfxWWsLawTXnPrZ6l82Mqe7n3gHoFDqPalrCzpsqzDP6Jthx8gnMvSrcsaDeeEpR6i6SRsWdX4NxQtIKd+Q==",
+      "sha512": "sha512-kVqtWfy7kNu599IuHiD6+G3OUN4uFXjtMKMTZ7LYBbXvu1bksuAgJh92pOK9TNcAePDpLUZJUUnEmNJn14zO/g==",
       "path": "fluentvalidation/8.0.100",
       "hashPath": "fluentvalidation.8.0.100.nupkg.sha512"
     },
     "MediatR/5.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-jeDegLfMe62NHC1oAz8FlWTQva4pOUAx/rk35TfpUUbr8MkqpJZYljh1ZrnKavhPPgUUHxUSay/6KEPYd4H57g==",
+      "sha512": "sha512-Xt0a7rxi3L9Hqds8dATA+lLdo7k+g6vryACCDjzSRodXY7axISBhUOO0uY/94YN6aPw2sfBpBSF+t9gw2J2eLA==",
       "path": "mediatr/5.1.0",
       "hashPath": "mediatr.5.1.0.nupkg.sha512"
     },
@@ -3033,6 +3042,11 @@
       "sha512": ""
     },
     "BudgetScale.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BudgetScale.Infrastructure.Mapping/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

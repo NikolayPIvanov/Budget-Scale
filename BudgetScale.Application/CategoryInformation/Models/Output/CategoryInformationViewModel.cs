@@ -1,6 +1,8 @@
-﻿namespace BudgetScale.Application.CategoryInformation.Models.Output
+﻿using BudgetScale.Infrastructure.Mapping;
+
+namespace BudgetScale.Application.CategoryInformation.Models.Output
 {
-    public class CategoryInformationViewModel
+    public class CategoryInformationViewModel : IMapTo<Domain.Entities.CategoryInformation>
     {
         public string CategoryInformationId { get; set; }
 

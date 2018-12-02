@@ -6,11 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using BudgetScale.Application.Groups.Commands.CreateCommand;
+using BudgetScale.Application.Groups.Models.Output;
 using BudgetScale.Application.Infrastructure;
 using BudgetScale.Domain.Entities;
 using BudgetScale.Infrastructure.Extensions;
 using BudgetScale.Infrastructure.Filters;
-using BudgetScale.Infrastructure.Mappings;
+using BudgetScale.Infrastructure.Mapping;
 using BudgetScale.Infrastructure.Middlewares.Authentication;
 using BudgetScale.Persistence;
 using BudgetScale.Persistence.Infrastructure;
@@ -107,13 +108,10 @@ namespace BudgetScale.WebUI
                 .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            AutoMapperConfig.RegisterMappings(typeof(GroupViewModel).Assembly);
 
             services.AddSingleton(this.Configuration);
-
-            services.AddAutoMapper(configuration =>
-            {
-                configuration.AddProfiles(typeof(GroupProfile).Assembly);
-            });
+            
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

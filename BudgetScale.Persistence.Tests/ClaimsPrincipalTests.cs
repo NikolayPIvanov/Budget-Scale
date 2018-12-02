@@ -4,8 +4,6 @@ using System.Linq;
 using System.Security.Claims;
 using BudgetScale.Infrastructure.Extensions;
 using BudgetScale.Infrastructure.Tests.Services;
-using BudgetScale.Persistence;
-using BudgetScale.Persistence.Infrastructure;
 using Microsoft.AspNetCore.Http;
 using Moq;
 using NUnit.Framework;
