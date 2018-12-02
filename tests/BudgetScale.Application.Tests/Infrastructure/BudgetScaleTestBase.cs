@@ -1,14 +1,9 @@
-using System;
+﻿using System;
 using AutoMapper;
-using BudgetScale.Application.Categories.Models.Output;
-using BudgetScale.Application.CategoryInformation.Models.Output;
 using BudgetScale.Application.Groups.Commands.CreateCommand;
-using BudgetScale.Application.Groups.Models.Input.Create;
-using BudgetScale.Application.Groups.Models.Output;
 using BudgetScale.Domain.Entities;
 using BudgetScale.Persistence;
 using Microsoft.EntityFrameworkCore;
-using Moq;
 using NUnit.Framework;
 
 namespace BudgetScale.Application.Tests.Infrastructure
@@ -39,7 +34,7 @@ namespace BudgetScale.Application.Tests.Infrastructure
         [TearDown]
         public void TearDown()
         {
-                context.Database.EnsureDeleted();
+            context.Database.EnsureDeleted();
             this.Dispose();
         }
 

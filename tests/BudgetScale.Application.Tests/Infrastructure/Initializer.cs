@@ -1,10 +1,10 @@
-﻿using System.Linq;
+﻿using BudgetScale.Persistence;
 using BudgetScale.Domain.Entities;
-using BudgetScale.Persistence;
+using System.Linq;
 
 namespace BudgetScale.Application.Tests.Infrastructure
 {
-    public class Initializer
+    public static class Initializer
     {
         public static void Initialize(ApplicationDbContext context)
         {
@@ -18,7 +18,7 @@ namespace BudgetScale.Application.Tests.Infrastructure
 
         private static void Seed(ApplicationDbContext context)
         {
-            var groups = new []
+            var groups = new[]
             {
                 new Group
                 {

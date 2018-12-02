@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -9,6 +8,7 @@ using BudgetScale.Application.Groups.Queries.GetGroup;
 using BudgetScale.Application.Groups.Queries.GetGroups;
 using BudgetScale.Application.Tests.Infrastructure;
 using NUnit.Framework;
+
 namespace BudgetScale.Application.Tests
 {
     [TestFixture]
@@ -64,10 +64,10 @@ namespace BudgetScale.Application.Tests
 
         [Test]
         [TestCase("1", "Dec")]
-        [TestCase("0","Mar")]
+        [TestCase("0", "Mar")]
         [TestCase("10", "Apr")]
         [TestCase("11", "Nov")]
-        public  void GroupsQueryValidator_IsWorking(string userId, string month)
+        public void GroupsQueryValidator_IsWorking(string userId, string month)
         {
             //Act
             var query = new GetGroupsQuery
@@ -106,10 +106,10 @@ namespace BudgetScale.Application.Tests
             Assert.True(!result.IsValid);
         }
 
-        [Test]  
-        [TestCase("1","1","Dec")]
+        [Test]
+        [TestCase("1", "1", "Dec")]
         [TestCase("2", "3", "Dec")]
-        public async Task GetGroup_ReturnTheCorrectGroup(string userId,string groupId, string month)
+        public async Task GetGroup_ReturnTheCorrectGroup(string userId, string groupId, string month)
         {
             //Act
             var query = new GetGroupQuery
@@ -118,7 +118,7 @@ namespace BudgetScale.Application.Tests
                 UserId = userId,
                 GroupId = groupId
             };
-            
+
             var handler = new GetGroupQueryHandler(context, mapper);
 
             var expected = context.Groups
@@ -153,10 +153,10 @@ namespace BudgetScale.Application.Tests
             var result = await handler.Handle(query, CancellationToken.None);
 
             Assert.IsNull(result);
-            
+
         }
 
-       
+
         [Test]
         [TestCase("1", "1", "Dec")]
         [TestCase("2", "3", "Dec")]
@@ -212,14 +212,14 @@ namespace BudgetScale.Application.Tests
 
             var expectedGroupsForUser = context.Groups.Count(e => e.UserId.Equals("1")) + 1;
 
-            var sut = new CreateGroupCommandHandler(context,mapper);
+            var sut = new CreateGroupCommandHandler(context, mapper);
 
             await sut.Handle(command, CancellationToken.None);
 
             var actualGroupsForUser = context.Groups.Count(e => e.UserId.Equals("1"));
 
             Assert.True(actualGroupsForUser == expectedGroupsForUser);
-            
+
         }
 
         [Test]

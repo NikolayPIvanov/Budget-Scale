@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using BudgetScale.Application.Groups.Commands.CreateCommand;
@@ -42,7 +41,7 @@ namespace BudgetScale.Application.Tests
             };
 
             var mockDelegate = new Mock<RequestHandlerDelegate<string>>(MockBehavior.Default);
-            
+
             IValidator<CreateGroupCommand> valid = new CreateGroupCommandValidator();
 
             var list = new List<IValidator<CreateGroupCommand>> { valid };
@@ -95,6 +94,6 @@ namespace BudgetScale.Application.Tests
             Assert.IsNull(result);
         }
 
-        
+
     }
 }

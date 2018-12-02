@@ -1,10 +1,5 @@
 ﻿
 
-using BudgetScale.Application.Groups.Commands.CreateCommand;
-using BudgetScale.Application.Groups.Models.Input;
-using BudgetScale.Application.Groups.Models.Input.Create;
-using BudgetScale.Application.Groups.Queries.GetGroup;
-using BudgetScale.Application.Groups.Queries.GetGroups;
 
 namespace BudgetScale.WebUI.Controllers
 {
@@ -12,8 +7,12 @@ namespace BudgetScale.WebUI.Controllers
     using System.Net;
     using System.Threading.Tasks;
 
-    using Application.Groups.Models.Output;
     using Infrastructure.Extensions;
+    using Application.Groups.Models.Output;
+    using Application.Groups.Commands.CreateCommand;
+    using Application.Groups.Models.Input.Create;
+    using Application.Groups.Queries.GetGroup;
+    using Application.Groups.Queries.GetGroups;
 
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
