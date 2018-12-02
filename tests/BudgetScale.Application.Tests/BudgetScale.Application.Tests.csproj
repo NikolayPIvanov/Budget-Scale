@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\BudgetScale.Application\BudgetScale.Application.csproj" />
     <ProjectReference Include="..\..\BudgetScale.Persistence\BudgetScale.Persistence.csproj" />
+    <ProjectReference Include="..\..\src\BudgetScale.Application\BudgetScale.Application.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2624,7 +2624,7 @@
       ]
     },
     "FluentValidation/8.0.100": {
-      "sha512": "kGyYfxWWsLawTXnPrZ6l82Mqe7n3gHoFDqPalrCzpsqzDP6Jthx8gnMvSrcsaDeeEpR6i6SRsWdX4NxQtIKd+Q==",
+      "sha512": "kVqtWfy7kNu599IuHiD6+G3OUN4uFXjtMKMTZ7LYBbXvu1bksuAgJh92pOK9TNcAePDpLUZJUUnEmNJn14zO/g==",
       "type": "package",
       "path": "fluentvalidation/8.0.100",
       "files": [
@@ -2643,7 +2643,7 @@
       ]
     },
     "MediatR/5.1.0": {
-      "sha512": "jeDegLfMe62NHC1oAz8FlWTQva4pOUAx/rk35TfpUUbr8MkqpJZYljh1ZrnKavhPPgUUHxUSay/6KEPYd4H57g==",
+      "sha512": "Xt0a7rxi3L9Hqds8dATA+lLdo7k+g6vryACCDjzSRodXY7axISBhUOO0uY/94YN6aPw2sfBpBSF+t9gw2J2eLA==",
       "type": "package",
       "path": "mediatr/5.1.0",
       "files": [
@@ -2959,7 +2959,7 @@
       ]
     },
     "Microsoft.DotNet.InternalAbstractions/1.0.0": {
-      "sha512": "S8f3mnSN4yNYafvMEuZKz3VSSv49BQahI6Ibmx9ryuc+7EQ3QsTt4rSvrazwoX2qcLhkPpDV/wLW7yDK6nyuFA==",
+      "sha512": "AAguUq7YyKk3yDWPoWA8DrLZvURxB/LrDdTn1h5lmPeznkFUpfC3p459w5mQYQE0qpquf/CkSQZ0etiV5vRHFA==",
       "type": "package",
       "path": "microsoft.dotnet.internalabstractions/1.0.0",
       "files": [
@@ -3040,7 +3040,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.InMemory/2.1.4": {
-      "sha512": "VFyAQ9qnlVV2Y9vZ8Wk4p659jKZHgvy/Qdo/kwQXnZGzSwdj1eFTD02h9e4+79SrhTGqBxPQRpMVlfdLe2BD6A==",
+      "sha512": "m6/Ssk5nDD0tWJTuDxojj53UER2FbB/fPeUDcrY8NFXwiR/g0csLhxA7RK4PrVz1Ze2S8GurYy6SbIreS3Crgw==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.inmemory/2.1.4",
       "files": [
@@ -3383,7 +3383,7 @@
       ]
     },
     "Microsoft.NET.Test.Sdk/15.7.2": {
-      "sha512": "hYWFRIGc+NdKfdufKK1LjL4tAW9xFors6kUA7QV1MZ2Yp7QMXn+bCbgUAcbhBvfszLlCPMZZZvRHDOnA4jkvCg==",
+      "sha512": "pHY/G48QeT7HVtOW/D7++OgKQ/PSpAJjGlWZORVgrPDxgQh03EjG28+mdFpSV9drlcAup7YyTgXJtwAcaSwjNQ==",
       "type": "package",
       "path": "microsoft.net.test.sdk/15.7.2",
       "files": [
@@ -4823,7 +4823,7 @@
       ]
     },
     "System.ComponentModel.EventBasedAsync/4.3.0": {
-      "sha512": "CZfrZ75j4Yt6E9/gutgxzuLJcivncqmcD9QT5AmPcF//r8kVZLrkEY2ZmV4nfsETrNpJhXmxJF/AAAx4ngl/xw==",
+      "sha512": "fCFl8f0XdwA/BuoNrVBB5D0Y48/hv2J+w4xSDdXQitXZsR6UCSOrDVE7TCUraY802ENwcHUnUCv4En8CupDU1g==",
       "type": "package",
       "path": "system.componentmodel.eventbasedasync/4.3.0",
       "files": [
@@ -7999,7 +7999,7 @@
       ]
     },
     "System.Xml.XPath.XmlDocument/4.3.0": {
-      "sha512": "91tvfHWHSrYFPolCwWYqbpo1YaoBUCQ3uNZ/O/zr0ev5BnkoATJoie16ywlMVUaXZtfSfNELxhtG3aqpTfwR4w==",
+      "sha512": "A/uxsWi/Ifzkmd4ArTLISMbfFs6XpRPsXZonrIqyTY70xi8t+mDtvSM5Os0RqyRDobjMBwIDHDL4NOIbkDwf7A==",
       "type": "package",
       "path": "system.xml.xpath.xmldocument/4.3.0",
       "files": [
@@ -8055,25 +8055,26 @@
     },
     "BudgetScale.Application/1.0.0": {
       "type": "project",
-      "path": "../../BudgetScale.Application/BudgetScale.Application.csproj",
-      "msbuildProject": "../../BudgetScale.Application/BudgetScale.Application.csproj"
+      "path": "../../src/BudgetScale.Application/BudgetScale.Application.csproj",
+      "msbuildProject": "../../src/BudgetScale.Application/BudgetScale.Application.csproj"
     },
     "BudgetScale.Domain/1.0.0": {
       "type": "project",
-      "path": "../../BudgetScale.Domain/BudgetScale.Domain.csproj",
-      "msbuildProject": "../../BudgetScale.Domain/BudgetScale.Domain.csproj"
+      "path": "../../src/BudgetScale.Domain/BudgetScale.Domain.csproj",
+      "msbuildProject": "../../src/BudgetScale.Domain/BudgetScale.Domain.csproj"
     },
     "BudgetScale.Persistence/1.0.0": {
       "type": "project",
-      "path": "../../BudgetScale.Persistence/BudgetScale.Persistence.csproj",
-      "msbuildProject": "../../BudgetScale.Persistence/BudgetScale.Persistence.csproj"
+      "path": "../../src/BudgetScale.Persistence/BudgetScale.Persistence.csproj",
+      "msbuildProject": "../../src/BudgetScale.Persistence/BudgetScale.Persistence.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "AutoMapper >= 7.0.1",
       "BudgetScale.Application >= 1.0.0",
-      "BudgetScale.Persistence >= 1.0.0",
+      "D:\\Budget Scale\\BudgetScale.Application\\BudgetScale.Application.csproj",
+      "D:\\Budget Scale\\BudgetScale.Persistence\\BudgetScale.Persistence.csproj",
       "Microsoft.EntityFrameworkCore.InMemory >= 2.1.4",
       "Microsoft.NET.Test.Sdk >= 15.7.2",
       "Microsoft.NETCore.App >= 2.2.0-preview3-27014-02",
@@ -8117,6 +8118,9 @@
             },
             "D:\\Budget Scale\\BudgetScale.Persistence\\BudgetScale.Persistence.csproj": {
               "projectPath": "D:\\Budget Scale\\BudgetScale.Persistence\\BudgetScale.Persistence.csproj"
+            },
+            "D:\\Budget Scale\\src\\BudgetScale.Application\\BudgetScale.Application.csproj": {
+              "projectPath": "D:\\Budget Scale\\src\\BudgetScale.Application\\BudgetScale.Application.csproj"
             }
           }
         }
@@ -8168,5 +8172,25 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'D:\\Budget Scale\\BudgetScale.Application\\BudgetScale.Application.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "D:\\Budget Scale\\BudgetScale.Application\\BudgetScale.Application.csproj",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.2"
+      ]
+    },
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'D:\\Budget Scale\\BudgetScale.Persistence\\BudgetScale.Persistence.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "D:\\Budget Scale\\BudgetScale.Persistence\\BudgetScale.Persistence.csproj",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.2"
+      ]
+    }
+  ]
 }
