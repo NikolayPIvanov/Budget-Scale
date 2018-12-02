@@ -2,6 +2,8 @@
 
 using BudgetScale.Application.Groups.Commands.CreateCommand;
 using BudgetScale.Application.Groups.Models.Input;
+using BudgetScale.Application.Groups.Queries.GetGroup;
+using BudgetScale.Application.Groups.Queries.GetGroups;
 
 namespace BudgetScale.WebUI.Controllers
 {
@@ -10,7 +12,6 @@ namespace BudgetScale.WebUI.Controllers
     using System.Threading.Tasks;
 
     using Application.Groups.Models.Output;
-    using Application.Groups.Queries;
     using Infrastructure.Extensions;
 
     using Microsoft.AspNetCore.Authorization;
@@ -34,14 +35,28 @@ namespace BudgetScale.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CommandInputModel model)
         {
-            var categoryId = await Mediator.Send(new CreateGroupCommand
+            
+            var groupId = await Mediator.Send(new CreateGroupCommand
             {
                 GroupName = model.GroupName,
                 UserId = this.User.GetId()
             });
+            
+            return this.RedirectToAction("Get", new {groupId});
+        }
 
-            //TODO: Redirect to GET for 201 Created Status Code.
-            return Ok(categoryId);
+        [HttpGet]
+        [Route("[action]")]
+        public async Task<IActionResult> Get([FromRoute] string groupId,[FromQuery] string month = "Dec")
+        {
+            var response = await Mediator.Send(new GetGroupQuery
+            {
+                UserId = this.User.GetId(),
+                Month = month,
+                GroupId = groupId
+            });
+
+            return Ok(response);
         }
     }
 }

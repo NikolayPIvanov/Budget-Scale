@@ -1,6 +1,5 @@
 ﻿using System;
 using BudgetScale.Domain.Entities;
-using BudgetScale.Persistence.Extensions;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -28,8 +27,7 @@ namespace BudgetScale.Persistence
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.ApplyAllConfigurations();
-            base.OnModelCreating(builder);
+            builder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
         }
     }
 }
