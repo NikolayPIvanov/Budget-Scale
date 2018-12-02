@@ -1,0 +1,12 @@
+D:\Budget Scale\tests\BudgetScale.Application.Tests\bin\Debug\netcoreapp2.0\NUnit3.TestAdapter.dll
+D:\Budget Scale\tests\BudgetScale.Application.Tests\bin\Debug\netcoreapp2.0\NUnit3.TestAdapter.pdb
+D:\Budget Scale\tests\BudgetScale.Application.Tests\bin\Debug\netcoreapp2.0\nunit.engine.netstandard.dll
+D:\Budget Scale\tests\BudgetScale.Application.Tests\bin\Debug\netcoreapp2.0\Mono.Cecil.dll
+D:\Budget Scale\tests\BudgetScale.Application.Tests\bin\Debug\netcoreapp2.0\BudgetScale.Application.Tests.deps.json
+D:\Budget Scale\tests\BudgetScale.Application.Tests\bin\Debug\netcoreapp2.0\BudgetScale.Application.Tests.runtimeconfig.json
+D:\Budget Scale\tests\BudgetScale.Application.Tests\bin\Debug\netcoreapp2.0\BudgetScale.Application.Tests.runtimeconfig.dev.json
+D:\Budget Scale\tests\BudgetScale.Application.Tests\bin\Debug\netcoreapp2.0\BudgetScale.Application.Tests.dll
+D:\Budget Scale\tests\BudgetScale.Application.Tests\obj\Debug\netcoreapp2.0\BudgetScale.Application.Tests.csprojAssemblyReference.cache
+D:\Budget Scale\tests\BudgetScale.Application.Tests\obj\Debug\netcoreapp2.0\BudgetScale.Application.Tests.csproj.CoreCompileInputs.cache
+D:\Budget Scale\tests\BudgetScale.Application.Tests\obj\Debug\netcoreapp2.0\BudgetScale.Application.Tests.AssemblyInfoInputs.cache
+D:\Budget Scale\tests\BudgetScale.Application.Tests\obj\Debug\netcoreapp2.0\BudgetScale.Application.Tests.AssemblyInfo.cs

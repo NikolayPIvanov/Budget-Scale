@@ -1,3 +1,7 @@
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Infrastructure.Tests\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Tests.csprojAssemblyReference.cache
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Infrastructure.Tests\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Tests.csproj.CoreCompileInputs.cache
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Infrastructure.Tests\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Tests.AssemblyInfoInputs.cache
+D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Infrastructure.Tests\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Tests.AssemblyInfo.cs
 D:\Budget Scale\.vs\BudgetScale\lut\0\b\BudgetScale.Infrastructure.Tests\Debug\netcoreapp2.2\NUnit3.TestAdapter.dll
 D:\Budget Scale\.vs\BudgetScale\lut\0\b\BudgetScale.Infrastructure.Tests\Debug\netcoreapp2.2\NUnit3.TestAdapter.pdb
 D:\Budget Scale\.vs\BudgetScale\lut\0\b\BudgetScale.Infrastructure.Tests\Debug\netcoreapp2.2\nunit.engine.netstandard.dll
@@ -6,9 +10,5 @@ D:\Budget Scale\.vs\BudgetScale\lut\0\b\BudgetScale.Infrastructure.Tests\Debug\n
 D:\Budget Scale\.vs\BudgetScale\lut\0\b\BudgetScale.Infrastructure.Tests\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Tests.runtimeconfig.json
 D:\Budget Scale\.vs\BudgetScale\lut\0\b\BudgetScale.Infrastructure.Tests\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Tests.runtimeconfig.dev.json
 D:\Budget Scale\.vs\BudgetScale\lut\0\b\BudgetScale.Infrastructure.Tests\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Tests.dll
-D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Infrastructure.Tests\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Tests.csprojAssemblyReference.cache
-D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Infrastructure.Tests\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Tests.csproj.CoreCompileInputs.cache
-D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Infrastructure.Tests\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Tests.AssemblyInfoInputs.cache
-D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Infrastructure.Tests\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Tests.AssemblyInfo.cs
 D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Infrastructure.Tests\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Tests.csproj.CopyComplete
 D:\Budget Scale\.vs\BudgetScale\lut\0\i\BudgetScale.Infrastructure.Tests\Debug\netcoreapp2.2\BudgetScale.Infrastructure.Tests.dll

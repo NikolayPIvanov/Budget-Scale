@@ -6,9 +6,8 @@ namespace BudgetScale.Application.Groups.Queries.GetGroups
     {
         public GetGroupsQueryValidator()
         {
-
             RuleFor(e => e.Month).MinimumLength(3).MaximumLength(3).Matches("[A-Z]{1}[a-z]{2}").NotNull();
-            RuleFor(e => e.UserId).NotNull();
+            RuleFor(e => e.UserId).NotNull().NotEmpty();
         }
     }
 }
