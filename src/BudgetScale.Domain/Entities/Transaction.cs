@@ -1,3 +1,4 @@
+
 using System;
 using BudgetScale.Domain.EntityContracts;
 

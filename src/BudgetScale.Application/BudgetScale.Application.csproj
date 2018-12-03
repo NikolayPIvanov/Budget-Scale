@@ -16,8 +16,4 @@
     <ProjectReference Include="..\BudgetScale.Persistence\BudgetScale.Persistence.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Categories\Commands\CreateCommand\" />
-  </ItemGroup>
-
 </Project>
