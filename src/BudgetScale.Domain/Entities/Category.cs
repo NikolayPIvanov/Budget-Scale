@@ -20,7 +20,7 @@ namespace BudgetScale.Domain.Entities
 
         public string GroupId { get; set; }
 
-        public ICollection<CategoryInformation> CategoryInformation { get; private set; }
+        public ICollection<CategoryInformation> CategoryInformation { get; set; }
 
         public ICollection<Transaction> Transactions { get; private set; }
 

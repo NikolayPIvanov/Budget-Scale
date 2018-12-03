@@ -25,10 +25,10 @@ namespace BudgetScale.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Register([FromBody]UserRegisterBindingModel model)
         {
-            if (model == null || !this.ModelState.IsValid)
-            {
-                return this.BadRequest(this.ModelState.GetFirstError());
-            }
+            //if (model == null || !this.ModelState.IsValid)
+            //{
+            //    return this.BadRequest(this.ModelState.GetFirstError());
+            //}
 
             var user = new ApplicationUser { Email = model.Email, UserName = model.Email, FullName = model.FullName };
             var result = await this._userManager.CreateAsync(user, model.Password);

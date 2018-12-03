@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using BudgetScale.Application.Groups.Models.Output;
+﻿using System.Linq;
+using BudgetScale.Domain.Entities;
 using MediatR;
 
 namespace BudgetScale.Application.Groups.Queries.GetGroups
 {
-    public class GetGroupsQuery : IRequest<IEnumerable<GroupViewModel>>
+    public class GetGroupsQuery : IRequest<IQueryable<Group>>
     {
         public string UserId { get; set; }
 

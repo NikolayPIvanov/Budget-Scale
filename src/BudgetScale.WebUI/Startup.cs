@@ -1,39 +1,45 @@
-using System;
-using System.Linq;
-using System.Security.Claims;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
-using BudgetScale.Application.Categories.Models.Output;
-using BudgetScale.Application.CategoryInformation.Models.Output;
-using BudgetScale.Application.Groups.Commands.CreateCommand;
-using BudgetScale.Application.Groups.Models.Output;
-using BudgetScale.Application.Infrastructure;
-using BudgetScale.Domain.Entities;
-using BudgetScale.Infrastructure.Extensions;
-using BudgetScale.Infrastructure.Filters;
-using BudgetScale.Infrastructure.Middlewares.Authentication;
-using BudgetScale.Persistence;
-using BudgetScale.Persistence.Infrastructure;
-using FluentValidation.AspNetCore;
-using MediatR;
-using MediatR.Pipeline;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SpaServices.AngularCli;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
+using System.Collections.Generic;
+using System.Reflection;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using BudgetScale.Application.Groups.Queries.GetGroup;
+using BudgetTracker.Common;
 
 namespace BudgetScale.WebUI
 {
+    using System;
+    using System.Linq;
+    using System.Security.Claims;
+    using System.Security.Principal;
+    using System.Text;
+    using System.Threading.Tasks;
+    using AutoMapper;
+    using Application.Categories.Models.Output;
+    using Application.CategoryInformation.Models.Output;
+    using Application.Groups.Commands.CreateCommand;
+    using Application.Groups.Models.Output;
+    using BudgetScale.Application.Infrastructure;
+    using Domain.Entities;
+    using Infrastructure.Extensions;
+    using Infrastructure.Filters;
+    using Infrastructure.Middlewares.Authentication;
+    using Persistence;
+    using BudgetScale.Persistence.Infrastructure;
+    using FluentValidation.AspNetCore;
+    using MediatR;
+    using MediatR.Pipeline;
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.SpaServices.AngularCli;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Options;
+    using Microsoft.IdentityModel.Tokens;
+     
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -71,11 +77,11 @@ namespace BudgetScale.WebUI
                 options.SigningCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
             });
 
-
+            //services.AddTransient(typeof(IRequestAbstraction<Group,GroupViewModel>),typeof(MapEntityRequest<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPerformanceBehaviour<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
-            services.AddMediatR();
+            services.AddMediatR(typeof(GetGroupQueryHandler).GetTypeInfo().Assembly);
 
             services
                .AddAuthentication()
@@ -124,6 +130,7 @@ namespace BudgetScale.WebUI
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

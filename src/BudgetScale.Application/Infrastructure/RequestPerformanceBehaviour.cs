@@ -26,7 +26,7 @@ namespace BudgetScale.Application.Infrastructure
 
             _timer.Stop();
 
-            if (_timer.ElapsedMilliseconds > 5000)
+            if (_timer.ElapsedMilliseconds > 500)
             {
                 var name = typeof(TRequest).Name;
 

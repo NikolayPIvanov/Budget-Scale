@@ -1,4 +1,5 @@
 
+using AutoMapper;
 using Microsoft.Extensions.Logging;
 
 namespace BudgetScale.WebUI.Controllers
@@ -15,7 +16,10 @@ namespace BudgetScale.WebUI.Controllers
     public abstract class BaseController: ControllerBase
     {
         private IMediator _mediator;
+        private IMapper _mapper;
 
         protected IMediator Mediator => _mediator ?? (_mediator = HttpContext.RequestServices.GetService<IMediator>());
+        protected IMapper Mapper => _mapper ?? (_mapper = HttpContext.RequestServices.GetService<IMapper>());
+
     }
 }

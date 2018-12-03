@@ -7,6 +7,7 @@ using BudgetScale.Application.Groups.Models.Output;
 using BudgetScale.Application.Groups.Queries.GetGroup;
 using BudgetScale.Application.Groups.Queries.GetGroups;
 using BudgetScale.Application.Tests.Infrastructure;
+using BudgetScale.Domain.Entities;
 using NUnit.Framework;
 
 namespace BudgetScale.Application.Tests
@@ -19,7 +20,7 @@ namespace BudgetScale.Application.Tests
         [TestCase("2", "Nov")]
         [TestCase("3", "Nov")]
         [TestCase("0", "Nov")]
-        public async Task GetGroups_ReturnsIListType(string userId, string month)
+        public async Task GetGroups_ReturnsIQueryable(string userId, string month)
         {
             //Act
             var query = new GetGroupsQuery
@@ -34,7 +35,7 @@ namespace BudgetScale.Application.Tests
             var result = await handler.Handle(query, CancellationToken.None);
 
             //Assert
-            Assert.IsInstanceOf<IList<GroupViewModel>>(result);
+            Assert.IsInstanceOf<IQueryable<Group>>(result);
         }
 
         [Test]
@@ -119,7 +120,7 @@ namespace BudgetScale.Application.Tests
                 GroupId = groupId
             };
 
-            var handler = new GetGroupQueryHandler(context, mapper);
+            var handler = new GetGroupQueryHandler(context);
 
             var expected = context.Groups
                 .FirstOrDefault(g => g.UserId.Equals(userId) && g.GroupId.Equals(groupId));
@@ -127,7 +128,7 @@ namespace BudgetScale.Application.Tests
             //Arrange
             var result = await handler.Handle(query, CancellationToken.None);
 
-            //Assert
+            ////Assert
             Assert.True(expected.GroupId.Equals(result.GroupId)
             && expected.GroupName.Equals(result.GroupName)
             && expected.Categories.Count == result.Categories.Count());
@@ -147,7 +148,7 @@ namespace BudgetScale.Application.Tests
                 GroupId = groupId
             };
 
-            var handler = new GetGroupQueryHandler(context, mapper);
+            var handler = new GetGroupQueryHandler(context);
 
             //Arrange
             var result = await handler.Handle(query, CancellationToken.None);
