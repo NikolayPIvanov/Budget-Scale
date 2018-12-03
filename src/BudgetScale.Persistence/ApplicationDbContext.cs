@@ -23,6 +23,8 @@ namespace BudgetScale.Persistence
 
         public DbSet<Transaction> Transactions { get; set; }
 
+        public DbSet<LongRequest> LongRequests { get; set; }    
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

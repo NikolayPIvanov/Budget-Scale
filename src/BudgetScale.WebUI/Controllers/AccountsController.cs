@@ -37,8 +37,8 @@ namespace BudgetScale.WebUI.Controllers
             else
             {
                 await this._userManager.AddToRoleAsync(user, "User");
-
             }
+
             return this.Ok();
         }
     }

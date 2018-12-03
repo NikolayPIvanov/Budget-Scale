@@ -1,6 +1,8 @@
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
+using BudgetScale.Domain.Entities;
+using BudgetScale.Persistence;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
@@ -10,11 +12,12 @@ namespace BudgetScale.Application.Infrastructure
     {
         private readonly Stopwatch _timer;
         private readonly ILogger<TRequest> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public RequestPerformanceBehaviour(ILogger<TRequest> logger)
+        public RequestPerformanceBehaviour(ILogger<TRequest> logger, ApplicationDbContext context)
         {
             _timer = new Stopwatch();
-
+            _context = context;
             _logger = logger;
         }
 
@@ -31,8 +34,17 @@ namespace BudgetScale.Application.Infrastructure
                 var name = typeof(TRequest).Name;
 
                 // TODO: Add User Details
-
+                var longRequest = new LongRequest
+                {
+                    ElapsedMilliseconds =  _timer.ElapsedMilliseconds.ToString(),
+                    Name = name,
+                    RequestDescription = string.Format("BudgetScale Long Running Request: {Name} ({ElapsedMilliseconds} milliseconds) {@Request}", name, _timer.ElapsedMilliseconds, request)
+                };
+                
                 _logger.LogWarning("BudgetScale Long Running Request: {Name} ({ElapsedMilliseconds} milliseconds) {@Request}", name, _timer.ElapsedMilliseconds, request);
+
+                _context.LongRequests.Add(longRequest);
+                await _context.SaveChangesAsync(cancellationToken);
             }
 
             return response;
