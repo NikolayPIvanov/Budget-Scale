@@ -7,7 +7,7 @@ using MediatR;
 
 namespace BudgetScale.Application.Groups.Commands.CreateCommand
 {
-    public class CreateGroupCommandHandler : BaseEntity, IRequestHandler<CreateGroupCommand, string>
+    public class CreateGroupCommandHandler : BaseHandler, IRequestHandler<CreateGroupCommand, string>
     {
         public CreateGroupCommandHandler(ApplicationDbContext context,IMapper mapper) : base(context,mapper)
         {

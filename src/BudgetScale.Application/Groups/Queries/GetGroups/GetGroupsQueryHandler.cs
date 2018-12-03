@@ -14,7 +14,7 @@ using Z.EntityFramework.Plus;
 
 namespace BudgetScale.Application.Groups.Queries.GetGroups
 {
-    public class GetGroupsQueryHandler : BaseEntity, IRequestHandler<GetGroupsQuery, IQueryable<Group>>
+    public class GetGroupsQueryHandler : BaseHandler, IRequestHandler<GetGroupsQuery, IQueryable<Group>>
     {
         public GetGroupsQueryHandler(ApplicationDbContext context, IMapper mapper) : base(context, mapper)
         {

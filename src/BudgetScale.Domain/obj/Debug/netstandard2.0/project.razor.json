@@ -1,5 +1,5 @@
 {
-  "ProjectFilePath": "d:\\Budget Scale\\BudgetScale.Domain\\BudgetScale.Domain.csproj",
+  "ProjectFilePath": "d:\\Budget Scale\\src\\BudgetScale.Domain\\BudgetScale.Domain.csproj",
   "TargetFramework": "netstandard2.0",
   "TagHelpers": [],
   "Configuration": {

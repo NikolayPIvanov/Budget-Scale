@@ -1,5 +1,5 @@
 {
-  "ProjectFilePath": "d:\\Budget Scale\\BudgetTracker.Common\\BudgetTracker.Common.csproj",
+  "ProjectFilePath": "d:\\Budget Scale\\src\\BudgetTracker.Common\\BudgetTracker.Common.csproj",
   "TargetFramework": "netstandard2.0",
   "TagHelpers": [],
   "Configuration": {

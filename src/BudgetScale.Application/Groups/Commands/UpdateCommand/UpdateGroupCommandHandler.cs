@@ -7,7 +7,7 @@ using MediatR;
 
 namespace BudgetScale.Application.Groups.Commands.UpdateCommand
 {
-    public class UpdateGroupCommandHandler : BaseEntity, IRequestHandler<UpdateGroupCommand, Unit>
+    public class UpdateGroupCommandHandler : BaseHandler, IRequestHandler<UpdateGroupCommand, Unit>
     {
         public UpdateGroupCommandHandler(ApplicationDbContext context, IMapper mapper) : base(context, mapper)
         {

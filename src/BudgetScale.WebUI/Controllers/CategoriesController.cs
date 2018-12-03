@@ -1,19 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+using BudgetScale.Application.Categories.Models.Output;
+using BudgetScale.Application.Categories.Queries.GetAllQuery;
+using BudgetScale.Infrastructure.Extensions;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BudgetScale.WebUI.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/{groupId}/")]
     public class CategoriesController : BaseController
     {
-        public async IActionResult Index()
+        [HttpGet("{groupId}")]
+        public async Task<IActionResult> All([FromRoute]string groupId)
         {
-            return Ok();
+            var response = await Mediator.Send(new GetAllCategoriesQuery{UserId = this.User.GetId(),GroupId = groupId});
+
+            var model = Mapper.Map<CategoryViewModel>(response);
+
+            return Ok(model);
         }
     }
 }
