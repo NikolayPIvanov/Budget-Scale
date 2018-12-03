@@ -117,6 +117,14 @@ namespace BudgetScale.WebUI
 
             services.AddSingleton(this.Configuration);
 
+            services.AddAuthorization(
+                options =>
+                {
+                    options.AddPolicy("Administrator",
+                        policy => policy
+                            .RequireClaim(ClaimTypes.Role, "Administrator"));
+                });
+
             services.AddAutoMapper(config =>
             {
                 config.CreateMap<CreateGroupCommand, Group>();
@@ -163,12 +171,12 @@ namespace BudgetScale.WebUI
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
+
             //GDPR middleware
             app.UseFeaturePolicy();
 
-            app.UseJwtBearerTokens(
-                app.ApplicationServices.GetRequiredService<IOptions<TokenProviderOptions>>(),
-                PrincipalResolver);
+            app.UseJwtBearerTokens(app.ApplicationServices
+                    .GetRequiredService<IOptions<TokenProviderOptions>>(),PrincipalResolver);
 
             app.UseMvc(routes =>
             {

@@ -112,8 +112,7 @@ namespace BudgetScale.Infrastructure.Middlewares.Authentication
                 roles = existingClaims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value),
             };
 
-            context.Response.Cookies.Append(
-                "Access_Token",
+            context.Response.Cookies.Append( "Access_Token",
             encodedJwt, new CookieOptions
             {
                 Expires = new DateTimeOffset(DateTime.UtcNow).AddDays(this.options.Expiration.Days),

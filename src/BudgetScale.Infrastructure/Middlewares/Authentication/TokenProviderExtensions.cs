@@ -19,6 +19,7 @@ namespace BudgetScale.Infrastructure.Middlewares.Authentication
             app.UseMiddleware<TokenProviderMiddleware>(options, principalResolver);
 
             app.UseAuthentication();
+
         }
 
         private static void ValidateArgs(

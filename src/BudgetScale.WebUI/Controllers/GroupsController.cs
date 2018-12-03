@@ -22,8 +22,7 @@ namespace BudgetScale.WebUI.Controllers
 
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-
-    [Authorize(Policy = "Administrator")]
+    
     [ApiController]
     [Route("api/[controller]")]
     public class GroupsController : BaseController
