@@ -1,5 +1,6 @@
 ﻿
 using System.Threading.Tasks;
+using BudgetScale.Application.Categories.Commands.CreateCommand;
 using BudgetScale.Application.Categories.Models.Input;
 using BudgetScale.Application.Categories.Models.Output;
 using BudgetScale.Application.Categories.Queries.GetAllQuery;
@@ -44,7 +45,7 @@ namespace BudgetScale.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromRoute] string groupId, [FromBody]CreateCommandInputModel model)
         {
-            var categoryId = await Mediator.Send(new CreateGroupCommand
+            var categoryId = await Mediator.Send(new CreateCategoryCommand
             {
                 UserId = this.User.GetId(),
                 GroupId = groupId,

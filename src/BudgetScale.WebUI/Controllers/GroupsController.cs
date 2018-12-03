@@ -59,7 +59,8 @@ namespace BudgetScale.WebUI.Controllers
             var groupId = await Mediator.Send(new CreateGroupCommand
             {
                 GroupName = model.GroupName,
-                UserId = this.User.GetId()
+                UserId = this.User.GetId(),
+                
             });
             
             return this.CreatedAtAction("Get", new {groupId});
