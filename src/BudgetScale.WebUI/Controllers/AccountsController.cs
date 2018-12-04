@@ -1,45 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BudgetScale.Domain.Entities;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-
-using Microsoft.AspNetCore.Authorization;
-using BudgetScale.Application.Users;
+using AutoMapper.QueryableExtensions;
+using BudgetScale.Application.Accounts.Models.Output;
+using BudgetScale.Application.Accounts.Queries.GetAccounts;
 using BudgetScale.Infrastructure.Extensions;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BudgetScale.WebUI.Controllers
 {
-    [AllowAnonymous]
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("/api/accounts")]
     public class AccountsController : BaseController
     {
-        private readonly UserManager<ApplicationUser> _userManager;
-
-        public AccountsController(UserManager<ApplicationUser> userManager)
+        public async Task<IActionResult> All()
         {
-            this._userManager = userManager;
-        }
+            var response = await Mediator.Send(new GetAllAccountsQuery(User.GetId()));
 
-        [HttpPost]
-        public async Task<IActionResult> Register([FromBody]UserRegisterBindingModel model)
-        {
-            var user = new ApplicationUser { Email = model.Email, UserName = model.Email, FullName = model.FullName };
-            var result = await this._userManager.CreateAsync(user, model.Password);
+            var model = response.ProjectTo<AccountsViewModel>(Mapper.ConfigurationProvider);
 
-            if (!result.Succeeded) return this.BadRequest(result);
-
-            if (this._userManager.Users.Count() == 1)
-            {
-                await this._userManager.AddToRoleAsync(user, "Administrator");
-            }
-            else
-            {
-                await this._userManager.AddToRoleAsync(user, "User");
-            }
-
-            return this.Ok();
+            return Ok(model);
         }
     }
 }

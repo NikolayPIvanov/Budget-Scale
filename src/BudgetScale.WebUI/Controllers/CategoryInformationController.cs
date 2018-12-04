@@ -13,6 +13,7 @@ namespace BudgetScale.WebUI.Controllers
     [Route("api/{groupId}/categories/{categoryId}/")]
     public class CategoryInformationController : BaseController
     {
+        //TODO : Add validation
         public async Task<IActionResult> Get(
             [FromRoute] string groupId,
             [FromRoute] string categoryId,

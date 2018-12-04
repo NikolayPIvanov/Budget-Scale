@@ -25,6 +25,8 @@ namespace BudgetScale.Persistence
 
         public DbSet<LongRequest> LongRequests { get; set; }    
 
+        //TODO: Add reports
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

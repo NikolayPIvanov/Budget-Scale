@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Controllers\AccountsController.cs" />
+    <None Include="Controllers\UsersController.cs" />
     <None Include="Controllers\BaseController.cs" />
     <None Include="Controllers\GroupsController.cs" />
   </ItemGroup>

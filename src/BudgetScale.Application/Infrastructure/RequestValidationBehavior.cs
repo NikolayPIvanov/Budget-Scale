@@ -27,7 +27,7 @@ namespace BudgetScale.Application.Infrastructure
                 .Where(f => f != null)
                 .ToList();
 
-            if (failures.Count != 0)
+            if (failures.Any())
             {
                 throw new Exceptions.ValidationException(failures);
             }

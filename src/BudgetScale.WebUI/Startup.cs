@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using BudgetScale.Application.Accounts.Models.Output;
 using BudgetScale.Application.Groups.Queries.GetGroup;
 using BudgetTracker.Common;
 
@@ -72,7 +73,7 @@ namespace BudgetScale.WebUI
             {
                 options.Audience = this.Configuration["JwtTokenValidation:Audience"];
                 options.Issuer = this.Configuration["JwtTokenValidation:Issuer"];
-                options.Path = "/api/accounts/login";
+                options.Path = "/api/users/login";
                 options.Expiration = TimeSpan.FromDays(15);
                 options.SigningCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
             });
@@ -131,6 +132,7 @@ namespace BudgetScale.WebUI
                 config.CreateMap<Group, GroupViewModel>();
                 config.CreateMap<Category, CategoryViewModel>();
                 config.CreateMap<CategoryInformation, CategoryInformationViewModel>();
+                config.CreateMap<Account, AccountsViewModel>();
             });
 
             // In production, the Angular files will be served from this directory
