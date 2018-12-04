@@ -21,7 +21,6 @@ namespace BudgetScale.Domain.Entities
             set => this._isLockedOut = value;
         }
 
-
         // Audit info
         public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
 
