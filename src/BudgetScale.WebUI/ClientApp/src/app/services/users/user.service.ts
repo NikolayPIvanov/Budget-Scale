@@ -1,8 +1,13 @@
 import { BaseService } from "../base.service";
-import { HttpClient } from "@angular/common/http";
-import { BehaviorSubject } from "rxjs";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { BehaviorSubject, Observable } from "rxjs";
 import { ConfigService } from "../config.service";
+import 'rxjs/add/operator/catch';
+import { Injectable } from "@angular/core";
 
+@Injectable({
+    providedIn: 'root'
+})
 export class UserService extends BaseService {
 
     private loggedIn = false;
@@ -13,10 +18,16 @@ export class UserService extends BaseService {
     constructor(private http: HttpClient, private configService: ConfigService) {
         super();
         this.loggedIn = !!localStorage.getItem('auth_token');
-        // ?? not sure if this the best way to broadcast the status but seems to resolve issue on page refresh where auth status is lost in
-        // header component resulting in authed user nav links disappearing despite the fact user is still logged in
         this._authNavStatusSource.next(this.loggedIn);
         this.baseUrl = configService.getApiURI();
+    }
+
+    register(userName: string, password: string, fullName: string, email: string): Observable<any> {
+
+        let body = JSON.stringify({ email, password, fullName, userName });
+        let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+        return this.http.post(this.baseUrl + "/accounts/register", body, { headers: headers, responseType: "text" })
     }
 
 }
