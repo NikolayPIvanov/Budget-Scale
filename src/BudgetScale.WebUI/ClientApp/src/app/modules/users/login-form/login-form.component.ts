@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Credentials } from 'src/app/models/users/credentials.model';
+import { UserService } from 'src/app/services/users/user.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
@@ -7,9 +11,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginFormComponent implements OnInit {
 
-  constructor() { }
+  private subscription: Subscription;
+
+  brandNew: boolean;
+  errors: string;
+  //isRequesting: boolean;
+  submitted: boolean = false;
+  credentials: Credentials = { email: '', password: '' };
+
+  constructor(private userService: UserService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.subscription = this.activatedRoute.queryParams.subscribe(
+      (param: any) => {
+        this.brandNew = param['brandNew'];
+        this.credentials.email = param['email'];
+      });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
+  login({ value, valid }: { value: Credentials, valid: boolean }) {
+    this.submitted = true;
+    this.errors = '';
+    if (valid) {
+      this.userService.login(value.email, value.password)
+        .subscribe(
+          result => {
+            if (result) {
+              this.router.navigate(['/counter']);
+            }
+          }, (error: any) => error);
+    }
   }
 
 }

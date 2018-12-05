@@ -43,6 +43,7 @@ export class UserService extends BaseService {
         return this.http.post(
             this.baseUrl + '/accounts/login', body)
             .pipe(map((response: any) => {
+                console.log({ response });
                 let tokenInfo = JSON.parse(response);
                 localStorage.setItem('auth_token', tokenInfo.auth_token);
                 this.loggedIn = true;
