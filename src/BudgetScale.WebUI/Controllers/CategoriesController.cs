@@ -5,7 +5,6 @@ using BudgetScale.Application.Categories.Models.Input;
 using BudgetScale.Application.Categories.Models.Output;
 using BudgetScale.Application.Categories.Queries.GetAllQuery;
 using BudgetScale.Application.Categories.Queries.GetQuery;
-using BudgetScale.Application.Groups.Commands.CreateCommand;
 using BudgetScale.Infrastructure.Extensions;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

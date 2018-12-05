@@ -87,7 +87,7 @@ namespace BudgetScale.Application.Tests
 
             var mockDelegate = new Mock<RequestHandlerDelegate<string>>(MockBehavior.Default);
 
-            var v = new RequestPerformanceBehaviour<CreateGroupCommand, string>(mockLogger.Object);
+            var v = new RequestPerformanceBehaviour<CreateGroupCommand, string>(mockLogger.Object,context);
 
             var result = await v.Handle(command, CancellationToken.None, mockDelegate.Object);
 
