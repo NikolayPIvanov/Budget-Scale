@@ -28,10 +28,10 @@ namespace BudgetScale.WebUI.Controllers
             var accounts = await Mediator.Send(new GetAllAccountsQuery(userId));
 
             var toBeBudgeted = accounts.Sum(e => e.Transactions
-                                   .Where(c => c.Type == TransactionType.Outflow).Sum(c => c.Amount )) 
+                                   .Where(c => c.Type == TransactionType.Outflow).Sum(c => c.Amount))
                                - groups.Sum(e => e.Availability);
 
-            
+
             return Ok();
         }
     }

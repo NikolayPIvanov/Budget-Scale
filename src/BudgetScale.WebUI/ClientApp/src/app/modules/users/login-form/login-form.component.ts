@@ -16,7 +16,7 @@ export class LoginFormComponent implements OnInit {
 
   brandNew: boolean;
   errors: string = '';
-  //isRequesting: boolean;
+  isRequesting: boolean;
   submitted: boolean = false;
   credentials: Credentials = { email: '', password: '' };
 
@@ -42,11 +42,10 @@ export class LoginFormComponent implements OnInit {
       this.userService.login(value.email, value.password)
         .subscribe(result => {
           if (result) {
-            this.router.navigate(['/counter']);
+            this.router.navigate(['/']);
           }
         }, (errors: HttpErrorResponse) => {
           this.errors = errors.error;
-          console.log(this.errors)
         })
     }
   }
