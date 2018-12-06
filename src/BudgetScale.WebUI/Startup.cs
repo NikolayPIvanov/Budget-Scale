@@ -3,6 +3,7 @@ using System.Reflection;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using BudgetScale.Application.Accounts.Models.Output;
+using BudgetScale.Application.Categories.Commands.CreateCommand;
 using BudgetScale.Application.Groups.Queries.GetGroup;
 using BudgetTracker.Common;
 
@@ -131,6 +132,8 @@ namespace BudgetScale.WebUI
                 config.CreateMap<CreateGroupCommand, Group>();
                 config.CreateMap<Group, GroupViewModel>();
                 config.CreateMap<Category, CategoryViewModel>();
+                config.CreateMap<CreateCategoryCommand, Category>();
+
                 config.CreateMap<CategoryInformation, CategoryInformationViewModel>();
                 config.CreateMap<Account, AccountsViewModel>();
             });

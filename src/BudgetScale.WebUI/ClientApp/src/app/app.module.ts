@@ -7,8 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './modules/home/home.component';
-import { CounterComponent } from './modules/counter/counter.component';
-import { FetchDataComponent } from './modules/fetch-data/fetch-data.component';
 import { UsersModule } from './modules/users/users.module';
 import { LoginFormComponent } from './modules/users/login-form/login-form.component';
 import { AuthGuard } from './services/authentication/auth.guard';
@@ -21,8 +19,6 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -35,7 +31,6 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
     DashboardModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent, canActivate: [AuthGuard] },
       { path: 'login', component: LoginFormComponent },
       { path: 'register', component: RegisterFormComponent },
       { path: 'groups', component: GroupsListComponent, canActivate: [AuthGuard] }

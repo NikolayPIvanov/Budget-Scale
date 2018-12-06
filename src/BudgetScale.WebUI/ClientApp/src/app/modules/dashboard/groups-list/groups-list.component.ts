@@ -17,10 +17,9 @@ export class GroupsListComponent implements OnInit {
   ngOnInit() {
     this.groupsService.requestGroups().subscribe(response => {
       this.groups = response;
-      console.log("Current groups in local field", this.groups);
-      console.log("Current response from service", response);
-    }, (errors: HttpErrorResponse) => {
-      this.errors = errors.error;
-    })
+    },
+      (errors: HttpErrorResponse) => {
+        this.errors = errors.error;
+      })
   }
 }

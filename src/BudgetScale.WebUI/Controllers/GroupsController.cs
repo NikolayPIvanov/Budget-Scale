@@ -21,6 +21,7 @@ namespace BudgetScale.WebUI.Controllers
     using Application.Groups.Queries.GetGroups;
 
     using Microsoft.AspNetCore.Mvc;
+    using BudgetScale.Application.Groups.Queries.GetCalculatedGroups;
 
     [ApiController]
     [Route("api/[controller]")]
@@ -37,6 +38,15 @@ namespace BudgetScale.WebUI.Controllers
             return Ok(response);
         }
 
+        [HttpGet("/shaped")]
+        public async Task<IActionResult> GetCalculatedGroups([FromQuery] string month = "Dec")
+        {
+            var query = await Mediator.Send(new GetDashboardGroupsQuery { Month = month, UserId = this.User.GetId() });
+
+            return Ok(query);
+
+        }
+
         [HttpGet("{groupId}")]
         [ProducesResponseType(typeof(GroupViewModel), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> Get([FromRoute] string groupId)
@@ -44,7 +54,6 @@ namespace BudgetScale.WebUI.Controllers
             var response = await Mediator.Send(new GetGroupQuery
             {
                 UserId = this.User.GetId(),
-
                 GroupId = groupId
             });
 
@@ -53,17 +62,19 @@ namespace BudgetScale.WebUI.Controllers
             return Ok(model);
         }
 
+
+
         [HttpPost]
         [ProducesResponseType(typeof(CreatedAtActionResult), (int)HttpStatusCode.Created)]
         public async Task<IActionResult> Create([FromBody] CommandInputModel model)
         {
-            var group = await Mediator.Send(new CreateGroupCommand
+            var groupId = await Mediator.Send(new CreateGroupCommand
             {
                 GroupName = model.GroupName,
                 UserId = this.User.GetId(),
             });
 
-            return this.CreatedAtAction("Get",new { groupId = group.GroupId }, new { groupId = group.GroupId });
+            return this.CreatedAtAction("Get", new { groupId = groupId }, new { groupId = groupId });
         }
 
         [HttpPatch("{groupId}")]

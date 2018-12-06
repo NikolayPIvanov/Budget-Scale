@@ -39,8 +39,8 @@ namespace BudgetScale.Application.Groups.Queries.GetCalculatedGroups
                     {
                         CategoryId = e.CategoryId,
                         CategoryName = e.CategoryName,
-                        CategoryInformation = _mapper.Map<CategoryInformationViewModel>(e.CategoryInformation
-                            .FirstOrDefault(x => x.Month.Equals(request.Month)))
+                        CategoryInformation = _mapper.Map<CategoryInformationViewModel>
+                        (e.CategoryInformation.FirstOrDefault(x => x.Month.Equals(request.Month)))
                     })
                 });
 

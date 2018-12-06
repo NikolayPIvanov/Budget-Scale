@@ -18,6 +18,7 @@ namespace BudgetScale.Application.Categories.Commands.CreateCommand
 
             _context.Categories.Add(category);
 
+            // TODO : Add categoryInforamtion generator
             await _context.SaveChangesAsync(cancellationToken);
             
             return category.CategoryId;
