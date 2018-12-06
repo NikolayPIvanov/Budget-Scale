@@ -30,7 +30,6 @@ import { RegisterFormComponent } from './modules/users/register-form/register-fo
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent, canActivate: [AuthGuard] },
-      { path: 'fetch-data', component: FetchDataComponent },
       { path: 'login', component: LoginFormComponent },
       { path: 'register', component: RegisterFormComponent }
     ])

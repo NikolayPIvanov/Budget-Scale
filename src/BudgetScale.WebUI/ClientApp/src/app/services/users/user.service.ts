@@ -6,7 +6,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { Injectable } from "@angular/core";
 import 'rxjs/Rx';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 
 
 
@@ -39,7 +39,7 @@ export class UserService extends BaseService {
         body.append('email', email);
         body.append('password', password);
 
-        let headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+        // let headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
 
         return this.http.post(this.baseUrl + '/users/login', body)
             .pipe(map((response: any) => {
