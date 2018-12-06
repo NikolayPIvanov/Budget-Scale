@@ -12,6 +12,7 @@ import { FetchDataComponent } from './modules/fetch-data/fetch-data.component';
 import { UsersModule } from './modules/users/users.module';
 import { LoginFormComponent } from './modules/users/login-form/login-form.component';
 import { AuthGuard } from './services/authentication/auth.guard';
+import { RegisterFormComponent } from './modules/users/register-form/register-form.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AuthGuard } from './services/authentication/auth.guard';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent, canActivate: [AuthGuard] },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'login', component: LoginFormComponent }
+      { path: 'login', component: LoginFormComponent },
+      { path: 'register', component: RegisterFormComponent }
     ])
   ],
   providers: [AuthGuard],

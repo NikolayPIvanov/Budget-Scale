@@ -31,8 +31,7 @@ export class UserService extends BaseService {
 
         let body = JSON.stringify({ email, password, fullName, userName });
         let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-
-        return this.http.post(this.baseUrl + "/accounts/register", body, { headers: headers, responseType: "text" })
+        return this.http.post(this.baseUrl + "/users/register", body, { headers: headers })
     }
 
     login(email, password) {
