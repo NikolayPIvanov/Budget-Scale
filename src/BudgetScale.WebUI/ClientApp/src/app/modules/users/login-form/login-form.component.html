@@ -5,7 +5,7 @@
 
         <div class="form-group">
           <label for="password">Email</label>
-          <input id="login-username" type="text" required name="email" validateEmail class="input-material" data-msg="Please enter your username"
+          <input id="login-username" type="text" required name="email" validateEmail class="form-control" data-msg="Please enter your username"
             ngModel #email="ngModel">
           <small [hidden]="email.valid || (email.pristine && !submitted)" class="text-danger">Please enter a
             valid email</small>

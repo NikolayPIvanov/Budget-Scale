@@ -11,6 +11,7 @@ import { CounterComponent } from './modules/counter/counter.component';
 import { FetchDataComponent } from './modules/fetch-data/fetch-data.component';
 import { UsersModule } from './modules/users/users.module';
 import { LoginFormComponent } from './modules/users/login-form/login-form.component';
+import { AuthGuard } from './services/authentication/auth.guard';
 
 @NgModule({
   declarations: [
@@ -27,12 +28,12 @@ import { LoginFormComponent } from './modules/users/login-form/login-form.compon
     UsersModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
+      { path: 'counter', component: CounterComponent, canActivate: [AuthGuard] },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'login', component: LoginFormComponent }
     ])
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
