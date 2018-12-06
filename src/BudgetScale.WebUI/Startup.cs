@@ -206,6 +206,7 @@ namespace BudgetScale.WebUI
             var email = context.Request.Form["email"];
 
             var userManager = context.RequestServices.GetRequiredService<UserManager<ApplicationUser>>();
+
             var user = await userManager.FindByEmailAsync(email);
             if (user == null)
             {

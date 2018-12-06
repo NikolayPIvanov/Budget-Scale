@@ -36,12 +36,13 @@ export class UserService extends BaseService {
     }
 
     login(email, password) {
-        let body = new URLSearchParams();
-        body.set('email', email);
-        body.set('password', password);
+        let body = new FormData();
+        body.append('email', email);
+        body.append('password', password);
 
-        return this.http.post(
-            this.baseUrl + '/accounts/login', body)
+        let headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+
+        return this.http.post(this.baseUrl + '/users/login', body)
             .pipe(map((response: any) => {
                 console.log({ response });
                 let tokenInfo = JSON.parse(response);
