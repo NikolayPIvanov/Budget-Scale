@@ -40,7 +40,7 @@ namespace BudgetScale.WebUI
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Options;
     using Microsoft.IdentityModel.Tokens;
-     
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -178,7 +178,7 @@ namespace BudgetScale.WebUI
             app.UseFeaturePolicy();
 
             app.UseJwtBearerTokens(app.ApplicationServices
-                    .GetRequiredService<IOptions<TokenProviderOptions>>(),PrincipalResolver);
+                    .GetRequiredService<IOptions<TokenProviderOptions>>(), PrincipalResolver);
 
             app.UseMvc(routes =>
             {

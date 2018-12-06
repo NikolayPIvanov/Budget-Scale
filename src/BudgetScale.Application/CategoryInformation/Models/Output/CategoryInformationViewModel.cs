@@ -10,7 +10,7 @@ namespace BudgetScale.Application.CategoryInformation.Models.Output
         /// <summary>
         /// Possibility that we do not need to return the month, only use it for requests.
         /// </summary>
-        public string Month { get;  set; }
+        public string Month { get; set; }
 
         public decimal Budgeted { get; set; }
 
@@ -18,6 +18,6 @@ namespace BudgetScale.Application.CategoryInformation.Models.Output
 
         public decimal Available { get; set; }
 
-        
+
     }
 }

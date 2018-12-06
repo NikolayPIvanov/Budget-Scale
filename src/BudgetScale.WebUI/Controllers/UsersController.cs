@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using BudgetScale.Application.Users;
 using BudgetScale.Infrastructure.Extensions;
+using Microsoft.AspNetCore.Http;
 
 namespace BudgetScale.WebUI.Controllers
 {
@@ -23,6 +24,9 @@ namespace BudgetScale.WebUI.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(System.Collections.Generic.IEnumerable<IdentityError>), StatusCodes.Status400BadRequest)]
+        [ProducesDefaultResponseType]
         public async Task<IActionResult> Register([FromBody]UserRegisterBindingModel model)
         {
             var user = new ApplicationUser { Email = model.Email, UserName = model.Email, FullName = model.FullName };

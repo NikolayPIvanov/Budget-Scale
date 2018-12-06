@@ -13,6 +13,8 @@ import { UsersModule } from './modules/users/users.module';
 import { LoginFormComponent } from './modules/users/login-form/login-form.component';
 import { AuthGuard } from './services/authentication/auth.guard';
 import { RegisterFormComponent } from './modules/users/register-form/register-form.component';
+import { GroupsListComponent } from './modules/dashboard/groups-list/groups-list.component';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -30,11 +32,13 @@ import { RegisterFormComponent } from './modules/users/register-form/register-fo
     }),
     FormsModule,
     UsersModule,
+    DashboardModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent, canActivate: [AuthGuard] },
       { path: 'login', component: LoginFormComponent },
-      { path: 'register', component: RegisterFormComponent }
+      { path: 'register', component: RegisterFormComponent },
+      { path: 'groups', component: GroupsListComponent, canActivate: [AuthGuard] }
     ])
   ],
   providers: [AuthGuard],

@@ -20,9 +20,8 @@ namespace BudgetScale.WebUI.Controllers
     using Application.Groups.Queries.GetGroup;
     using Application.Groups.Queries.GetGroups;
 
-    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    
+
     [ApiController]
     [Route("api/[controller]")]
     public class GroupsController : BaseController
@@ -31,20 +30,21 @@ namespace BudgetScale.WebUI.Controllers
         [ProducesResponseType(typeof(IEnumerable<GroupViewModel>), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> All([FromQuery] string month = "Dec")
         {
-            var query = await Mediator.Send(new GetGroupsQuery { Month = month, UserId = this.User.GetId()});
+            var query = await Mediator.Send(new GetGroupsQuery { Month = month, UserId = this.User.GetId() });
 
             var response = query.ProjectTo<GroupViewModel>(Mapper.ConfigurationProvider);
 
-            return Ok(response);    
+            return Ok(response);
         }
 
         [HttpGet("{groupId}")]
-        public async Task<IActionResult> Get([FromRoute] string groupId, [FromQuery] string month = "Dec")
+        [ProducesResponseType(typeof(GroupViewModel), (int)HttpStatusCode.OK)]
+        public async Task<IActionResult> Get([FromRoute] string groupId)
         {
             var response = await Mediator.Send(new GetGroupQuery
             {
                 UserId = this.User.GetId(),
-                Month = month,
+
                 GroupId = groupId
             });
 
@@ -54,16 +54,16 @@ namespace BudgetScale.WebUI.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(typeof(CreatedAtActionResult), (int)HttpStatusCode.Created)]
         public async Task<IActionResult> Create([FromBody] CommandInputModel model)
         {
-            var groupId = await Mediator.Send(new CreateGroupCommand
+            var group = await Mediator.Send(new CreateGroupCommand
             {
                 GroupName = model.GroupName,
                 UserId = this.User.GetId(),
-                
             });
-            
-            return this.CreatedAtAction("Get", new {groupId});
+
+            return this.CreatedAtAction("Get",new { groupId = group.GroupId }, new { groupId = group.GroupId });
         }
 
         [HttpPatch("{groupId}")]

@@ -31,7 +31,7 @@ namespace BudgetScale.Application.Infrastructure
 
             if (_timer.ElapsedMilliseconds > 500)
             {
-                var name = typeof(TRequest).Name;
+               /* var name = typeof(TRequest).Name;
 
                 // TODO: Add User Details
                 var longRequest = new LongRequest
@@ -45,6 +45,7 @@ namespace BudgetScale.Application.Infrastructure
 
                 _context.LongRequests.Add(longRequest);
                 await _context.SaveChangesAsync(cancellationToken);
+                */
             }
 
             return response;

@@ -13,7 +13,7 @@ namespace BudgetScale.WebUI.Controllers
 
 
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    public abstract class BaseController: ControllerBase
+    public abstract class BaseController : ControllerBase
     {
         private IMediator _mediator;
         private IMapper _mapper;

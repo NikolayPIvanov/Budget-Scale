@@ -7,6 +7,7 @@ import { OverviewComponent } from './overview/overview.component';
   imports: [
     CommonModule
   ],
-  declarations: [GroupsListComponent, OverviewComponent]
+  declarations: [GroupsListComponent, OverviewComponent],
+  providers: [GroupsListComponent]
 })
 export class DashboardModule { }
