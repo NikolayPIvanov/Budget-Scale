@@ -10,7 +10,7 @@ namespace BudgetScale.WebUI.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("api/{groupId}/categories/{categoryId}/")]
+    [Route("api/{groupId}/categories/{categoryId}")]
     public class CategoryInformationController : BaseController
     {
         //TODO : Add validation

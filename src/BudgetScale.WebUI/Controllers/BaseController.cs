@@ -20,6 +20,5 @@ namespace BudgetScale.WebUI.Controllers
 
         protected IMediator Mediator => _mediator ?? (_mediator = HttpContext.RequestServices.GetService<IMediator>());
         protected IMapper Mapper => _mapper ?? (_mapper = HttpContext.RequestServices.GetService<IMapper>());
-
     }
 }

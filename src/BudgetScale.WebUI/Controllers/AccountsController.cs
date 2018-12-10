@@ -59,7 +59,6 @@ namespace BudgetScale.WebUI.Controllers
                 AccountType = account.Type
             });
 
-
             return this.CreatedAtAction("Get", new { accountId }, new { accountId });
 
         }

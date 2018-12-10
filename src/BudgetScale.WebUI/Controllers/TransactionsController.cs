@@ -11,7 +11,7 @@ namespace BudgetScale.WebUI.Controllers
     public class TransactionsController : BaseController
     {
 
-        [HttpGet("{accountId")]
+        [HttpGet]
         public async Task<IActionResult> GetAction()
         {
             return Ok();
