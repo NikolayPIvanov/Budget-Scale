@@ -5,7 +5,6 @@ import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './modules/home/home.component';
 import { UsersModule } from './modules/users/users.module';
 import { LoginFormComponent } from './modules/users/login-form/login-form.component';
@@ -13,6 +12,7 @@ import { AuthGuard } from './services/authentication/auth.guard';
 import { RegisterFormComponent } from './modules/users/register-form/register-form.component';
 import { GroupsListComponent } from './modules/dashboard/groups-list/groups-list.component';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { NavMenuComponent } from './modules/shared/nav-menu/nav-menu.component';
 
 @NgModule({
   declarations: [

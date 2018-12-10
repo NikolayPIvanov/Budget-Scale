@@ -38,7 +38,7 @@ namespace BudgetScale.WebUI.Controllers
             return Ok(response);
         }
 
-        [HttpGet("/shaped")]
+        [HttpGet("shaped")]
         public async Task<IActionResult> GetCalculatedGroups([FromQuery] string month = "Dec")
         {
             var query = await Mediator.Send(new GetDashboardGroupsQuery { Month = month, UserId = this.User.GetId() });

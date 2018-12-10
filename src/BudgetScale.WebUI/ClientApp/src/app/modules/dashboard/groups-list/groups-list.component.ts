@@ -17,6 +17,7 @@ export class GroupsListComponent implements OnInit {
   ngOnInit() {
     this.groupsService.requestGroups().subscribe(response => {
       this.groups = response;
+      console.log(this.groups)
     },
       (errors: HttpErrorResponse) => {
         this.errors = errors.error;
