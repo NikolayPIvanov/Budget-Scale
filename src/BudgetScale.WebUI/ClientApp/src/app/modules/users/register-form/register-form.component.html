@@ -1,34 +1,59 @@
-<div class="col-lg-6 bg-white">
-  <div class="form d-flex align-items-center">
-    <div class="content">
-      <form #f="ngForm" novalidate (ngSubmit)="register(f)">
-        <div class="form-group">
-          <input type="text" class="form-control" class="input-material" id="fullName" placeholder="Full name" name="fullName"
-            tmFocus ngModel>
+<div class="page login-page">
+  <div class="container d-flex align-items-center">
+    <div class="form-holder has-shadow">
+      <div class="row">
+        <!-- Logo & Information Panel-->
+        <div class="col-lg-6">
+          <div class="info d-flex align-items-center">
+            <div class="content">
+              <div class="logo">
+                <h1>Dashboard</h1>
+              </div>
+              <p>Lorem ipsu m dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <input type="text" class="input-material" id="userName" placeholder="Username" required name="userName"
-            ngModel>
-        </div>
-        <div class="form-group">
-          <input id="email" type="text" class="input-material" required name="email" validateEmail placeholder="Email"
-            ngModel #email="ngModel">
-          <small [hidden]="email.valid || (email.pristine && !submitted)" class="text-danger">Please enter a
-            valid email</small>
-        </div>
-        <div class="form-group">
-          <input type="password" class="input-material" id="password" name="password" placeholder="Password" ngModel>
-        </div>
+        <!-- Form Panel    -->
+        <div class="col-lg-6 bg-white">
+          <div class="form d-flex align-items-center">
+            <div class="content">
+              <form #f="ngForm" novalidate (ngSubmit)="register(f)">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="userName" placeholder="Username" required name="userName"
+                    ngModel>
+                </div>
+                <div class="form-group">
+                  <input id="email" type="text" class="form-control" required name="email" validateEmail placeholder="Email"
+                    ngModel #email="ngModel">
+                  <small [hidden]="email.valid || (email.pristine && !submitted)" class="text-danger">Please enter a
+                    valid email</small>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Password"
+                    ngModel>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" class="form-control" id="fullName" placeholder="Full name"
+                    name="fullName" tmFocus ngModel>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary" d="regidter" [disabled]="f.invalid || isRequesting">Register</button>
+                </div>
 
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary" d="regidter" [disabled]="f.invalid || isRequesting">Register</button>
-        </div>
+                <div *ngIf="errors" class="alert alert-danger" role="alert">
+                  <strong>Oops!</strong> {{errors}}
+                </div>
 
-        <div *ngIf="errors" class="alert alert-danger" role="alert">
-          <strong>Oops!</strong> {{errors}}
-        </div>
+              </form><small>Already have an account? </small><a class="signup">Login</a>
 
-      </form><small>Already have an account? </small><a class="signup">Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+  <div class="copyrights text-center">
+    <p>Design by <a href="https://bootstrapious.com" class="external">Bootstrapious</a>
+      <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+    </p>
+  </div>
