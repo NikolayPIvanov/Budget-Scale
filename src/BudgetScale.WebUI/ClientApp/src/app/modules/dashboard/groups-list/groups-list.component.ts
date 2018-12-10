@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Group } from 'src/app/models/groups/group.model';
 import { HttpErrorResponse } from '@angular/common/http';
 import { GroupsListService } from 'src/app/services/groups/groups-list.service';
@@ -6,7 +6,9 @@ import { GroupsListService } from 'src/app/services/groups/groups-list.service';
 @Component({
   selector: 'app-groups-list',
   templateUrl: './groups-list.component.html',
-  styleUrls: ['./groups-list.component.css']
+  styleUrls: ['./groups-list.component.css'],
+  encapsulation: ViewEncapsulation.None,
+
 })
 export class GroupsListComponent implements OnInit {
   private errors: string = '';
