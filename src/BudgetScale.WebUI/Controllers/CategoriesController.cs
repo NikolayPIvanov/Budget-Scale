@@ -9,6 +9,7 @@ using BudgetScale.Infrastructure.Extensions;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
+using BudgetScale.Application.CategoryInformation.Commands;
 
 namespace BudgetScale.WebUI.Controllers
 {
@@ -19,7 +20,6 @@ namespace BudgetScale.WebUI.Controllers
         [HttpGet]
         public async Task<IActionResult> All([FromRoute]string groupId)
         {
-            // TODO: Add validaton
             var response = await Mediator.Send(new GetAllCategoriesQuery { UserId = this.User.GetId(), GroupId = groupId });
 
             if (response == null)
@@ -66,6 +66,8 @@ namespace BudgetScale.WebUI.Controllers
                 GroupId = groupId,
                 CategoryName = model.CategoryName
             });
+
+            await Mediator.Send(new CreateInformationCommand { Category = categoryId });
 
             return CreatedAtAction("Get", new { categoryId }, categoryId);
 

@@ -9,12 +9,12 @@ namespace BudgetScale.Domain.Entities
         public CategoryInformation()
         {
             this.CreatedOn = DateTime.UtcNow;
-            this.Month = this.CreatedOn.ToString("MMM", CultureInfo.InvariantCulture);
+            //this.Month = this.CreatedOn.ToString("MMM", CultureInfo.InvariantCulture);
         }
 
         public string CategoryInformationId { get; set; }
 
-        public string Month { get; private set; }
+        public string Month { get; set; }
 
         public decimal Budgeted { get; set; }
 

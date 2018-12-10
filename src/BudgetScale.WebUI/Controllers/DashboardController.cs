@@ -31,7 +31,6 @@ namespace BudgetScale.WebUI.Controllers
                                    .Where(c => c.Type == TransactionType.Outflow).Sum(c => c.Amount))
                                - groups.Sum(e => e.Availability);
 
-
             return Ok();
         }
     }

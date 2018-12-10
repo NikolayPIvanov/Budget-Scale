@@ -8,7 +8,7 @@ using Z.EntityFramework.Plus;
 
 namespace BudgetScale.Application.Categories.Commands.CreateCommand
 {
-    public class CreateCategoryCommandHandler : BaseHandler,IRequestHandler<CreateCategoryCommand,string>
+    public class CreateCategoryCommandHandler : BaseHandler, IRequestHandler<CreateCategoryCommand, string>
     {
         public async Task<string> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
         {
@@ -18,11 +18,10 @@ namespace BudgetScale.Application.Categories.Commands.CreateCommand
 
             _context.Categories.Add(category);
 
-            // TODO : Add categoryInforamtion generator
             await _context.SaveChangesAsync(cancellationToken);
-            
+
             return category.CategoryId;
-            
+
         }
 
         public CreateCategoryCommandHandler(ApplicationDbContext context, IMapper mapper) : base(context, mapper)

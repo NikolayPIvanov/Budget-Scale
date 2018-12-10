@@ -131,10 +131,27 @@ namespace BudgetScale.WebUI
             {
                 config.CreateMap<CreateGroupCommand, Group>();
                 config.CreateMap<Group, GroupViewModel>();
-                config.CreateMap<Category, CategoryViewModel>();
+                config.CreateMap<Category, CategoryViewModel>()
+                .ForMember(p => p.CategoryId, src => src.MapFrom(d => d.CategoryId))
+                .ForMember(p => p.CategoryName, src => src.MapFrom(d => d.CategoryName))
+                .ForMember(p => p.CategoryInformation, src => src.MapFrom(d => d.CategoryInformation));
+
                 config.CreateMap<CreateCategoryCommand, Category>();
 
-                config.CreateMap<CategoryInformation, CategoryInformationViewModel>();
+                config.CreateMap<ICollection<CategoryInformation>, CategoryInformationViewModel>()
+                .ForMember(e => e.Activity, src => src.MapFrom(d => d.FirstOrDefault().Activity))
+                .ForMember(e => e.Available, src => src.MapFrom(d => d.FirstOrDefault().Available))
+                .ForMember(e => e.Budgeted, src => src.MapFrom(d => d.FirstOrDefault().Budgeted))
+                .ForMember(e => e.CategoryInformationId, src => src.MapFrom(d => d.FirstOrDefault().CategoryInformationId))
+                .ForMember(e => e.Month, src => src.MapFrom(d => d.FirstOrDefault().Month));
+
+                config.CreateMap<CategoryInformation, CategoryInformationViewModel>()
+                .ForMember(p => p.CategoryInformationId, src => src.MapFrom(d => d.CategoryInformationId))
+                .ForMember(p => p.Month, src => src.MapFrom(d => d.Month))
+                .ForMember(p => p.Budgeted, src => src.MapFrom(d => d.Budgeted))
+                .ForMember(p => p.Available, src => src.MapFrom(d => d.Available))
+                .ForMember(p => p.Activity, src => src.MapFrom(d => d.Activity));
+
                 config.CreateMap<Account, AccountsViewModel>();
             });
 
