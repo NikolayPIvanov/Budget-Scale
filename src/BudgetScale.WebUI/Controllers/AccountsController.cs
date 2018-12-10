@@ -10,6 +10,8 @@ using BudgetScale.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
+using BudgetScale.Application.Accounts.Commands;
+using BudgetScale.Application.Accounts.Models.Input;
 
 namespace BudgetScale.WebUI.Controllers
 {
@@ -34,7 +36,7 @@ namespace BudgetScale.WebUI.Controllers
         public async Task<IActionResult> Get([FromRoute] string accountId)
         {
             var response =
-                await Mediator.Send(new GetAccountQuery() {UserId = this.User.GetId(), AccountId = accountId});
+                await Mediator.Send(new GetAccountQuery() { UserId = this.User.GetId(), AccountId = accountId });
 
             if (response == null)
             {
@@ -44,6 +46,22 @@ namespace BudgetScale.WebUI.Controllers
             var model = Mapper.Map<AccountsViewModel>(response);
 
             return Ok(model);
+        }
+
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        public async Task<IActionResult> Create([FromBody] CreateAccountViewModel account)
+        {
+            var accountId = await Mediator.Send(new CreateAccountCommand
+            {
+                UserId = this.User.GetId(),
+                AccountName = account.Name,
+                AccountType = account.Type
+            });
+
+
+            return this.CreatedAtAction("Get", new { accountId }, new { accountId });
+
         }
     }
 }

@@ -6,11 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BudgetScale.WebUI.Controllers
 {
-    public class TransactionsController : Controller
+    [ApiController]
+    [Route("/api/{accountId}/transactions")]
+    public class TransactionsController : BaseController
     {
-        public IActionResult Index()
+
+        [HttpGet("{accountId")]
+        public async Task<IActionResult> GetAction()
         {
-            return View();
+            return Ok();
         }
     }
 }
