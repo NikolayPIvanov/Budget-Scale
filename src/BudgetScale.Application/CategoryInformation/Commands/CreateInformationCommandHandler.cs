@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -19,9 +20,9 @@ namespace BudgetScale.Application.CategoryInformation.Commands
         public async Task<Unit> Handle(CreateInformationCommand request, CancellationToken cancellationToken)
         {
             var months = new List<string> {
-                DateTime.UtcNow.AddMonths(-1).ToString("MMM"),
-                DateTime.UtcNow.ToString("MMM"),
-                DateTime.UtcNow.AddMonths(1).ToString("MMM")
+                DateTime.UtcNow.AddMonths(-1).ToString("MMM",CultureInfo.InvariantCulture),
+                DateTime.UtcNow.ToString("MMM",CultureInfo.InvariantCulture),
+                DateTime.UtcNow.AddMonths(1).ToString("MMM",CultureInfo.InvariantCulture)
             };
 
             var inforamtion = new List<Domain.Entities.CategoryInformation>();

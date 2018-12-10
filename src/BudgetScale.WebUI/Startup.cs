@@ -129,8 +129,7 @@ namespace BudgetScale.WebUI
 
             services.AddAutoMapper(config =>
             {
-                config.CreateMap<CreateGroupCommand, Group>();
-                config.CreateMap<Group, GroupViewModel>();
+
                 config.CreateMap<Category, CategoryViewModel>()
                 .ForMember(p => p.CategoryId, src => src.MapFrom(d => d.CategoryId))
                 .ForMember(p => p.CategoryName, src => src.MapFrom(d => d.CategoryName))
@@ -153,6 +152,11 @@ namespace BudgetScale.WebUI
                 .ForMember(p => p.Activity, src => src.MapFrom(d => d.Activity));
 
                 config.CreateMap<Account, AccountsViewModel>();
+                config.CreateMap<ICollection<CategoryInformation>, CategoryInformationViewModel>();
+                config.CreateMap<Category, CategoryViewModel>();
+                config.CreateMap<CreateGroupCommand, Group>();
+                config.CreateMap<CategoryInformation, CategoryInformationViewModel>();
+                config.CreateMap<Group, GroupViewModel>();
             });
 
             // In production, the Angular files will be served from this directory

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BudgetScale.Application.Categories.Queries.GetQuery
 {
-    public class GetCategoryQueryHandler : BaseHandler,IRequestHandler<GetCategoryQuery,Category>
+    public class GetCategoryQueryHandler : BaseHandler, IRequestHandler<GetCategoryQuery, Category>
     {
         public GetCategoryQueryHandler(ApplicationDbContext context, IMapper mapper) : base(context, mapper)
         {
@@ -20,8 +20,9 @@ namespace BudgetScale.Application.Categories.Queries.GetQuery
             var model = await this._context.Categories
                 .Include(c => c.Group)
                 .Include(c => c.CategoryInformation)
-                .Where(e => e.Group.UserId.Equals(request.GroupId))
-                .FirstOrDefaultAsync(c => 
+                .Where(e => e.Group.UserId.Equals(request.UserId)
+                && e.GroupId.Equals(request.GroupId))
+                .FirstOrDefaultAsync(c =>
                     c.CategoryId.Equals(request.CategoryId), cancellationToken: cancellationToken);
 
             return model;

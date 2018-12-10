@@ -10,6 +10,8 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using BudgetScale.Application.CategoryInformation.Commands;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 
 namespace BudgetScale.WebUI.Controllers
 {
@@ -27,10 +29,11 @@ namespace BudgetScale.WebUI.Controllers
                 return Unauthorized();
             }
 
-            var model = Mapper.Map<CategoryViewModel>(response);
+            var model = response.ProjectTo<CategoryViewModel>(Mapper.ConfigurationProvider);
 
             return Ok(model);
         }
+
 
         [HttpGet("{categoryId}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
