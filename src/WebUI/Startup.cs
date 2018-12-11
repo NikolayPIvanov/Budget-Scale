@@ -15,6 +15,7 @@ using BudgetScale.Application.Groups.Commands.CreateCommand;
 using BudgetScale.Application.Groups.Models.Output;
 using BudgetScale.Application.Groups.Queries.GetGroup;
 using BudgetScale.Application.Infrastructure;
+using BudgetScale.Application.Requests.Models.Output;
 using BudgetScale.Domain.Entities;
 using BudgetScale.Infrastructure.Extensions;
 using BudgetScale.Infrastructure.Filters;
@@ -146,6 +147,9 @@ namespace WebUI
                 .ForMember(p => p.Budgeted, src => src.MapFrom(d => d.Budgeted))
                 .ForMember(p => p.Available, src => src.MapFrom(d => d.Available))
                 .ForMember(p => p.Activity, src => src.MapFrom(d => d.Activity));
+
+                config.CreateMap<LongRequest, RequestViewModel>()
+                    .ForMember(p => p.Time, src => src.MapFrom(d => d.Time.ToShortDateString()));
 
                 config.CreateMap<Account, AccountsViewModel>();
                 config.CreateMap<ICollection<CategoryInformation>, CategoryInformationViewModel>();

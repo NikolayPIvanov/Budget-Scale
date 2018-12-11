@@ -1,4 +1,6 @@
-﻿namespace BudgetScale.Domain.Entities
+﻿using System;
+
+namespace BudgetScale.Domain.Entities
 {
     public class LongRequest
     {
@@ -8,6 +10,8 @@
 
         public string RequestDescription { get; set; }
 
-        public string ElapsedMilliseconds { get; set; } 
+        public string ElapsedMilliseconds { get; set; }
+
+        public DateTime Time { get; set; } = DateTime.UtcNow;
     }
 }

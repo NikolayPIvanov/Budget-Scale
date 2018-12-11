@@ -6,11 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BudgetScale.WebUI.Controllers
 {
-    public class ReportsController : Controller
+    public class ReportsController : BaseController
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
     }
 }

@@ -23,6 +23,7 @@ namespace BudgetScale.Domain.Entities
         public virtual ICollection<Category> Categories { get; private set; }
 
         public DateTime CreatedOn { get; set; }
+
         public DateTime? ModifiedOn { get; set; }
     }
 }
