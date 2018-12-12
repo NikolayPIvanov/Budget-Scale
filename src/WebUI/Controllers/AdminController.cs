@@ -1,16 +1,23 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper.QueryableExtensions;
 using BudgetScale.Application.Accounts.Queries.GetAccounts;
 using BudgetScale.Application.Groups.Queries.GetCalculatedGroups;
+using BudgetScale.Application.Requests.Models.Output;
+using BudgetScale.Application.Requests.Queries.AllRequests;
+using BudgetScale.Application.Transactions.Model;
+using BudgetScale.Application.Transactions.Query;
 using BudgetScale.Domain.Entities;
 using BudgetScale.Infrastructure.Extensions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebUI.Controllers
 {
+    [Authorize(Policy = "Administrator")]
     [ApiController]
     [Route("/api/[controller]")]
-    public class DashboardController : BaseController
+    public class AdminController : BaseController
     {
         // GET
         [HttpGet]
@@ -32,6 +39,22 @@ namespace WebUI.Controllers
                                - groups.Sum(e => e.Availability);
 
             return Ok();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> AllTransactions()
+        {
+            var response = await Mediator.Send(new GetAllTransaction());
+
+            return Ok(response.ProjectTo<TransactionViewModel>(Mapper.ConfigurationProvider));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetRequests([FromQuery]int hours = int.MaxValue)
+        {
+            var query = await Mediator.Send(new AllRequests { Hours = hours });
+
+            return Ok(query.ProjectTo<RequestViewModel>(Mapper.ConfigurationProvider));
         }
     }
 }

@@ -12,12 +12,6 @@ namespace WebUI.Controllers
     [Route("api/services/requests")]
     public class RequestsController : BaseController
     {
-        [HttpGet]
-        public async Task<IActionResult> GetRequests( [FromQuery]int hours = int.MaxValue)
-        {
-            var query = await Mediator.Send(new AllRequests { Hours = hours });
-
-            return Ok(query.ProjectTo<RequestViewModel>(Mapper.ConfigurationProvider));
-        }
+        
     }
 }
