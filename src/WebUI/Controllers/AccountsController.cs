@@ -94,5 +94,29 @@ namespace WebUI.Controllers
             return NoContent();
 
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete([FromRoute] string id)
+        {
+            (bool Exists, bool Authorized) = await Mediator.Send(new ValidatorRequest
+            {
+                AccountId = id,
+                UserId = this.User.GetId()
+            });
+
+            if (!Exists)
+            {
+                return NotFound();
+            }
+
+            if (!Authorized)
+            {
+                return Unauthorized();
+            }
+
+            await Mediator.Send(new DeleteAccountCommand {AccountId = id});
+            
+            return NoContent();
+        }
     }
 }
