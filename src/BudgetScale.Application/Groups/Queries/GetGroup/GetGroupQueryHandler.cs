@@ -24,8 +24,6 @@ namespace BudgetScale.Application.Groups.Queries.GetGroup
 
         public async Task<Group> Handle(GetGroupQuery request, CancellationToken cancellationToken)
         {
-            _context.Filter<Group>(i => i.Where(g => g.UserId.Equals(request.UserId)));
-
             var model = await this._context.Groups
                 .Include(g => g.Categories)
                 .ThenInclude(e => e.CategoryInformation)

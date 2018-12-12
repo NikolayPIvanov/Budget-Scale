@@ -40,14 +40,20 @@ namespace WebUI.Controllers
         {
             var response = await Mediator.Send(new GetCategoryQuery
             {
-                UserId = this.User.GetId(),
                 GroupId = groupId,
                 CategoryId = categoryId
             });
 
+            
             if (response == null)
             {
                 return NotFound();
+            }
+
+            if (response.Group.UserId != this.User.GetId())
+            {
+                return Unauthorized();
+
             }
 
             var model = this.Mapper.Map<CategoryViewModel>(response);

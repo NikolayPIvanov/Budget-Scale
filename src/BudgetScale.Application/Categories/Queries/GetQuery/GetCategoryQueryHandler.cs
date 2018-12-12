@@ -20,8 +20,7 @@ namespace BudgetScale.Application.Categories.Queries.GetQuery
             var model = await this._context.Categories
                 .Include(c => c.Group)
                 .Include(c => c.CategoryInformation)
-                .Where(e => e.Group.UserId.Equals(request.UserId)
-                && e.GroupId.Equals(request.GroupId))
+                .Where(e => e.GroupId.Equals(request.GroupId))
                 .FirstOrDefaultAsync(c =>
                     c.CategoryId.Equals(request.CategoryId), cancellationToken: cancellationToken);
 

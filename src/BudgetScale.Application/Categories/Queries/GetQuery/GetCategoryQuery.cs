@@ -9,7 +9,5 @@ namespace BudgetScale.Application.Categories.Queries.GetQuery
 
         public string CategoryId { get; set; }
 
-        public string UserId { get; set; }
-
     }
 }

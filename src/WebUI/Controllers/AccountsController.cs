@@ -32,11 +32,16 @@ namespace WebUI.Controllers
         public async Task<IActionResult> Get([FromRoute] string accountId)
         {
             var response =
-                await Mediator.Send(new GetAccountQuery() { UserId = this.User.GetId(), AccountId = accountId });
+                await Mediator.Send(new GetAccountQuery() { AccountId = accountId });
 
             if (response == null)
             {
                 return NotFound();
+            }
+
+            if (response.UserId != this.User.GetId())
+            {
+                return Unauthorized();
             }
 
             var model = Mapper.Map<AccountsViewModel>(response);

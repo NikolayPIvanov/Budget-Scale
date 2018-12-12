@@ -45,9 +45,18 @@ namespace WebUI.Controllers
         {
             var response = await Mediator.Send(new GetGroupQuery
             {
-                UserId = this.User.GetId(),
                 GroupId = groupId
             });
+
+            if (response == null)
+            {
+                return NotFound();
+            }
+
+            if (response.UserId != this.User.GetId())
+            {
+                return Unauthorized();
+            }
 
             var model = AutoMapper.Mapper.Map<GroupViewModel>(response);
 

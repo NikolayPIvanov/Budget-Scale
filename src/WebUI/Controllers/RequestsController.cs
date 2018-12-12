@@ -13,7 +13,7 @@ namespace WebUI.Controllers
     public class RequestsController : BaseController
     {
         [HttpGet]
-        public async Task<IActionResult> GetRequests(int hours = int.MaxValue)
+        public async Task<IActionResult> GetRequests( [FromQuery]int hours = int.MaxValue)
         {
             var query = await Mediator.Send(new AllRequests { Hours = hours });
 

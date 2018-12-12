@@ -7,8 +7,6 @@ namespace BudgetScale.Application.Groups.Queries.GetGroup
 {
     public class GetGroupQuery : IRequest<Group>
     {
-        public string UserId { get; set; }
-
         public string Month { get; set; }
 
         public string GroupId { get; set; }
