@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AutoMapper.QueryableExtensions;
 using BudgetScale.Application.Categories.Commands.DeleteCommand;
 using BudgetScale.Application.Groups.Commands.CreateCommand;
+using BudgetScale.Application.Groups.Commands.DeleteCommand;
 using BudgetScale.Application.Groups.Models.Input.Create;
 using BudgetScale.Application.Groups.Models.Input.UpdatePartially;
 using BudgetScale.Application.Groups.Models.Output;
@@ -109,7 +110,7 @@ namespace WebUI.Controllers
         public async Task<IActionResult> Delete([FromRoute] string id)
         {
 
-            await Mediator.Send(new DeleteCategoryCommand { CategoryId = id });
+            await Mediator.Send(new DeleteGroupCommand { GroupId = id });
 
             return NoContent();
         }

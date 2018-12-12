@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using AutoMapper;
 using BudgetScale.Persistence;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using Z.EntityFramework.Plus;
 
 namespace BudgetScale.Application.Accounts.Commands
@@ -17,7 +16,8 @@ namespace BudgetScale.Application.Accounts.Commands
 
         public async Task<Unit> Handle(DeleteAccountCommand request, CancellationToken cancellationToken)
         {
-            await _context.Accounts.Where(e => e.AccountId.Equals(request.AccountId)).DeleteAsync(cancellationToken);
+            
+            _context.Accounts.Where(e => e.AccountId == request.AccountId).Delete();
 
             await _context.SaveChangesAsync(cancellationToken);
 
