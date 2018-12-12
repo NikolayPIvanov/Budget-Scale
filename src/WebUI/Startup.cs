@@ -159,7 +159,9 @@ namespace WebUI
                 config.CreateMap<CreateGroupCommand, Group>();
                 config.CreateMap<CategoryInformation, CategoryInformationViewModel>();
                 config.CreateMap<Group, GroupViewModel>();
-                config.CreateMap<CreateAccountCommand, Account>();
+                config.CreateMap<CreateAccountCommand, Account>()
+                    .ForMember(dest => dest.AccountType,
+                        src => src.MapFrom(d => (AccountType) (Enum.Parse(typeof(AccountType), d.AccountType))));
             });
 
             // In production, the Angular files will be served from this directory
