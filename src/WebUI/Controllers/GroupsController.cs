@@ -108,6 +108,7 @@ namespace WebUI.Controllers
         public async Task<IActionResult> Delete([FromRoute] string id)
         {
 
+            await Mediator.Send(new DeleteCategoryCommand { CategoryId = id });
 
             return NoContent();
         }
