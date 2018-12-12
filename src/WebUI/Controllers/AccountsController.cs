@@ -66,6 +66,11 @@ namespace WebUI.Controllers
         }
 
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesDefaultResponseType]
         public async Task<IActionResult> Update([FromRoute] string id, [FromBody] UpdateAccountCommand command)
         {
             if (id != command.AccountId)
@@ -96,6 +101,10 @@ namespace WebUI.Controllers
         }
 
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesDefaultResponseType]
         public async Task<IActionResult> Delete([FromRoute] string id)
         {
             (bool Exists, bool Authorized) = await Mediator.Send(new ValidatorRequest

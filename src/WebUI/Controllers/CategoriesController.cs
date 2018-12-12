@@ -18,6 +18,9 @@ namespace WebUI.Controllers
     public class CategoriesController : BaseController
     {
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesDefaultResponseType]
         public async Task<IActionResult> All([FromRoute]string groupId)
         {
             var response = await Mediator.Send(new GetAllCategoriesQuery { UserId = this.User.GetId(), GroupId = groupId });
@@ -65,6 +68,7 @@ namespace WebUI.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesDefaultResponseType]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> Create([FromRoute] string groupId, [FromBody]CreateCommandInputModel model)
         {
             var categoryId = await Mediator.Send(new CreateCategoryCommand
@@ -81,6 +85,9 @@ namespace WebUI.Controllers
         }
 
         [HttpPut("{categoryId}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesDefaultResponseType]
         public async Task<IActionResult> Update([FromRoute] string categoryId, [FromBody] UpdateCategoryCommand command)
         {
             if (categoryId != command.CategoryId)
