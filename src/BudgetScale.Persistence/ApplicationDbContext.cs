@@ -17,8 +17,6 @@ namespace BudgetScale.Persistence
 
         public DbSet<Category> Categories { get; set; }
 
-        public DbSet<CategoryInformation> CategoryInformations { get; set; }
-
         public DbSet<Account> Accounts { get; set; }
 
         public DbSet<Transaction> Transactions { get; set; }

@@ -1,17 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Security.Claims;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
 using AutoMapper;
 using BudgetScale.Application.Accounts.Commands;
 using BudgetScale.Application.Accounts.Models.Output;
 using BudgetScale.Application.Categories.Commands.CreateCommand;
 using BudgetScale.Application.Categories.Models.Output;
-using BudgetScale.Application.CategoryInformation.Models.Output;
 using BudgetScale.Application.Groups.Commands.CreateCommand;
 using BudgetScale.Application.Groups.Models.Output;
 using BudgetScale.Application.Groups.Queries.GetGroup;
@@ -37,6 +28,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using System;
+using System.Linq;
+using System.Reflection;
+using System.Security.Claims;
+using System.Security.Principal;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace WebUI
 {
@@ -134,30 +132,14 @@ namespace WebUI
 
                 config.CreateMap<CreateCategoryCommand, Category>();
 
-                config.CreateMap<ICollection<CategoryInformation>, CategoryInformationViewModel>()
-                .ForMember(e => e.Activity, src => src.MapFrom(d => d.FirstOrDefault().Activity))
-                .ForMember(e => e.Available, src => src.MapFrom(d => d.FirstOrDefault().Available))
-                .ForMember(e => e.Budgeted, src => src.MapFrom(d => d.FirstOrDefault().Budgeted))
-                .ForMember(e => e.CategoryInformationId, src => src.MapFrom(d => d.FirstOrDefault().CategoryInformationId))
-                .ForMember(e => e.Month, src => src.MapFrom(d => d.FirstOrDefault().Month));
-
-                config.CreateMap<CategoryInformation, CategoryInformationViewModel>()
-                .ForMember(p => p.CategoryInformationId, src => src.MapFrom(d => d.CategoryInformationId))
-                .ForMember(p => p.Month, src => src.MapFrom(d => d.Month))
-                .ForMember(p => p.Budgeted, src => src.MapFrom(d => d.Budgeted))
-                .ForMember(p => p.Available, src => src.MapFrom(d => d.Available))
-                .ForMember(p => p.Activity, src => src.MapFrom(d => d.Activity));
-
                 config.CreateMap<LongRequest, RequestViewModel>()
                     .ForMember(p => p.Time, src => src.MapFrom(d => d.Time.ToShortDateString()));
 
                 config.CreateMap<Account, AccountsViewModel>()  
                     .ForMember(e => e.AccountType, src => src.MapFrom(d => d.AccountType.ToString("G")));
-
-                config.CreateMap<ICollection<CategoryInformation>, CategoryInformationViewModel>();
+                
                 config.CreateMap<Category, CategoryViewModel>();
                 config.CreateMap<CreateGroupCommand, Group>();
-                config.CreateMap<CategoryInformation, CategoryInformationViewModel>();
                 config.CreateMap<Group, GroupViewModel>();
                 config.CreateMap<CreateAccountCommand, Account>()
                     .ForMember(dest => dest.AccountType,

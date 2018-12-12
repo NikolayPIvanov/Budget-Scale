@@ -109,7 +109,7 @@ namespace WebUI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete([FromRoute] string id)
         {
-
+            // add validation
             await Mediator.Send(new DeleteGroupCommand { GroupId = id });
 
             return NoContent();

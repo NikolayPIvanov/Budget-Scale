@@ -7,7 +7,6 @@ using BudgetScale.Application.Categories.Models.Input;
 using BudgetScale.Application.Categories.Models.Output;
 using BudgetScale.Application.Categories.Queries.GetAllQuery;
 using BudgetScale.Application.Categories.Queries.GetQuery;
-using BudgetScale.Application.CategoryInformation.Commands;
 using BudgetScale.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -75,8 +74,6 @@ namespace WebUI.Controllers
                 CategoryName = model.CategoryName,
                 Month = DateTime.Now.ToString("MMM")
             });
-
-            await Mediator.Send(new CreateInformationCommand { Category = categoryId });
 
             //return CreatedAtAction("Get", new { groupId, categoryId }, new {groupId,categoryId});
             return Ok(categoryId);
