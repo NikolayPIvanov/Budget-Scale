@@ -17,8 +17,10 @@ namespace BudgetScale.Application.Accounts.Queries.GetAccount
 
         public async Task<Account> Handle(GetAccountQuery request, CancellationToken cancellationToken)
         {
-            return await _context.Accounts
+            var s =  await _context.Accounts
                 .FirstOrDefaultAsync(a => a.AccountId.Equals(request.AccountId), cancellationToken: cancellationToken);
+
+            return s;
         }
     }
 }

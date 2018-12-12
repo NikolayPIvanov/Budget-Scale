@@ -31,19 +31,22 @@ namespace BudgetScale.Application.Infrastructure
 
             if (_timer.ElapsedMilliseconds > 500)
             {
-               var name = typeof(TRequest).Name;
-                
-                var longRequest = new LongRequest
-                {
-                    ElapsedMilliseconds =  _timer.ElapsedMilliseconds.ToString(),
-                    Name = name,
-                    RequestDescription = string.Format("BudgetScale Long Running Request: {Name} ({ElapsedMilliseconds} milliseconds) {@Request}", name, _timer.ElapsedMilliseconds, request)
-                };
-                
-                _logger.LogWarning("BudgetScale Long Running Request: {Name} ({ElapsedMilliseconds} milliseconds) {@Request}", name, _timer.ElapsedMilliseconds, request);
+               //var name = typeof(TRequest).Name;
 
-                _context.LongRequests.Add(longRequest);
-                await _context.SaveChangesAsync(cancellationToken);
+               // var desc = string.Format(
+               //     "BudgetScale Long Running Request: {Name} ({ElapsedMilliseconds} milliseconds) {@Request}", name,
+               //     _timer.ElapsedMilliseconds, request);
+               // var longRequest = new LongRequest
+               // {
+               //     ElapsedMilliseconds =  _timer.ElapsedMilliseconds.ToString(),
+               //     Name = name,
+               //     RequestDescription = desc
+               // };
+                
+               // _logger.LogWarning("BudgetScale Long Running Request: {Name} ({ElapsedMilliseconds} milliseconds) {@Request}", name, _timer.ElapsedMilliseconds, request);
+
+               // _context.LongRequests.Add(longRequest);
+               // await _context.SaveChangesAsync(cancellationToken);
                 
             }
 

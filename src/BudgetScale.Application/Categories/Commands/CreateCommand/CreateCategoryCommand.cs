@@ -8,6 +8,6 @@ namespace BudgetScale.Application.Categories.Commands.CreateCommand
         public string UserId { get; set; }
         public string CategoryName { get; set; }
         public string GroupId { get; set; }
-
+        public string Month { get; set; }
     }
 }

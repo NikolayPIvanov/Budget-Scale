@@ -131,9 +131,8 @@ namespace BudgetScale.WebUI
             {
 
                 config.CreateMap<Category, CategoryViewModel>()
-                .ForMember(p => p.CategoryId, src => src.MapFrom(d => d.CategoryId))
-                .ForMember(p => p.CategoryName, src => src.MapFrom(d => d.CategoryName))
-                .ForMember(p => p.CategoryInformation, src => src.MapFrom(d => d.CategoryInformation));
+                    .ForMember(p => p.CategoryId, src => src.MapFrom(d => d.CategoryId))
+                    .ForMember(p => p.CategoryName, src => src.MapFrom(d => d.CategoryName));
 
                 config.CreateMap<CreateCategoryCommand, Category>();
 

@@ -26,17 +26,12 @@ namespace BudgetScale.Application.Groups.Queries.GetGroup
         {
             var model = await this._context.Groups
                 .Include(g => g.Categories)
-                .ThenInclude(e => e.CategoryInformation)
                 .FirstOrDefaultAsync(e => e.GroupId.Equals(request.GroupId), cancellationToken: cancellationToken);
 
             //Filter
             if (model == null) return model;
 
-            foreach (var category in model.Categories)
-            {
-                category.CategoryInformation = category.CategoryInformation
-                    .Where(e => e.Month.Equals(request.Month)).ToList();
-            }
+            model.Categories = model.Categories.Where(e => e.Month.Equals(request.Month)).ToList();
 
 
             return model;

@@ -2,7 +2,7 @@ namespace BudgetScale.Domain.Entities
 {
     using System;
     using System.Collections.Generic;
-    using BudgetScale.Domain.EntityContracts;
+    using EntityContracts;
     using Microsoft.AspNetCore.Identity;
     public class ApplicationUser : IdentityUser, IAuditInfo
     {

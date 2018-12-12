@@ -20,7 +20,7 @@ namespace BudgetScale.Domain.Entities
 
         public string UserId { get; set; }
 
-        public virtual ICollection<Category> Categories { get; private set; }
+        public virtual ICollection<Category> Categories { get; set; }
 
         public DateTime CreatedOn { get; set; }
 

@@ -116,7 +116,6 @@ namespace BudgetScale.Application.Tests
             var query = new GetGroupQuery
             {
                 Month = month,
-                UserId = userId,
                 GroupId = groupId
             };
 
@@ -144,7 +143,6 @@ namespace BudgetScale.Application.Tests
             var query = new GetGroupQuery
             {
                 Month = month,
-                UserId = userId,
                 GroupId = groupId
             };
 
@@ -167,7 +165,6 @@ namespace BudgetScale.Application.Tests
             var query = new GetGroupQuery
             {
                 Month = month,
-                UserId = userId,
                 GroupId = groupId
             };
 
@@ -189,7 +186,6 @@ namespace BudgetScale.Application.Tests
             var query = new GetGroupQuery
             {
                 Month = month,
-                UserId = userId,
                 GroupId = groupId
             };
 

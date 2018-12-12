@@ -9,11 +9,7 @@ namespace BudgetScale.Persistence.Configurations
         public void Configure(EntityTypeBuilder<CategoryInformation> builder)
         {
             builder.HasKey(e => e.CategoryInformationId);
-
-            builder.HasOne(e => e.Category)
-            .WithMany(c => c.CategoryInformation)
-            .HasForeignKey(e => e.CategoryId)
-            .OnDelete(DeleteBehavior.Restrict);
+            
 
             builder.Property(e => e.Activity).IsRequired().ValueGeneratedNever();
 

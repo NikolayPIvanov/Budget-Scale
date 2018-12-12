@@ -11,7 +11,7 @@ namespace BudgetScale.Application.Accounts.Models.Output
 
         public string AccountName { get; set; }
 
-        public AccountType AccountType { get; set; }
+        public string AccountType { get; set; }
 
         public ICollection<Transaction> Transactions { get; private set; }
     }

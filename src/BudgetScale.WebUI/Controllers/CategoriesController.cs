@@ -43,7 +43,6 @@ namespace BudgetScale.WebUI.Controllers
         {
             var response = await Mediator.Send(new GetCategoryQuery
             {
-                UserId = this.User.GetId(),
                 GroupId = groupId,
                 CategoryId = categoryId
             });

@@ -8,7 +8,7 @@ namespace BudgetScale.Domain.Entities
     {
         public Category()
         {
-            this.CategoryInformation = new HashSet<CategoryInformation>();
+            //this.CategoryInformation = new HashSet<CategoryInformation>();
             this.Transactions = new HashSet<Transaction>();
             this.CreatedOn = DateTime.UtcNow;
         }
@@ -20,7 +20,16 @@ namespace BudgetScale.Domain.Entities
 
         public string GroupId { get; set; }
 
-        public ICollection<CategoryInformation> CategoryInformation { get; set; }
+        // Old way
+        //public ICollection<CategoryInformation> CategoryInformation { get; set; }
+
+        public string Month { get; set; }
+
+        public decimal Budgeted { get; set; }
+
+        public decimal Activity { get; set; }
+
+        public decimal Available { get; set; }
 
         public ICollection<Transaction> Transactions { get; private set; }
 

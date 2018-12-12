@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using AutoMapper.QueryableExtensions;
 using BudgetScale.Application.Categories.Commands.CreateCommand;
 using BudgetScale.Application.Categories.Commands.Update;
@@ -71,12 +72,14 @@ namespace WebUI.Controllers
             {
                 UserId = this.User.GetId(),
                 GroupId = groupId,
-                CategoryName = model.CategoryName
+                CategoryName = model.CategoryName,
+                Month = DateTime.Now.ToString("MMM")
             });
 
             await Mediator.Send(new CreateInformationCommand { Category = categoryId });
 
-            return CreatedAtAction("Get", new { categoryId }, categoryId);
+            //return CreatedAtAction("Get", new { groupId, categoryId }, new {groupId,categoryId});
+            return Ok(categoryId);
 
         }
 

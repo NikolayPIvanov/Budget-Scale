@@ -53,7 +53,6 @@ namespace BudgetScale.WebUI.Controllers
         {
             var response = await Mediator.Send(new GetGroupQuery
             {
-                UserId = this.User.GetId(),
                 GroupId = groupId
             });
 
@@ -90,7 +89,6 @@ namespace BudgetScale.WebUI.Controllers
             var groupFromDatabase = await Mediator.Send(new GetGroupQuery
             {
                 GroupId = groupId,
-                UserId = this.User.GetId(),
                 Month = month
             });
 

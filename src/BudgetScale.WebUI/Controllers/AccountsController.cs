@@ -36,7 +36,7 @@ namespace BudgetScale.WebUI.Controllers
         public async Task<IActionResult> Get([FromRoute] string accountId)
         {
             var response =
-                await Mediator.Send(new GetAccountQuery() { UserId = this.User.GetId(), AccountId = accountId });
+                await Mediator.Send(new GetAccountQuery() { AccountId = accountId });
 
             if (response == null)
             {

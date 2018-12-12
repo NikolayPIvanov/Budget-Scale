@@ -25,18 +25,13 @@ namespace BudgetScale.Application.Groups.Queries.GetGroups
             _context.Filter<Group>(i => i.Where(g => g.UserId.Equals(request.UserId)));
 
             var groups = this._context.Groups
-                .Include(g => g.Categories)
-                .ThenInclude(e => e.CategoryInformation);
+                .Include(g => g.Categories);
 
-            foreach (var group in groups)
+            foreach (var @group in groups)
             {
-                foreach (var category in group.Categories)
-                {
-                    category.CategoryInformation = category.CategoryInformation
-                        .Where(e => e.Month.Equals(request.Month)).ToList();
-                }
+                @group.Categories = @group.Categories.Where(g => g.Month.Equals(request.Month)).ToList();
             }
-
+                
             return groups;
 
         }

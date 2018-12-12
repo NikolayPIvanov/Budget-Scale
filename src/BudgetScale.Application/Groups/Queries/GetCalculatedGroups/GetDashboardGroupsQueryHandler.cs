@@ -23,24 +23,18 @@ namespace BudgetScale.Application.Groups.Queries.GetCalculatedGroups
         {
             var model = _context.Groups
                 .Include(g => g.Categories)
-                .ThenInclude(c => c.CategoryInformation)
                 .Where(g => g.UserId.Equals(request.UserId))
                 .Select(g => new GroupDashboardViewModel
                 {
-                    Budgeted = g.Categories.Select(e => e.CategoryInformation.Select(p => p.Budgeted))
-                        .Sum(e => e.Sum(x => x)),
-                    Activity = g.Categories.Select(e => e.CategoryInformation.Select(p => p.Activity))
-                        .Sum(e => e.Sum(x => x)),
-                    Availability = g.Categories.Select(e => e.CategoryInformation.Select(p => p.Available))
-                        .Sum(e => e.Sum(x => x)),
+                    Budgeted = g.Categories.Sum(e => e.Budgeted),
+                    Activity = g.Categories.Sum(e => e.Activity),
+                    Availability = g.Categories.Sum(e => e.Available),
                     GroupId = g.GroupId,
                     GroupName = g.GroupName,
                     Categories = g.Categories.Select(e => new CategoryViewModel
                     {
                         CategoryId = e.CategoryId,
                         CategoryName = e.CategoryName,
-                        CategoryInformation = _mapper.Map<CategoryInformationViewModel>
-                        (e.CategoryInformation.FirstOrDefault(x => x.Month.Equals(request.Month)))
                     })
                 });
 

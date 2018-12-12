@@ -22,7 +22,6 @@ namespace BudgetScale.Application.Categories.Queries.GetAllQuery
         {
             var query = this._context.Categories
                 .Include(c => c.Group)
-                .Include(c => c.CategoryInformation)
                 .Where(c => c.Group.UserId.Equals(request.UserId));
 
             return query;

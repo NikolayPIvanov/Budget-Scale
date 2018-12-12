@@ -7,6 +7,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using BudgetScale.Application.Accounts.Commands;
 using BudgetScale.Application.Accounts.Models.Output;
 using BudgetScale.Application.Categories.Commands.CreateCommand;
 using BudgetScale.Application.Categories.Models.Output;
@@ -128,9 +129,8 @@ namespace WebUI
             {
 
                 config.CreateMap<Category, CategoryViewModel>()
-                .ForMember(p => p.CategoryId, src => src.MapFrom(d => d.CategoryId))
-                .ForMember(p => p.CategoryName, src => src.MapFrom(d => d.CategoryName))
-                .ForMember(p => p.CategoryInformation, src => src.MapFrom(d => d.CategoryInformation));
+                    .ForMember(p => p.CategoryId, src => src.MapFrom(d => d.CategoryId))
+                    .ForMember(p => p.CategoryName, src => src.MapFrom(d => d.CategoryName));
 
                 config.CreateMap<CreateCategoryCommand, Category>();
 
@@ -151,12 +151,15 @@ namespace WebUI
                 config.CreateMap<LongRequest, RequestViewModel>()
                     .ForMember(p => p.Time, src => src.MapFrom(d => d.Time.ToShortDateString()));
 
-                config.CreateMap<Account, AccountsViewModel>();
+                config.CreateMap<Account, AccountsViewModel>()  
+                    .ForMember(e => e.AccountType, src => src.MapFrom(d => d.AccountType.ToString("G")));
+
                 config.CreateMap<ICollection<CategoryInformation>, CategoryInformationViewModel>();
                 config.CreateMap<Category, CategoryViewModel>();
                 config.CreateMap<CreateGroupCommand, Group>();
                 config.CreateMap<CategoryInformation, CategoryInformationViewModel>();
                 config.CreateMap<Group, GroupViewModel>();
+                config.CreateMap<CreateAccountCommand, Account>();
             });
 
             // In production, the Angular files will be served from this directory
@@ -172,6 +175,8 @@ namespace WebUI
             using (var serviceScope = app.ApplicationServices.CreateScope())
             {
                 var dbContext = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+                dbContext.Database.EnsureCreated();
 
                 if (!env.IsDevelopment())
                 {

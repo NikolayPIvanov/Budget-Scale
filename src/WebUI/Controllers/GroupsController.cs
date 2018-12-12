@@ -62,8 +62,7 @@ namespace WebUI.Controllers
 
             return Ok(model);
         }
-
-
+        
 
         [HttpPost]
         [ProducesResponseType(typeof(CreatedAtActionResult), (int)HttpStatusCode.Created)]
@@ -101,6 +100,14 @@ namespace WebUI.Controllers
 
             //TODO:;
             //patchDto.ApplyTo(groupFromDatabase);
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete([FromRoute] string id)
+        {
+
 
             return NoContent();
         }
