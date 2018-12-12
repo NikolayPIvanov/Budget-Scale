@@ -22,10 +22,6 @@ namespace BudgetScale.Application.Accounts.Commands
                 AccountType = (AccountType)Enum.Parse(typeof(AccountType), request.AccountType)
             });
 
-            //entity.ModifiedOn = DateTime.UtcNow;
-            //entity.AccountName = request.AccountName;
-            //entity.AccountType = (AccountType)Enum.Parse(typeof(AccountType), request.AccountType);
-
             await _context.SaveChangesAsync(cancellationToken);
 
             return Unit.Value;
