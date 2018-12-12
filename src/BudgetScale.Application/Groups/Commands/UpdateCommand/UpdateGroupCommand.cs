@@ -5,7 +5,9 @@ namespace BudgetScale.Application.Groups.Models.Input
 {
     public class UpdateGroupCommand : IRequest<Unit>
     {
-        public Group Group { get; set; }
+        public string  GroupId { get; set; }
+
+        public string GroupName { get; set; }
 
     }
 }

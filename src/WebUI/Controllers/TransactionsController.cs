@@ -13,7 +13,7 @@ namespace WebUI.Controllers
     public class TransactionsController : BaseController
     {
         [HttpGet]
-        public async Task<IActionResult> GetAllTransactions([FromRoute] string accountId)
+        public async Task<IActionResult> All([FromRoute] string accountId)
         {
             var response = await Mediator.Send(new GetAllTransactionForAccount
             {
@@ -22,7 +22,7 @@ namespace WebUI.Controllers
 
             return Ok(response);
         }
-            
+                
         [HttpPost]
         public async Task<IActionResult> Create([FromRoute] string accountId,
             [FromBody] CreateTransactionCommand command)

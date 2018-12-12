@@ -5,6 +5,7 @@ using AutoMapper.QueryableExtensions;
 using BudgetScale.Application.Categories.Commands.DeleteCommand;
 using BudgetScale.Application.Groups.Commands.CreateCommand;
 using BudgetScale.Application.Groups.Commands.DeleteCommand;
+using BudgetScale.Application.Groups.Models.Input;
 using BudgetScale.Application.Groups.Models.Input.Create;
 using BudgetScale.Application.Groups.Models.Input.UpdatePartially;
 using BudgetScale.Application.Groups.Models.Output;
@@ -81,7 +82,19 @@ namespace WebUI.Controllers
 
             return this.CreatedAtAction("Get", new { groupId = groupId }, new { groupId = groupId });
         }
-        
+
+
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesDefaultResponseType]
+        public async Task<IActionResult> Update([FromRoute] string id, [FromBody] UpdateGroupCommand update)
+        {
+            await Mediator.Send(update);
+
+            return NoContent();
+        }
+
+
 
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
