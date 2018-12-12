@@ -5,6 +5,7 @@ using BudgetScale.Application.Accounts.Models.Input;
 using BudgetScale.Application.Accounts.Models.Output;
 using BudgetScale.Application.Accounts.Queries.GetAccount;
 using BudgetScale.Application.Accounts.Queries.GetAccounts;
+using BudgetScale.Application.Accounts.Validator;
 using BudgetScale.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebUI.Controllers
 {
     [ApiController]
-    [Route("/api/accounts")]
+    [Route("/api/[controller]")]
     public class AccountsController : BaseController
     {
         [HttpGet]
@@ -61,6 +62,36 @@ namespace WebUI.Controllers
             });
 
             return this.CreatedAtAction("Get", new { accountId }, new { accountId });
+
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update([FromRoute] string id, [FromBody] UpdateAccountCommand command)
+        {
+            if (id != command.AccountId)
+            {
+                return BadRequest();
+            }
+
+            (bool Exists, bool Authorized) = await Mediator.Send(new ValidatorRequest
+            {
+                AccountId = id,
+                UserId = this.User.GetId()
+            });
+
+            if (!Exists)
+            {
+                return NotFound();
+            }
+
+            if (!Authorized)
+            {
+                return Unauthorized();
+            }
+
+            await Mediator.Send(command);
+
+            return NoContent();
 
         }
     }

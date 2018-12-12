@@ -91,7 +91,6 @@ namespace WebUI.Controllers
             var groupFromDatabase = await Mediator.Send(new GetGroupQuery
             {
                 GroupId = groupId,
-                UserId = this.User.GetId(),
                 Month = month
             });
 

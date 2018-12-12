@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using AutoMapper.QueryableExtensions;
 using BudgetScale.Application.Categories.Commands.CreateCommand;
+using BudgetScale.Application.Categories.Commands.Update;
 using BudgetScale.Application.Categories.Models.Input;
 using BudgetScale.Application.Categories.Models.Output;
 using BudgetScale.Application.Categories.Queries.GetAllQuery;
@@ -78,5 +79,21 @@ namespace WebUI.Controllers
             return CreatedAtAction("Get", new { categoryId }, categoryId);
 
         }
+
+        [HttpPut("{categoryId}")]
+        public async Task<IActionResult> Update([FromRoute] string categoryId, [FromBody] UpdateCategoryCommand command)
+        {
+            if (categoryId != command.CategoryId)
+            {
+                return BadRequest();
+            }
+            //TODO : Add validator
+
+            await Mediator.Send(command);
+
+            return NoContent();
+        }
+
+
     }
 }
