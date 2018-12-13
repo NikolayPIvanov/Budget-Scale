@@ -35,6 +35,7 @@ using System.Security.Claims;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
+using BudgetScale.Application.Accounts.Commands.CreateCommand;
 
 namespace WebUI
 {

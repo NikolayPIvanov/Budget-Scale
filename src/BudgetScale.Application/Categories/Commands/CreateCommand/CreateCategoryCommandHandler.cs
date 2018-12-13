@@ -8,24 +8,29 @@ using Z.EntityFramework.Plus;
 
 namespace BudgetScale.Application.Categories.Commands.CreateCommand
 {
-    public class CreateCategoryCommandHandler : BaseHandler, IRequestHandler<CreateCategoryCommand, string>
+    public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommand, string>
     {
+        public ApplicationDbContext Context { get; }
+        public IMapper Mapper { get; }
+
         public async Task<string> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
         {
-            var category = _mapper.Map<Category>(request);
+            var category = Mapper.Map<Category>(request);
 
-            category.Group = await _context.Groups.FindAsync(request.GroupId);
+            category.Group = await Context.Groups.FindAsync(request.GroupId);
 
-            _context.Categories.Add(category);
+            Context.Categories.Add(category);
 
-            await _context.SaveChangesAsync(cancellationToken);
+            await Context.SaveChangesAsync(cancellationToken);
 
             return category.CategoryId;
 
         }
 
-        public CreateCategoryCommandHandler(ApplicationDbContext context, IMapper mapper) : base(context, mapper)
+        public CreateCategoryCommandHandler(ApplicationDbContext context, IMapper mapper)
         {
+            Context = context;
+            Mapper = mapper;
         }
     }
 }

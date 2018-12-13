@@ -16,7 +16,7 @@ namespace BudgetScale.Application.Transactions.Query
 
         public async Task<IQueryable<Transaction>> Handle(GetAllTransaction request, CancellationToken cancellationToken)
         {
-            return _context.Transactions.AsQueryable();
+            return Context.Transactions.AsQueryable();
         }
     }
 }

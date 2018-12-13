@@ -17,11 +17,11 @@ namespace BudgetScale.Application.Groups.Commands.CreateCommand
         {
             var group = _mapper.Map<Group>(request);
 
-            group.User = await this._context.Users.FindAsync(request.UserId);
+            group.User = await this.Context.Users.FindAsync(request.UserId);
 
-            this._context.Add(group);
+            this.Context.Add(group);
 
-            await this._context.SaveChangesAsync(cancellationToken);
+            await this.Context.SaveChangesAsync(cancellationToken);
 
             return group.GroupId;
         }

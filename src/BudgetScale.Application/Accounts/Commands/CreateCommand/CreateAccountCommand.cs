@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace BudgetScale.Application.Accounts.Commands
+namespace BudgetScale.Application.Accounts.Commands.CreateCommand
 {
     public class CreateAccountCommand : IRequest<string>
     {

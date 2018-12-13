@@ -18,9 +18,9 @@ namespace BudgetScale.Application.Groups.Queries.GetGroups
 
         public async Task<IQueryable<Group>> Handle(GetGroupsQuery request, CancellationToken cancellationToken)
         {
-            _context.Filter<Group>(i => i.Where(g => g.UserId.Equals(request.UserId)));
+            Context.Filter<Group>(i => i.Where(g => g.UserId.Equals(request.UserId)));
 
-            var groups = this._context.Groups
+            var groups = this.Context.Groups
                 .Include(g => g.Categories);
 
             foreach (var @group in groups)

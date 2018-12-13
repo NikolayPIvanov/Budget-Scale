@@ -8,10 +8,13 @@ using Z.EntityFramework.Plus;
 
 namespace BudgetScale.Application.Categories.Commands.DeleteCommand
 {
-    public class DeleteCategoryCommandHandler : BaseHandler,IRequestHandler<DeleteCategoryCommand,Unit>
+    public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryCommand,Unit>
     {
-        public DeleteCategoryCommandHandler(ApplicationDbContext context, IMapper mapper) : base(context, mapper)
+        private readonly ApplicationDbContext _context;
+
+        public DeleteCategoryCommandHandler(ApplicationDbContext context)
         {
+            _context = context;
         }
 
         public async Task<Unit> Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)

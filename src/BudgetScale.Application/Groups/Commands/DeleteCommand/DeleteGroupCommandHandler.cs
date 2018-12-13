@@ -17,9 +17,9 @@ namespace BudgetScale.Application.Groups.Commands.DeleteCommand
         public async Task<Unit> Handle(DeleteGroupCommand request, CancellationToken cancellationToken)
         {
             //TODO: Not sure about first line of code. Note; research about the EF Core Plus 
-            await _context.Categories.Where(c => c.GroupId.Equals(request.GroupId)).DeleteAsync(cancellationToken);
-            await _context.Groups.Where(e => e.GroupId.Equals(request.GroupId)).DeleteAsync(x => x.BatchSize = 1,cancellationToken);
-            await _context.SaveChangesAsync(cancellationToken);
+            await Context.Categories.Where(c => c.GroupId.Equals(request.GroupId)).DeleteAsync(cancellationToken);
+            await Context.Groups.Where(e => e.GroupId.Equals(request.GroupId)).DeleteAsync(x => x.BatchSize = 1,cancellationToken);
+            await Context.SaveChangesAsync(cancellationToken);
 
             return Unit.Value;
         }

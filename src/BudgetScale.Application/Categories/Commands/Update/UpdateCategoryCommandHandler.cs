@@ -10,22 +10,25 @@ using Z.EntityFramework.Plus;
 
 namespace BudgetScale.Application.Categories.Commands.Update
 {
-    public class UpdateCategoryCommandHandler : BaseHandler, IRequestHandler<UpdateCategoryCommand,Unit>
+    public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryCommand,Unit>
     {
-        public UpdateCategoryCommandHandler(ApplicationDbContext context, IMapper mapper) : base(context, mapper)
+        public ApplicationDbContext Context { get; }
+
+        public UpdateCategoryCommandHandler(ApplicationDbContext context)
         {
+            Context = context;
         }
 
         public async Task<Unit> Handle(UpdateCategoryCommand request, CancellationToken cancellationToken)
         {
 
-            await _context.Categories.Where(e => e.CategoryId.Equals(request.CategoryId)).UpdateAsync(x =>
+            await Context.Categories.Where(e => e.CategoryId.Equals(request.CategoryId)).UpdateAsync(x =>
                 new Category()
                 {
                     CategoryName = request.CategoryName
                 });
 
-            await _context.SaveChangesAsync(cancellationToken);
+            await Context.SaveChangesAsync(cancellationToken);
 
             return Unit.Value;
         }

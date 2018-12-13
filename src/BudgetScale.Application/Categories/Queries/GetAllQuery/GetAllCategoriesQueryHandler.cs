@@ -11,16 +11,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BudgetScale.Application.Categories.Queries.GetAllQuery
 {
-    public class GetAllCategoriesQueryHandler : BaseHandler, IRequestHandler<GetAllCategoriesQuery, IQueryable<Category>>
+    public class GetAllCategoriesQueryHandler :  IRequestHandler<GetAllCategoriesQuery, IQueryable<Category>>
     {
-        public GetAllCategoriesQueryHandler(ApplicationDbContext context, IMapper mapper) : base(context, mapper)
-        {
+        public ApplicationDbContext Context { get; }
 
+        public GetAllCategoriesQueryHandler(ApplicationDbContext context)
+        {
+            Context = context;
         }
 
         public async Task<IQueryable<Category>> Handle(GetAllCategoriesQuery request, CancellationToken cancellationToken)
         {
-            var query = this._context.Categories
+            var query = this.Context.Categories
                 .Include(c => c.Group)
                 .Where(c => c.Group.UserId.Equals(request.UserId));
 

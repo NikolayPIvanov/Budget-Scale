@@ -9,10 +9,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BudgetScale.Application.Accounts.Queries.GetAccount
 {
-    public class GetAccountQueryHandler : BaseHandler, IRequestHandler<GetAccountQuery, Account>
+    public class GetAccountQueryHandler : IRequestHandler<GetAccountQuery, Account>
     {
-        public GetAccountQueryHandler(ApplicationDbContext context, IMapper mapper) : base(context, mapper)
+        private readonly ApplicationDbContext _context;
+
+        public GetAccountQueryHandler(ApplicationDbContext context)
         {
+            _context = context;
         }
 
         public async Task<Account> Handle(GetAccountQuery request, CancellationToken cancellationToken)

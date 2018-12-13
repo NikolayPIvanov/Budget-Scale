@@ -1,7 +1,6 @@
-﻿using BudgetScale.Domain.Entities;
-using MediatR;
+﻿using MediatR;
 
-namespace BudgetScale.Application.Accounts.Commands
+namespace BudgetScale.Application.Accounts.Commands.UpdateCommand
 {
     public class UpdateAccountCommand : IRequest<Unit>
     {

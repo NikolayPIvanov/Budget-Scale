@@ -20,7 +20,7 @@ namespace BudgetScale.Application.Groups.Queries.GetCalculatedGroups
 
         public async Task<IEnumerable<GroupDashboardViewModel>> Handle(GetDashboardGroupsQuery request, CancellationToken cancellationToken)
         {
-            var model = _context.Groups
+            var model = Context.Groups
                 .Include(g => g.Categories)
                 .Where(g => g.UserId.Equals(request.UserId))
                 .Select(g => new GroupDashboardViewModel

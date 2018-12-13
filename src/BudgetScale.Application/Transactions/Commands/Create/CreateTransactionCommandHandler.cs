@@ -15,24 +15,24 @@ namespace BudgetScale.Application.Transactions.Commands.Create
             var transaction = new Transaction
             {
                 Amount = request.Amount,
-                DestinationAccount = await _context.Accounts
+                DestinationAccount = await Context.Accounts
                     .FirstOrDefaultAsync(e => e.AccountId.Equals(request.DestinationAccountId),
                         cancellationToken: cancellationToken),
                 DestinationAccountId = request.DestinationAccountId,
                 Memo = request.Memo,
                 Reason = request.Reason,
-                SourceAccount = await _context.Accounts
+                SourceAccount = await Context.Accounts
                     .FirstOrDefaultAsync(e => e.AccountId.Equals(request.SourceAccountId),
                         cancellationToken: cancellationToken),
                 SourceAccountId = request.SourceAccountId,
                 CategoryId = request.CategoryId,
-                Category = await _context.Categories.FirstOrDefaultAsync(e => e.CategoryId.Equals(request.CategoryId),
+                Category = await Context.Categories.FirstOrDefaultAsync(e => e.CategoryId.Equals(request.CategoryId),
                     cancellationToken)
             };
 
-            _context.Transactions.Add(transaction);
+            Context.Transactions.Add(transaction);
 
-            await _context.SaveChangesAsync(cancellationToken);
+            await Context.SaveChangesAsync(cancellationToken);
 
             return transaction.TransactionId;
         }

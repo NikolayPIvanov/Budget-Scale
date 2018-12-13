@@ -8,11 +8,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BudgetScale.Application.Accounts.Validator
 {
-    public class ValidatorRequestHandler : BaseHandler, IRequestHandler<ValidatorRequest, (bool Exists, bool Authorized)>
+    public class ValidatorRequestHandler : IRequestHandler<ValidatorRequest, (bool Exists, bool Authorized)>
     {
+        public ApplicationDbContext Context { get; }
+
         public async Task<(bool Exists, bool Authorized)> Handle(ValidatorRequest request, CancellationToken cancellationToken)
         {
-            var entity = await _context.Accounts
+            var entity = await Context.Accounts
                 .FirstOrDefaultAsync(e => e.AccountId.Equals(request.AccountId), cancellationToken: cancellationToken);
 
             if (entity == null)
@@ -28,8 +30,9 @@ namespace BudgetScale.Application.Accounts.Validator
             return (true,true);
         }
 
-        public ValidatorRequestHandler(ApplicationDbContext context, IMapper mapper) : base(context, mapper)
+        public ValidatorRequestHandler(ApplicationDbContext context)
         {
+            Context = context;
         }
     }
 }

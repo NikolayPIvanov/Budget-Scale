@@ -3,15 +3,13 @@ using BudgetScale.Persistence;
 
 namespace BudgetScale.Application
 {
-    public abstract class BaseHandler
+    public abstract class BaseHandler   
     {
-        protected readonly ApplicationDbContext _context;
-        protected readonly IMapper _mapper;
+        protected readonly ApplicationDbContext Context;
 
-        protected BaseHandler(ApplicationDbContext context, IMapper mapper)
+        protected BaseHandler(ApplicationDbContext context)
         {
-            this._context = context;
-            this._mapper = mapper;
+            this.Context = context;
         }
     }
 }

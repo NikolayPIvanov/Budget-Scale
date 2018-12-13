@@ -12,7 +12,7 @@ namespace BudgetScale.Application.Transactions.Query
     {
         public async Task<IQueryable<Transaction>> Handle(GetAllTransactionForAccount request, CancellationToken cancellationToken)
         {
-            return _context.Transactions
+            return Context.Transactions
                 .Where(e => e.SourceAccountId == request.AccountId && e.DestinationAccountId == request.AccountId)
                 .AsQueryable();
         }

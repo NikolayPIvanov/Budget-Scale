@@ -31,9 +31,5 @@ namespace WebUI.Controllers
 
             return Ok(response);
         }
-
-
     }
-
-    
 }

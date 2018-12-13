@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using AutoMapper.QueryableExtensions;
 using BudgetScale.Application.Categories.Commands.CreateCommand;
+using BudgetScale.Application.Categories.Commands.DeleteCommand;
 using BudgetScale.Application.Categories.Commands.Update;
 using BudgetScale.Application.Categories.Models.Input;
 using BudgetScale.Application.Categories.Models.Output;
@@ -97,6 +98,15 @@ namespace WebUI.Controllers
             //TODO : Add validator
 
             await Mediator.Send(command);
+
+            return NoContent();
+        }
+
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesDefaultResponseType]
+        public async Task<IActionResult> Delete([FromRoute] string categoryId)
+        {
+            await Mediator.Send(new DeleteCategoryCommand {CategoryId = categoryId});
 
             return NoContent();
         }
