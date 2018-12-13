@@ -7,6 +7,7 @@ using BudgetScale.Application.Requests.Models.Output;
 using BudgetScale.Application.Requests.Queries.AllRequests;
 using BudgetScale.Application.Transactions.Model;
 using BudgetScale.Application.Transactions.Query;
+using BudgetScale.Application.Transactions.Query.TransactionsForUser;
 using BudgetScale.Domain.Entities;
 using BudgetScale.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Authorization;
@@ -20,31 +21,39 @@ namespace WebUI.Controllers
     public class AdminController : BaseController
     {
         // GET
-        [HttpGet]
-        public async Task<IActionResult> RequestData([FromQuery] string month)
-        {
-            // Include groups with categories with information and map them to a dto.
-            // Include accounts with transactions
-            // Calculate budget, activity, availability, month's inflow, to be budgeted
+        //[HttpGet]
+        //public async Task<IActionResult> RequestData([FromQuery] string month)
+        //{
+        //    // Include groups with categories with information and map them to a dto.
+        //    // Include accounts with transactions
+        //    // Calculate budget, activity, availability, month's inflow, to be budgeted
 
-            var userId = this.User.GetId();
+        //    var userId = this.User.GetId();
 
-            var groups = await Mediator.Send(new GetDashboardGroupsQuery { Month = month, UserId = userId });
+        //    var groups = await Mediator.Send(new GetDashboardGroupsQuery { Month = month, UserId = userId });
 
-            //TODO: Add months
-            var accounts = await Mediator.Send(new GetAllAccountsQuery(userId));
+        //    //TODO: Add months
+        //    var accounts = await Mediator.Send(new GetAllAccountsQuery(userId));
 
-            var toBeBudgeted = accounts.Sum(e => e.Transactions
-                                   .Where(c => c.Type == TransactionType.Outflow).Sum(c => c.Amount))
-                               - groups.Sum(e => e.Availability);
+        //    var toBeBudgeted = accounts.Sum(e => e.Transactions
+        //                           .Where(c => c.Type == TransactionType.Outflow).Sum(c => c.Amount))
+        //                       - groups.Sum(e => e.Availability);
 
-            return Ok();
-        }
+        //    return Ok();
+        //}
 
         [HttpGet]
         public async Task<IActionResult> AllTransactions()
         {
             var response = await Mediator.Send(new GetAllTransaction());
+
+            return Ok(response.ProjectTo<TransactionViewModel>(Mapper.ConfigurationProvider));
+        }
+
+        [HttpGet()]
+        public async Task<IActionResult> TransactionForUser([FromRoute] string userId)
+        {
+            var response = await Mediator.Send(new GetTransactionsForUserQuery() {UserId = userId});
 
             return Ok(response.ProjectTo<TransactionViewModel>(Mapper.ConfigurationProvider));
         }
