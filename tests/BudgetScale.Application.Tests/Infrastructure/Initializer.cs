@@ -39,6 +39,25 @@ namespace BudgetScale.Application.Tests.Infrastructure
 
             };
 
+            var accounts = new[]
+            {
+                new Account
+                {
+                    UserId = "1", AccountId = "1", AccountType = AccountType.Cash, AccountName = "First user cash account",
+                },
+                new Account
+                {
+                    UserId = "1", AccountId = "2", AccountType = AccountType.Checking, AccountName = "First user checking account",
+                },
+                new Account
+                {
+                    UserId = "2", AccountId = "3", AccountType = AccountType.Savings, AccountName = "Second savings",
+                },
+            };
+
+            context.Accounts.AddRange(accounts);
+            context.SaveChanges();
+
             context.Groups.AddRange(groups);
             context.SaveChanges();
         }

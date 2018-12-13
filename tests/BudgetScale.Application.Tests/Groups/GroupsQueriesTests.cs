@@ -54,8 +54,6 @@ namespace BudgetScale.Application.Tests
                 UserId = userId
             };
 
-
-
             var handler = new GetGroupsQueryHandler(context);
 
             var expected = context.Groups.Where(g => g.UserId.Equals(userId)).ToList();
@@ -65,6 +63,7 @@ namespace BudgetScale.Application.Tests
 
             //Assert
             Assert.True(result.Count() == expected.Count);
+            Assert.True(result.All(g => g.Categories.All(c => c.Month==month)));
         }
 
         [Test]

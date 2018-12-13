@@ -1,5 +1,6 @@
 ﻿using System;
 using AutoMapper;
+using BudgetScale.Application.Accounts.Commands.CreateCommand;
 using BudgetScale.Application.Groups.Commands.CreateCommand;
 using BudgetScale.Domain.Entities;
 using BudgetScale.Persistence;
@@ -30,6 +31,10 @@ namespace BudgetScale.Application.Tests.Infrastructure
             this.mapper = new Mapper(new MapperConfiguration(config =>
             {
                 config.CreateMap<CreateGroupCommand, Group>();
+
+                config.CreateMap<CreateAccountCommand, Account>()
+                    .ForMember(dest => dest.AccountType,
+                        src => src.MapFrom(d => (AccountType)(Enum.Parse(typeof(AccountType), d.AccountType))));
             }));
 
             Initializer.Initialize(context);

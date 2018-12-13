@@ -21,7 +21,8 @@ namespace BudgetScale.Application.Accounts.Queries.GetAccounts
         public async Task<IQueryable<Account>> Handle(GetAllAccountsQuery request, CancellationToken cancellationToken)
         {
             return _context.Accounts
-                .Include(a => a.Transactions);
+                .Include(a => a.Transactions)
+                .Where(a => a.UserId.Equals(request.UserId));
         }
 
         
