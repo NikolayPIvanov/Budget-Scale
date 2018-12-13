@@ -7,21 +7,26 @@ using MediatR;
 
 namespace BudgetScale.Application.Groups.Commands.CreateCommand
 {
-    public class CreateGroupCommandHandler : BaseHandler, IRequestHandler<CreateGroupCommand, string>
+    public class CreateGroupCommandHandler : IRequestHandler<CreateGroupCommand, string>
     {
-        public CreateGroupCommandHandler(ApplicationDbContext context, IMapper mapper) : base(context, mapper)
+        private readonly ApplicationDbContext _context;
+        private readonly IMapper _mapper;
+
+        public CreateGroupCommandHandler(ApplicationDbContext context, IMapper mapper)
         {
+            _context = context;
+            _mapper = mapper;
         }
 
         public async Task<string> Handle(CreateGroupCommand request, CancellationToken cancellationToken)
         {
             var group = _mapper.Map<Group>(request);
 
-            group.User = await this.Context.Users.FindAsync(request.UserId);
+            group.User = await this._context.Users.FindAsync(request.UserId);
 
-            this.Context.Add(group);
+            this._context.Add(group);
 
-            await this.Context.SaveChangesAsync(cancellationToken);
+            await this._context.SaveChangesAsync(cancellationToken);
 
             return group.GroupId;
         }

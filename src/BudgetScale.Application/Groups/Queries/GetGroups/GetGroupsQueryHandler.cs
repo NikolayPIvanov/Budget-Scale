@@ -10,10 +10,13 @@ using Z.EntityFramework.Plus;
 
 namespace BudgetScale.Application.Groups.Queries.GetGroups
 {
-    public class GetGroupsQueryHandler : BaseHandler, IRequestHandler<GetGroupsQuery, IQueryable<Group>>
+    public class GetGroupsQueryHandler : IRequestHandler<GetGroupsQuery, IQueryable<Group>>
     {
-        public GetGroupsQueryHandler(ApplicationDbContext context, IMapper mapper) : base(context, mapper)
+        public ApplicationDbContext Context { get; }
+
+        public GetGroupsQueryHandler(ApplicationDbContext context)
         {
+            Context = context;
         }
 
         public async Task<IQueryable<Group>> Handle(GetGroupsQuery request, CancellationToken cancellationToken)

@@ -10,10 +10,13 @@ using Z.EntityFramework.Plus;
 
 namespace BudgetScale.Application.Groups.Commands.UpdateCommand
 {
-    public class UpdateGroupCommandHandler : BaseHandler, IRequestHandler<UpdateGroupCommand, Unit>
+    public class UpdateGroupCommandHandler : IRequestHandler<UpdateGroupCommand, Unit>
     {
-        public UpdateGroupCommandHandler(ApplicationDbContext context, IMapper mapper) : base(context, mapper)
+        public ApplicationDbContext Context { get; }
+
+        public UpdateGroupCommandHandler(ApplicationDbContext context)
         {
+            Context = context;
         }
 
         public async Task<Unit> Handle(UpdateGroupCommand request, CancellationToken cancellationToken)

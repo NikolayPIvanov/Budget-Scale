@@ -8,10 +8,13 @@ using MediatR;
 
 namespace BudgetScale.Application.Transactions.Query
 {
-    public class GetAllTransactionHandler : BaseHandler, IRequestHandler<GetAllTransaction,IQueryable<Transaction>>
+    public class GetAllTransactionHandler : IRequestHandler<GetAllTransaction,IQueryable<Transaction>>
     {
-        public GetAllTransactionHandler(ApplicationDbContext context, IMapper mapper) : base(context, mapper)
+        public ApplicationDbContext Context { get; }
+
+        public GetAllTransactionHandler(ApplicationDbContext context)
         {
+            Context = context;
         }
 
         public async Task<IQueryable<Transaction>> Handle(GetAllTransaction request, CancellationToken cancellationToken)

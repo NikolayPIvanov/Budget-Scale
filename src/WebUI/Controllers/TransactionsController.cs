@@ -13,23 +13,29 @@ namespace WebUI.Controllers
     public class TransactionsController : BaseController
     {
         [HttpGet]
-        public async Task<IActionResult> All([FromRoute] string accountId)
+        public async Task<IActionResult> All([FromRoute] string transactionId)
         {
             var response = await Mediator.Send(new GetAllTransactionForAccount
             {
-                AccountId = accountId
+                AccountId = transactionId
             });
 
             return Ok(response);
         }
-                
+        
         [HttpPost]
-        public async Task<IActionResult> Create([FromRoute] string accountId,
+        public async Task<IActionResult> Create([FromRoute] string transactionId,
             [FromBody] CreateTransactionCommand command)
         {
             var response = await Mediator.Send(command);
 
             return Ok(response);
         }
+
+        //[HttpPut]
+        //public async Task<IActionResult> Update([FromRoute] string transactionId)
+        //{
+        //    await Mediator.Send(new Update)
+        //}
     }
 }

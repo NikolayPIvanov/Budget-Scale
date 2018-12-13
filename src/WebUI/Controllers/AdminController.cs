@@ -46,14 +46,13 @@ namespace WebUI.Controllers
         public async Task<IActionResult> AllTransactions()
         {
             var response = await Mediator.Send(new GetAllTransaction());
-
             return Ok(response.ProjectTo<TransactionViewModel>(Mapper.ConfigurationProvider));
         }
 
         [HttpGet()]
         public async Task<IActionResult> TransactionForUser([FromRoute] string userId)
         {
-            var response = await Mediator.Send(new GetTransactionsForUserQuery() {UserId = userId});
+            var response = await Mediator.Send(new GetTransactionsForUserQuery { UserId = userId });
 
             return Ok(response.ProjectTo<TransactionViewModel>(Mapper.ConfigurationProvider));
         }
@@ -65,5 +64,7 @@ namespace WebUI.Controllers
 
             return Ok(query.ProjectTo<RequestViewModel>(Mapper.ConfigurationProvider));
         }
+        
+        
     }
 }

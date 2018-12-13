@@ -11,11 +11,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BudgetScale.Application.Groups.Queries.GetCalculatedGroups
 {
-    public class GetDashboardGroupsQueryHandler : BaseHandler,
+    public class GetDashboardGroupsQueryHandler :
         IRequestHandler<GetDashboardGroupsQuery, IEnumerable<GroupDashboardViewModel>>
     {
-        public GetDashboardGroupsQueryHandler(ApplicationDbContext context, IMapper mapper) : base(context, mapper)
+        public ApplicationDbContext Context { get; }
+
+        public GetDashboardGroupsQueryHandler(ApplicationDbContext context)
         {
+            Context = context;
         }
 
         public async Task<IEnumerable<GroupDashboardViewModel>> Handle(GetDashboardGroupsQuery request, CancellationToken cancellationToken)

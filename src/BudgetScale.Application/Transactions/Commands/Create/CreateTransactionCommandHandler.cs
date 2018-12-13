@@ -8,8 +8,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BudgetScale.Application.Transactions.Commands.Create
 {
-    public class CreateTransactionCommandHandler : BaseHandler, IRequestHandler<CreateTransactionCommand,string>
+    public class CreateTransactionCommandHandler : IRequestHandler<CreateTransactionCommand,string>
     {
+        public ApplicationDbContext Context { get; }
+
         public async Task<string> Handle(CreateTransactionCommand request, CancellationToken cancellationToken)
         {
             var transaction = new Transaction
@@ -37,8 +39,9 @@ namespace BudgetScale.Application.Transactions.Commands.Create
             return transaction.TransactionId;
         }
 
-        public CreateTransactionCommandHandler(ApplicationDbContext context, IMapper mapper) : base(context, mapper)
+        public CreateTransactionCommandHandler(ApplicationDbContext context)
         {
+            Context = context;
         }
     }
 }

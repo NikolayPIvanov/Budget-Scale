@@ -90,7 +90,6 @@ namespace WebUI.Controllers
         public async Task<IActionResult> Update([FromRoute] string id, [FromBody] UpdateGroupCommand update)
         {
             await Mediator.Send(update);
-
             return NoContent();
         }
 

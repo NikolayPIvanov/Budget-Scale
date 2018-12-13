@@ -8,8 +8,10 @@ using MediatR;
 
 namespace BudgetScale.Application.Transactions.Query
 {
-    public class GetAllTransactionForAccountHandler : BaseHandler, IRequestHandler<GetAllTransactionForAccount, IQueryable<Transaction>>
+    public class GetAllTransactionForAccountHandler : IRequestHandler<GetAllTransactionForAccount, IQueryable<Transaction>>
     {
+        public ApplicationDbContext Context { get; }
+
         public async Task<IQueryable<Transaction>> Handle(GetAllTransactionForAccount request, CancellationToken cancellationToken)
         {
             return Context.Transactions
@@ -17,8 +19,9 @@ namespace BudgetScale.Application.Transactions.Query
                 .AsQueryable();
         }
 
-        public GetAllTransactionForAccountHandler(ApplicationDbContext context, IMapper mapper) : base(context, mapper)
+        public GetAllTransactionForAccountHandler(ApplicationDbContext context)
         {
+            Context = context;
         }
     }
 }

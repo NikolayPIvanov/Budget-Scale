@@ -8,7 +8,9 @@ using BudgetScale.Application.Groups.Queries.GetGroup;
 using BudgetScale.Application.Groups.Queries.GetGroups;
 using BudgetScale.Application.Tests.Infrastructure;
 using BudgetScale.Domain.Entities;
+using BudgetScale.Persistence;
 using NUnit.Framework;
+using Z.EntityFramework.Plus;
 
 namespace BudgetScale.Application.Tests
 {
@@ -29,7 +31,7 @@ namespace BudgetScale.Application.Tests
                 UserId = userId
             };
 
-            var handler = new GetGroupsQueryHandler(context, mapper);
+            var handler = new GetGroupsQueryHandler(context);
 
             //Arrange
             var result = await handler.Handle(query, CancellationToken.None);
@@ -52,7 +54,9 @@ namespace BudgetScale.Application.Tests
                 UserId = userId
             };
 
-            var handler = new GetGroupsQueryHandler(context, mapper);
+
+
+            var handler = new GetGroupsQueryHandler(context);
 
             var expected = context.Groups.Where(g => g.UserId.Equals(userId)).ToList();
 
@@ -197,53 +201,7 @@ namespace BudgetScale.Application.Tests
             Assert.True(!result.IsValid);
         }
 
-        [Test]
-        public async Task CreateGroup_SuccessfullyCreatesAGroup_ForAUser()
-        {
-            var command = new CreateGroupCommand
-            {
-                UserId = "1",
-                GroupName = "Unit test group"
-            };
-            //var expectedAllGroups = context.Groups.Count();
-
-            var expectedGroupsForUser = context.Groups.Count(e => e.UserId.Equals("1")) + 1;
-
-            var sut = new CreateGroupCommandHandler(context, mapper);
-
-            await sut.Handle(command, CancellationToken.None);
-
-            var actualGroupsForUser = context.Groups.Count(e => e.UserId.Equals("1"));
-
-            Assert.True(actualGroupsForUser == expectedGroupsForUser);
-
-        }
-
-        [Test]
-        [TestCase(null, "An invalid data")]
-        [TestCase(null, "A")]
-        [TestCase(null, "An invalid data that is too long to be processed by the validator because the maximum is reached!")]
-        [TestCase("Valid", "An invalid data that is too long to be processed by the validator because the maximum is reached!")]
-        [TestCase("Valid", "A")]
-        [TestCase(null, null)]
-        public void CreateGroup_Validation_TracksInvalidData(string userId, string groupName)
-        {
-            //Act
-            var query = new CreateGroupCommand()
-            {
-                UserId = userId,
-                GroupName = groupName
-            };
-
-            var validator = new CreateGroupCommandValidator();
-
-            //Arrange
-            var result = validator.Validate(query);
-
-            //Assert
-            Assert.True(!result.IsValid);
-
-        }
+        
 
     }
 }
