@@ -28,8 +28,6 @@ import { routing } from './app.routing';
     FormsModule,
     routing,
     RouterModule.forRoot([
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
     ])
   ],
   providers: [],

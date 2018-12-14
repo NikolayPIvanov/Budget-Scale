@@ -165,11 +165,6 @@ namespace WebUI
 
                 dbContext.Database.EnsureCreated();
 
-                // if (!env.IsDevelopment())
-                // {
-                //     dbContext.Database.Migrate();
-                // }
-
                 ApplicationDbContextSeeder.Seed(dbContext, serviceScope.ServiceProvider);
             }
 
@@ -177,7 +172,6 @@ namespace WebUI
             {
                 app.UseDeveloperExceptionPage();
             }
-
             else
             {
                 app.UseExceptionHandler(builder =>
@@ -202,6 +196,7 @@ namespace WebUI
 
             //Disable this
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
             //GDPR middleware
             app.UseFeaturePolicy();
 
@@ -211,7 +206,6 @@ namespace WebUI
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
-
             app.UseDefaultFiles();
 
             app.UseMvc(routes =>
@@ -225,17 +219,8 @@ namespace WebUI
             {
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
                 // see https://go.microsoft.com/fwlink/?linkid=864501
-
                 spa.Options.SourcePath = "ClientApp";
-
-                if (env.IsDevelopment())
-                {
-                    spa.UseAngularCliServer(npmScript: "start");
-                }
-                else
-                {
-                    spa.UseAngularCliServer(npmScript: "start");
-                }
+                spa.UseAngularCliServer(npmScript: "start");
             });
         }
 
