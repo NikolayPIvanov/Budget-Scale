@@ -36,6 +36,8 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using BudgetScale.Application.Accounts.Commands.CreateCommand;
+using System.Net;
+using Microsoft.AspNetCore.Diagnostics;
 
 namespace WebUI
 {
@@ -136,15 +138,15 @@ namespace WebUI
                 config.CreateMap<LongRequest, RequestViewModel>()
                     .ForMember(p => p.Time, src => src.MapFrom(d => d.Time.ToShortDateString()));
 
-                config.CreateMap<Account, AccountsViewModel>()  
+                config.CreateMap<Account, AccountsViewModel>()
                     .ForMember(e => e.AccountType, src => src.MapFrom(d => d.AccountType.ToString("G")));
-                
+
                 config.CreateMap<Category, CategoryViewModel>();
                 config.CreateMap<CreateGroupCommand, Group>();
                 config.CreateMap<Group, GroupViewModel>();
                 config.CreateMap<CreateAccountCommand, Account>()
                     .ForMember(dest => dest.AccountType,
-                        src => src.MapFrom(d => (AccountType) (Enum.Parse(typeof(AccountType), d.AccountType))));
+                        src => src.MapFrom(d => (AccountType)(Enum.Parse(typeof(AccountType), d.AccountType))));
             });
 
             // In production, the Angular files will be served from this directory
@@ -163,10 +165,10 @@ namespace WebUI
 
                 dbContext.Database.EnsureCreated();
 
-                if (!env.IsDevelopment())
-                {
-                    dbContext.Database.Migrate();
-                }
+                // if (!env.IsDevelopment())
+                // {
+                //     dbContext.Database.Migrate();
+                // }
 
                 ApplicationDbContextSeeder.Seed(dbContext, serviceScope.ServiceProvider);
             }
@@ -175,13 +177,30 @@ namespace WebUI
             {
                 app.UseDeveloperExceptionPage();
             }
+
             else
             {
-                app.UseExceptionHandler("/Error");
+                app.UseExceptionHandler(builder =>
+                {
+                    builder.Run(async context =>
+                    {
+                        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+
+                        var error = context.Features.Get<IExceptionHandlerFeature>();
+                        if (error != null)
+                        {
+                            context.Response.AddApplicationError(error.Error.Message);
+                            await context.Response.WriteAsync(error.Error.Message);
+                        }
+                    });
+                });
+
+                //app.UseExceptionHandler("/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                //app.UseHsts();
             }
-            
+
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             //GDPR middleware
             app.UseFeaturePolicy();
 
@@ -191,6 +210,8 @@ namespace WebUI
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
+
+            app.UseDefaultFiles();
 
             app.UseMvc(routes =>
             {
@@ -207,6 +228,10 @@ namespace WebUI
                 spa.Options.SourcePath = "ClientApp";
 
                 if (env.IsDevelopment())
+                {
+                    spa.UseAngularCliServer(npmScript: "start");
+                }
+                else
                 {
                     spa.UseAngularCliServer(npmScript: "start");
                 }
