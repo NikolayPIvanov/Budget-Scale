@@ -26,7 +26,7 @@ namespace BudgetScale.Application.Categories.Commands.Update
                 new Category()
                 {
                     CategoryName = request.CategoryName
-                });
+                }, cancellationToken: cancellationToken);
 
             await Context.SaveChangesAsync(cancellationToken);
 

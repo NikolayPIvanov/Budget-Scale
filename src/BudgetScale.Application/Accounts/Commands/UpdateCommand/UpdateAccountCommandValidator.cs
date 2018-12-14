@@ -12,10 +12,12 @@ namespace BudgetScale.Application.Accounts.Commands.UpdateCommand
         {
             RuleFor(e => e.AccountType).NotNull().Must(e =>
             {
-                Enum.TryParse(typeof(AccountType), e, out var result);
+                var isValid = Enum.TryParse(typeof(AccountType), e, out var result);
 
-                return (bool) result;
+                return isValid;
             });
+
+            RuleFor(e => e.AccountName).MaximumLength(20);
         }
     }
 }

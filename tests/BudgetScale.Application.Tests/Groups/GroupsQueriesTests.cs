@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using BudgetScale.Application.Groups.Commands.CreateCommand;
 using BudgetScale.Application.Groups.Models.Output;
+using BudgetScale.Application.Groups.Queries.GetCalculatedGroups;
 using BudgetScale.Application.Groups.Queries.GetGroup;
 using BudgetScale.Application.Groups.Queries.GetGroups;
 using BudgetScale.Application.Tests.Infrastructure;
@@ -63,7 +64,7 @@ namespace BudgetScale.Application.Tests
 
             //Assert
             Assert.True(result.Count() == expected.Count);
-            Assert.True(result.All(g => g.Categories.All(c => c.Month==month)));
+            Assert.True(result.All(g => g.Categories.All(c => c.Month == month)));
         }
 
         [Test]
@@ -200,6 +201,21 @@ namespace BudgetScale.Application.Tests
             Assert.True(!result.IsValid);
         }
 
+        [Test]
+        public async Task GetCalculatedGroupsTest()
+        {
+            var handler = new GetDashboardGroupsQueryHandler(context);
+
+            var result = await handler.Handle(new GetDashboardGroupsQuery
+            {
+                Month = "Dec",
+                UserId = "1"
+            }, CancellationToken.None);
+
+            Assert.True(result.Count() == context.Groups.Count(g => g.UserId == "1"));
+
+
+        }
         
 
     }

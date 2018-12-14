@@ -1,4 +1,5 @@
-﻿using BudgetScale.Persistence;
+﻿using System;
+using BudgetScale.Persistence;
 using BudgetScale.Domain.Entities;
 using System.Linq;
 
@@ -39,6 +40,44 @@ namespace BudgetScale.Application.Tests.Infrastructure
 
             };
 
+            var categories = new[]
+            {
+                new Category
+                {
+                    Activity = 100, Available = 10, Budgeted = 0, CategoryId = "1", CategoryName = "first category",
+                    Month = "Dec", GroupId = "1"
+                },
+                new Category
+                {
+                    Activity = 10, Available = 20, Budgeted = 100, CategoryId = "2", CategoryName = "second category",
+                    Month = "Nov", GroupId = "2"
+                },
+                new Category
+                {
+                    Activity = 2.41m, Available = 10, Budgeted = 70, CategoryId = "3", CategoryName = "third category",
+                    Month = "Dec", GroupId = "3"
+                }
+            };
+
+            var longRequests = new[]
+            {
+                new LongRequest
+                {
+                    ElapsedMilliseconds = "600", Id = "1", Name = "Weird Request", RequestDescription = "None really",
+                    Time = DateTime.Now
+                },
+                new LongRequest
+                {
+                    ElapsedMilliseconds = "800", Id = "2", Name = "Weird Request two",
+                    RequestDescription = "None really", Time = DateTime.Now.AddMonths(-1)
+                },
+                new LongRequest
+                {
+                    ElapsedMilliseconds = "1200", Id = "3", Name = "Weird Request three",
+                    RequestDescription = "None really", Time = DateTime.Now.AddYears(-1)
+                },
+            };
+
             var accounts = new[]
             {
                 new Account
@@ -55,9 +94,9 @@ namespace BudgetScale.Application.Tests.Infrastructure
                 },
             };
 
+            context.LongRequests.AddRange(longRequests);
+            context.Categories.AddRange(categories);
             context.Accounts.AddRange(accounts);
-            context.SaveChanges();
-
             context.Groups.AddRange(groups);
             context.SaveChanges();
         }

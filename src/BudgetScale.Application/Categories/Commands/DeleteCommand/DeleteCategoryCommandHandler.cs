@@ -21,8 +21,7 @@ namespace BudgetScale.Application.Categories.Commands.DeleteCommand
         {
             await _context.Categories.Where(c => c.CategoryId.Equals(request.CategoryId))
                 .DeleteAsync(cancellationToken);
-
-            await _context.SaveChangesAsync(cancellationToken);
+            
 
             return Unit.Value;
         }

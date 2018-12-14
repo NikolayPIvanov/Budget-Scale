@@ -8,6 +8,7 @@ namespace BudgetScale.Application.Users
         {
             RuleFor(e => e.Email).EmailAddress();
             RuleFor(e => e.Password).Length(6, 32);
+            RuleFor(e => e.FullName).Length(6, 50).NotEmpty();
         }
     }
 }
