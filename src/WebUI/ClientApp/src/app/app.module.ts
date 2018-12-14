@@ -12,6 +12,9 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
 
 import { routing } from './app.routing';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -20,12 +23,14 @@ import { routing } from './app.routing';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    SiteLayoutComponent
+    SiteLayoutComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    NgbModule,
     routing,
     RouterModule.forRoot([
     ])

@@ -1,0 +1,114 @@
+.header-wrap {
+  position: relative;
+}
+
+.header-top {
+  padding: 30px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .header-top {
+    padding: 15px 0;
+  }
+}
+
+.menu-bar {
+  cursor: pointer;
+}
+
+.menu-bar span {
+  color: #fff;
+  font-size: 24px;
+}
+
+.main-menubar {
+  position: relative;
+}
+
+nav {
+  margin-right: 70px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  transform-origin: 100% 50%;
+}
+
+.single-feature .icon:after :hover {
+  background-image: -moz-linear-gradient(0deg, #e66587 0%, #f09458 100%);
+  background-image: -webkit-linear-gradient(0deg, #e66587 0%, #f09458 100%);
+}
+
+.banner-area,
+.story-area {
+  background-image: -webkit-linear-gradient(0deg, #e66587 0%, #f09458 100%);
+}
+
+.banner-area .height {
+  height: 600px;
+}
+
+.banner-area .generic-height {
+  height: 300px;
+}
+
+.main-wrapper-first {
+  padding-top: 12%;
+}
+
+.story-area {
+  padding: 90px 0;
+  position: relative;
+  position: relative;
+}
+
+.story-area:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: url(../../assets/img/story-bg.jpg) no-repeat center center/cover;
+  z-index: 1;
+}
+
+@media (max-width: 991px) {
+  .story-area:after {
+    display: none;
+  }
+}
+
+.story-area .story-box {
+  padding: 60px 90px;
+  background: #fff;
+  border-radius: 3px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 991px) {
+  .story-area .story-box {
+    padding: 30px 50px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 575px) {
+  .story-area .story-box {
+    padding: 30px;
+  }
+}
+
+.story-area .story-box h6 {
+  margin-bottom: 15px;
+}
+
+.story-area:after {
+  content: "";
+  position: absolute;
+}
