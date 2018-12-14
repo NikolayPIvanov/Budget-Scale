@@ -200,6 +200,7 @@ namespace WebUI
                 //app.UseHsts();
             }
 
+            //Disable this
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             //GDPR middleware
             app.UseFeaturePolicy();
