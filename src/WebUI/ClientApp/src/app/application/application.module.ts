@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   imports: [
@@ -12,6 +13,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     RouterModule,
     MatSidenavModule
   ],
-  declarations: [AppLayoutComponent, MainNavComponent, SideNavComponent]
+  declarations: [AppLayoutComponent, MainNavComponent, SideNavComponent, DashboardComponent]
 })
 export class ApplicationModule { }
