@@ -7,13 +7,14 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
 import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
 
 import { routing } from './app.routing';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthenticationModule } from './authentication/authentication.module';
+import { AppLayoutComponent } from './_layout/app-layout/app-layout.component';
+import { AdminLayoutComponent } from './_layout/admin-layout/admin-layout.component';
 
 
 @NgModule({
@@ -21,9 +22,10 @@ import { AuthenticationModule } from './authentication/authentication.module';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
     SiteLayoutComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    AppLayoutComponent,
+    AdminLayoutComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
