@@ -1,7 +1,6 @@
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
-using BudgetScale.Domain.Entities;
 using BudgetScale.Persistence;
 using MediatR;
 using Microsoft.Extensions.Logging;

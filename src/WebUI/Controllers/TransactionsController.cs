@@ -1,9 +1,6 @@
 ﻿using System.Threading.Tasks;
-using AutoMapper.QueryableExtensions;
 using BudgetScale.Application.Transactions.Commands.Create;
-using BudgetScale.Application.Transactions.Model;
 using BudgetScale.Application.Transactions.Query;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebUI.Controllers

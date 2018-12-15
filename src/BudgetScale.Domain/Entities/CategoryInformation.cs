@@ -1,5 +1,4 @@
 using System;
-using System.Globalization;
 using BudgetScale.Domain.EntityContracts;
 
 namespace BudgetScale.Domain.Entities

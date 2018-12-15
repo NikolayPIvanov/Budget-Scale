@@ -1,17 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using BudgetScale.Application.Groups.Commands.CreateCommand;
-using BudgetScale.Application.Groups.Models.Output;
 using BudgetScale.Application.Groups.Queries.GetCalculatedGroups;
 using BudgetScale.Application.Groups.Queries.GetGroup;
 using BudgetScale.Application.Groups.Queries.GetGroups;
 using BudgetScale.Application.Tests.Infrastructure;
 using BudgetScale.Domain.Entities;
-using BudgetScale.Persistence;
 using NUnit.Framework;
-using Z.EntityFramework.Plus;
 
 namespace BudgetScale.Application.Tests
 {

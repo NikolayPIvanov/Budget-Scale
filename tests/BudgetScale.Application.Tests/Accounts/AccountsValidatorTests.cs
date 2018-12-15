@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using BudgetScale.Application.Accounts.Validator;
 using BudgetScale.Application.Tests.Infrastructure;
 using NUnit.Framework;
-using NUnit.Framework.Internal;
 
 namespace BudgetScale.Application.Tests.Accounts
 {

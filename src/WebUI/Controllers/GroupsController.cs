@@ -2,18 +2,15 @@
 using System.Net;
 using System.Threading.Tasks;
 using AutoMapper.QueryableExtensions;
-using BudgetScale.Application.Categories.Commands.DeleteCommand;
 using BudgetScale.Application.Groups.Commands.CreateCommand;
 using BudgetScale.Application.Groups.Commands.DeleteCommand;
 using BudgetScale.Application.Groups.Models.Input;
 using BudgetScale.Application.Groups.Models.Input.Create;
-using BudgetScale.Application.Groups.Models.Input.UpdatePartially;
 using BudgetScale.Application.Groups.Models.Output;
 using BudgetScale.Application.Groups.Queries.GetCalculatedGroups;
 using BudgetScale.Application.Groups.Queries.GetGroup;
 using BudgetScale.Application.Groups.Queries.GetGroups;
 using BudgetScale.Infrastructure.Extensions;
-using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 

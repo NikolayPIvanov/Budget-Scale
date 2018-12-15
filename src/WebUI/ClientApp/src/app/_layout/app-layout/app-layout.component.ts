@@ -9,13 +9,9 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 export class AppLayoutComponent implements OnInit {
 
   constructor() {
-
-    MDBBootstrapModule.forRoot()
   }
 
   ngOnInit() {
-
-    MDBBootstrapModule.forRoot()
   }
 
 }

@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using BudgetScale.Domain.Entities;
+﻿using BudgetScale.Domain.Entities;
 using BudgetScale.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;

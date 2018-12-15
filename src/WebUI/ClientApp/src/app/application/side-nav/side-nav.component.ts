@@ -13,7 +13,6 @@ export class SideNavComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    MDBBootstrapModule.forRoot()
   }
 
 }

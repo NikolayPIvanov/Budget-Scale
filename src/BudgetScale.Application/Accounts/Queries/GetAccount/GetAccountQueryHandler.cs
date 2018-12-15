@@ -1,7 +1,5 @@
-﻿using System.Linq;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
-using AutoMapper;
 using BudgetScale.Domain.Entities;
 using BudgetScale.Persistence;
 using MediatR;

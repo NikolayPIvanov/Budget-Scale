@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using BudgetScale.Application.Groups.Models.Output;
-using BudgetScale.Domain.Entities;
+﻿using BudgetScale.Domain.Entities;
 using MediatR;
 
 namespace BudgetScale.Application.Groups.Queries.GetGroup

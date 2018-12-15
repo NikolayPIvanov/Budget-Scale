@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace BudgetTracker.Common
+﻿namespace BudgetTracker.Common
 {
     public static class GlobalConstants
     {

@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using AutoMapper;
 using BudgetScale.Application.Categories.Models.Output;
 using BudgetScale.Application.Groups.Models.Output;
 using BudgetScale.Persistence;

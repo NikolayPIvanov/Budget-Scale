@@ -1,5 +1,4 @@
-﻿using BudgetScale.Domain.Entities;
-using MediatR;
+﻿using MediatR;
 
 namespace BudgetScale.Application.Categories.Commands.CreateCommand
 {

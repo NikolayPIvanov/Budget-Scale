@@ -1,5 +1,3 @@
-using BudgetScale.Domain.Entities;
-
 namespace BudgetScale.Application.Accounts.Models.Input
 {
     public class CreateAccountViewModel

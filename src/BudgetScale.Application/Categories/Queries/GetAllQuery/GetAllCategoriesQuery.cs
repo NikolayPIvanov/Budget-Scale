@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using BudgetScale.Application.Categories.Models.Output;
+﻿using System.Linq;
 using BudgetScale.Domain.Entities;
 using MediatR;
 

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using BudgetScale.Domain.Entities;
+﻿using BudgetScale.Domain.Entities;
 using MediatR;
 
 namespace BudgetScale.Application.Accounts.Queries.GetAccount

@@ -4,7 +4,6 @@ using AutoMapper;
 using BudgetScale.Domain.Entities;
 using BudgetScale.Persistence;
 using MediatR;
-using Z.EntityFramework.Plus;
 
 namespace BudgetScale.Application.Categories.Commands.CreateCommand
 {

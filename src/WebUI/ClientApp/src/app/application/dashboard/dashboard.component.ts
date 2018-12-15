@@ -9,13 +9,10 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 export class DashboardComponent implements OnInit {
 
   constructor() {
-
-    MDBBootstrapModule.forRoot()
   }
 
   ngOnInit() {
 
-    MDBBootstrapModule.forRoot()
   }
 
 }

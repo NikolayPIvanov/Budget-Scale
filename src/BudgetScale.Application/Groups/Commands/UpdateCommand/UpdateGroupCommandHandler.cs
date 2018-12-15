@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using AutoMapper;
 using BudgetScale.Application.Groups.Models.Input;
 using BudgetScale.Domain.Entities;
 using BudgetScale.Persistence;

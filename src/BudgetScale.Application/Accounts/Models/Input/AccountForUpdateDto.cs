@@ -1,6 +1,4 @@
-﻿using BudgetScale.Domain.Entities;
-
-namespace BudgetScale.Application.Accounts.Models.Input
+﻿namespace BudgetScale.Application.Accounts.Models.Input
 {
     public class AccountForUpdateDto
     {

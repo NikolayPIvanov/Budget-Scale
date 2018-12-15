@@ -1,5 +1,4 @@
 using AutoMapper;
-using BudgetScale.Application.Accounts.Commands;
 using BudgetScale.Application.Accounts.Models.Output;
 using BudgetScale.Application.Categories.Commands.CreateCommand;
 using BudgetScale.Application.Categories.Models.Output;

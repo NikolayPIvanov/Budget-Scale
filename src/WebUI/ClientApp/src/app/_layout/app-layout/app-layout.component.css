@@ -1,1 +1,184 @@
+.text-bold {
+  font-weight: 700;
+}
 
+.text-small {
+  font-size: 0.9rem;
+}
+
+.text-xsmall {
+  font-size: 0.8rem;
+}
+
+.text-gray {
+  color: #868e96;
+}
+
+.text-uppercase {
+  letter-spacing: 0.2em;
+}
+
+.lh-2 {
+  line-height: 2;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+i {
+  display: inline-block;
+}
+
+span {
+  display: inline-block;
+}
+
+.mt-30px {
+  margin-top: 30px !important;
+}
+
+.mb-30px {
+  margin-bottom: 30px !important;
+}
+
+i[class*='icon-'] {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+}
+
+table {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.btn-xs {
+  font-size: 0.7em !important;
+  padding: 2px 5px !important;
+  border-radius: 2px !important;
+}
+
+.badge {
+  font-weight: 400;
+  border-radius: 0;
+}
+
+.badge.badge-primary {
+  background: #33b35a;
+}
+
+
+
+h2 {
+  color: #555;
+  font-weight: 400;
+}
+
+.breadcrumb-holder {
+  background: #eceeef;
+}
+
+.breadcrumb-holder .breadcrumb {
+  padding: 15px 0;
+  font-size: 0.85em;
+  font-weight: 300;
+  color: #999;
+  margin-bottom: 0;
+}
+
+.breadcrumb-holder .breadcrumb a:hover,
+.breadcrumb-holder .breadcrumb:focus {
+  text-decoration: none;
+}
+
+.breadcrumb-holder .breadcrumb .container {
+  padding: 0;
+}
+
+.card {
+  margin-bottom: 30px;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.card-header h1,
+.card-header h2,
+.card-header h3,
+.card-header h4,
+.card-header h5,
+.card-header h6 {
+  margin-bottom: 0;
+}
+
+.card:not([class*="text"]) p {
+  color: #888;
+}
+
+.display {
+  font-weight: 400 !important;
+}
+
+.section-padding {
+  padding: 3rem 0;
+}
+
+.section-no-padding-bottom {
+  padding-bottom: 0;
+}
+
+section header {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .container-fluid {
+    padding: 0 3rem;
+  }
+}
+
+.list-group-item {
+  border-right: 0;
+  border-left: 0;
+}
+
+.list-group-item:first-child,
+.list-group-item:last-child {
+  border-radius: 0;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.tile-link {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 30;
+}
+
+.mCSB_scrollTools {
+  width: 4px;
+}
+
+.mCSB_inside>.mCSB_container {
+  margin-right: 0 !important;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background-color: #33b35a;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar:hover {
+  background-color: #33b35a;
+}

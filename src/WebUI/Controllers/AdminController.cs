@@ -1,15 +1,10 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AutoMapper.QueryableExtensions;
-using BudgetScale.Application.Accounts.Queries.GetAccounts;
-using BudgetScale.Application.Groups.Queries.GetCalculatedGroups;
 using BudgetScale.Application.Requests.Models.Output;
 using BudgetScale.Application.Requests.Queries.AllRequests;
 using BudgetScale.Application.Transactions.Model;
 using BudgetScale.Application.Transactions.Query;
 using BudgetScale.Application.Transactions.Query.TransactionsForUser;
-using BudgetScale.Domain.Entities;
-using BudgetScale.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

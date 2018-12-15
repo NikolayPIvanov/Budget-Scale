@@ -19,7 +19,6 @@ import { DashboardComponent } from './application/dashboard/dashboard.component'
 import { MainNavComponent } from './application/main-nav/main-nav.component';
 import { SideNavComponent } from './application/side-nav/side-nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -35,7 +34,6 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     MainNavComponent
   ],
   imports: [
-    MDBBootstrapModule.forRoot(),
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,

@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using BudgetScale.Application.Accounts.Queries.GetAccounts;
 using BudgetScale.Application.Categories.Queries.GetAllQuery;
 using BudgetScale.Application.Categories.Queries.GetQuery;
 using BudgetScale.Application.Tests.Infrastructure;
