@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @Component({
   selector: 'app-app-layout',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppLayoutComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+
+    MDBBootstrapModule.forRoot()
+  }
 
   ngOnInit() {
+
+    MDBBootstrapModule.forRoot()
   }
 
 }

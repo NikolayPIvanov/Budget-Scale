@@ -7,6 +7,7 @@ import { LoginComponent } from "./authentication/login/login.component";
 import { RegisterComponent } from "./authentication/register/register.component";
 import { AppLayoutComponent } from "./_layout/app-layout/app-layout.component";
 import { AdminLayoutComponent } from "./_layout/admin-layout/admin-layout.component";
+import { DashboardComponent } from "./application/dashboard/dashboard.component";
 
 
 const appRoutes: Routes = [
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
         path: '',
         component: AppLayoutComponent,
         children: [
+            { path: 'dashboard', component: DashboardComponent },
 
         ]
     },
