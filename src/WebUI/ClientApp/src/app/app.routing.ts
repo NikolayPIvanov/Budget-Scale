@@ -5,6 +5,7 @@ import { CounterComponent } from "./counter/counter.component";
 import { ContactUsComponent } from "./contact-us/contact-us.component";
 import { AuthenticationComponent } from "./_layout/authentication/authentication.component";
 import { LoginComponent } from "./authentication/login/login.component";
+import { RegisterComponent } from "./authentication/register/register.component";
 
 
 const appRoutes: Routes = [
@@ -22,7 +23,8 @@ const appRoutes: Routes = [
         path: '',
         component: AuthenticationComponent,
         children: [
-            { path: 'login', component: LoginComponent }
+            { path: 'login', component: LoginComponent },
+            { path: 'register', component: RegisterComponent }
         ]
     },
 
