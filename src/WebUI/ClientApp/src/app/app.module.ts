@@ -8,12 +8,12 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
 
 import { routing } from './app.routing';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AuthenticationModule } from './authentication/authentication.module';
 
 
 @NgModule({
@@ -22,7 +22,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent,
     SiteLayoutComponent,
     ContactUsComponent
   ],
@@ -32,6 +31,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     NgbModule,
     routing,
+    AuthenticationModule,
     RouterModule.forRoot([
     ])
   ],
