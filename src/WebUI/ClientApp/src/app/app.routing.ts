@@ -8,6 +8,10 @@ import { RegisterComponent } from "./authentication/register/register.component"
 import { AppLayoutComponent } from "./_layout/app-layout/app-layout.component";
 import { AdminLayoutComponent } from "./_layout/admin-layout/admin-layout.component";
 import { DashboardComponent } from "./application/dashboard/dashboard.component";
+import { DashboardWidgetComponent } from "./application/dashboard-widget/dashboard-widget.component";
+import { AccountsComponent } from "./application/accounts/accounts.component";
+import { PlansComponent } from "./application/plans/plans.component";
+import { ReportsComponent } from "./application/reports/reports.component";
 
 
 const appRoutes: Routes = [
@@ -34,7 +38,9 @@ const appRoutes: Routes = [
         component: AppLayoutComponent,
         children: [
             { path: 'dashboard', component: DashboardComponent },
-
+            { path: 'accounts', component: AccountsComponent },
+            { path: 'reports', component: ReportsComponent },
+            { path: 'plans', component: PlansComponent }
         ]
     },
 

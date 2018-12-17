@@ -11,14 +11,11 @@ import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component
 
 import { routing } from './app.routing';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { AppLayoutComponent } from './_layout/app-layout/app-layout.component';
 import { AdminLayoutComponent } from './_layout/admin-layout/admin-layout.component';
-import { DashboardComponent } from './application/dashboard/dashboard.component';
-import { MainNavComponent } from './application/main-nav/main-nav.component';
-import { SideNavComponent } from './application/side-nav/side-nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { WebAppModule } from './application/application.module';
 
 @NgModule({
   declarations: [
@@ -27,11 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     SiteLayoutComponent,
     ContactUsComponent,
-    AppLayoutComponent,
     AdminLayoutComponent,
-    DashboardComponent,
-    SideNavComponent,
-    MainNavComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -40,6 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     routing,
     AuthenticationModule,
+    WebAppModule,
     RouterModule.forRoot([
     ]),
   ],

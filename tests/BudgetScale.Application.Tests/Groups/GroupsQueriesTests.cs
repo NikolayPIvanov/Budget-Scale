@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper.QueryableExtensions;
+using BudgetScale.Application.Groups.Models.Output;
 using BudgetScale.Application.Groups.Queries.GetCalculatedGroups;
 using BudgetScale.Application.Groups.Queries.GetGroup;
 using BudgetScale.Application.Groups.Queries.GetGroups;
@@ -32,6 +34,7 @@ namespace BudgetScale.Application.Tests
             //Arrange
             var result = await handler.Handle(query, CancellationToken.None);
 
+            var res = result.ProjectTo<GroupViewModel>(mapper.ConfigurationProvider);
             //Assert
             Assert.IsInstanceOf<IQueryable<Group>>(result);
         }
