@@ -8,10 +8,12 @@ import { RegisterComponent } from "./authentication/register/register.component"
 import { AppLayoutComponent } from "./_layout/app-layout/app-layout.component";
 import { AdminLayoutComponent } from "./_layout/admin-layout/admin-layout.component";
 import { DashboardComponent } from "./application/dashboard/dashboard.component";
-import { DashboardWidgetComponent } from "./application/dashboard-widget/dashboard-widget.component";
 import { AccountsComponent } from "./application/accounts/accounts.component";
 import { PlansComponent } from "./application/plans/plans.component";
 import { ReportsComponent } from "./application/reports/reports.component";
+import { AccountOptionsComponent } from "./application/account-options/account-options.component";
+import { AdminDashboardComponent } from "./administrator/admin-dashboard/admin-dashboard.component";
+import { RequestsManagerComponent } from "./administrator/requests-manager/requests-manager.component";
 
 
 const appRoutes: Routes = [
@@ -40,15 +42,17 @@ const appRoutes: Routes = [
             { path: 'dashboard', component: DashboardComponent },
             { path: 'accounts', component: AccountsComponent },
             { path: 'reports', component: ReportsComponent },
-            { path: 'plans', component: PlansComponent }
+            { path: 'plans', component: PlansComponent },
+            { path: 'options', component: AccountOptionsComponent }
         ]
     },
 
     {
-        path: '',
+        path: 'admin/',
         component: AdminLayoutComponent,
         children: [
-
+            { path: 'dashboard', component: AdminDashboardComponent },
+            { path: 'requests', component: RequestsManagerComponent },
         ]
     },
 

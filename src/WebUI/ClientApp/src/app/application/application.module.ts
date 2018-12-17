@@ -12,6 +12,7 @@ import { AccountsComponent } from './accounts/accounts.component';
 import { AccountsWidgetComponent } from './accounts-widget/accounts-widget.component';
 import { ReportsComponent } from './reports/reports.component';
 import { PlansComponent } from './plans/plans.component';
+import { AccountOptionsComponent } from './account-options/account-options.component';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { PlansComponent } from './plans/plans.component';
     AccountsComponent,
     AccountsWidgetComponent,
     ReportsComponent,
-    PlansComponent
+    PlansComponent,
+    AccountOptionsComponent
   ]
 
 })
