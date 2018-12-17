@@ -13,6 +13,7 @@ import { AccountsWidgetComponent } from './accounts-widget/accounts-widget.compo
 import { ReportsComponent } from './reports/reports.component';
 import { PlansComponent } from './plans/plans.component';
 import { AccountOptionsComponent } from './account-options/account-options.component';
+import { DashboardListComponent } from './dashboard/dashboard-list/dashboard-list.component';
 
 @NgModule({
   imports: [
@@ -31,8 +32,11 @@ import { AccountOptionsComponent } from './account-options/account-options.compo
     AccountsWidgetComponent,
     ReportsComponent,
     PlansComponent,
-    AccountOptionsComponent
-  ]
+    AccountOptionsComponent,
+    DashboardListComponent
+  ],
+
+  exports: [MainNavComponent, SideNavComponent]
 
 })
 export class WebAppModule { }
