@@ -14,6 +14,7 @@ import { ReportsComponent } from "./application/reports/reports.component";
 import { AccountOptionsComponent } from "./application/account-options/account-options.component";
 import { AdminDashboardComponent } from "./administrator/admin-dashboard/admin-dashboard.component";
 import { RequestsManagerComponent } from "./administrator/requests-manager/requests-manager.component";
+import { MessagesComponent } from "./administrator/messages/messages.component";
 
 
 const appRoutes: Routes = [
@@ -53,6 +54,7 @@ const appRoutes: Routes = [
         children: [
             { path: 'dashboard', component: AdminDashboardComponent, pathMatch: 'full' },
             { path: 'requests', component: RequestsManagerComponent },
+            { path: 'messages', component: MessagesComponent }
         ]
     },
 
