@@ -4,7 +4,6 @@ import { AuthenticationComponent } from '../_layout/authentication/authenticatio
 
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
-import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 

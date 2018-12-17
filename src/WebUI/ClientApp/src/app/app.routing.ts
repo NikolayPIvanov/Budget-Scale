@@ -51,7 +51,7 @@ const appRoutes: Routes = [
         path: 'admin/',
         component: AdminLayoutComponent,
         children: [
-            { path: 'dashboard', component: AdminDashboardComponent },
+            { path: 'dashboard', component: AdminDashboardComponent, pathMatch: 'full' },
             { path: 'requests', component: RequestsManagerComponent },
         ]
     },

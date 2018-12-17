@@ -3,7 +3,6 @@ using AutoMapper;
 using BudgetScale.Application.Accounts.Commands.CreateCommand;
 using BudgetScale.Application.Categories.Commands.CreateCommand;
 using BudgetScale.Application.Groups.Commands.CreateCommand;
-using BudgetScale.Application.Groups.Models.Output;
 using BudgetScale.Domain.Entities;
 using BudgetScale.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -30,9 +29,9 @@ namespace BudgetScale.Application.Tests.Infrastructure
             BatchDeleteManager.InMemoryDbContextFactory = () => new ApplicationDbContext(options);
 
             this.context.Database.EnsureCreated();
+            
             this.mapper = new Mapper(new MapperConfiguration(config =>
             {
-                config.CreateMap<Group, GroupViewModel>();
                 config.CreateMap<CreateGroupCommand, Group>();
                 config.CreateMap<CreateCategoryCommand, Category>();
                 config.CreateMap<CreateAccountCommand, Account>()
