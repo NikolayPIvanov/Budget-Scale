@@ -49,7 +49,7 @@ const appRoutes: Routes = [
     },
 
     {
-        path: 'admin/',
+        path: 'admin',
         component: AdminLayoutComponent,
         children: [
             { path: 'dashboard', component: AdminDashboardComponent, pathMatch: 'full' },
